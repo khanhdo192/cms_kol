@@ -1,0 +1,101 @@
+.navbarTop{
+    background-color: #3389ff;
+}
+.sidebarLeft{
+    background-color: #2a363d;
+}
+#content{
+    background-color: #eef2f5;
+}
+.btn-color{
+    background-color: #2ec7cf;
+}
+.btn-add{
+    float: right;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.btn-contract{
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.btnyt{
+    background-color: #FE0000;
+    color: #fff;
+}
+.btnfb{
+    background-color: #0084ff;
+    color: #fff;
+}
+.btnins{
+    background-color: #b1166c;
+    color: #fff;
+}
+.btnplus{
+    background-color: #27d367;
+    color: #fff;
+}
+.btnminus{
+    background-color: #f20001;
+    color: #fff;
+}
+.nav-page{
+    color: #000;
+    background-color: #fff;
+}
+.main-screen{
+    background-color: #eef2f5;
+}
+.filter-screen{
+    background-color: #e6e9ee;
+}
+.main-table{
+    padding-top: 20px;
+}
+
+
+.fa-phone-alt{
+    background-color: #2ecf6c;
+    color: #fff;
+}
+.fa-envelope{
+    background-color: #2ec7cf;
+    color: #fff;
+}
+.fass{
+    padding: 5px;
+    font-size: 15px;
+    width: 25px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+    border-radius: 20%;
+}
+.fass:hover{
+    opacity: 0.8;
+}
+
+.social1{
+    margin-left: 10px;
+}
+
+.option1{
+    margin-top: -10px;
+}
+.option2{
+    margin-top: -5px;
+}
+.fa-bullseye{
+    font-size: 10px;
+}
+.fa-ellipsis-h{
+    font-size: 10px;
+}
+.ui-front {
+    z-index: 1051 !important;
+  }
+.token-input{
+    width: 100% !important;
+}
