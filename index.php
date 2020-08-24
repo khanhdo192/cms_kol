@@ -46,7 +46,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Hình ảnh:</label>
-                                                <input class="btn" type="file" name="kol_img">
+                                                <input class="btn" type="file" name="kol_img" required>
                                             </div>
                                             <div class="form-group">
                                                 <label>Lĩnh vực:</label>
@@ -54,8 +54,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Giới tính:</label>
-                                                <select class="form-control" name="kol_gender">
-                                                    <option>Unknow</option>
+                                                <select class="form-control" name="kol_gender" required>
+                                                    <option value="">Unknow</option>
                                                     <option>Male</option>
                                                     <option>Female</option>
                                                     <option>Group</option>
@@ -116,9 +116,9 @@
                                             <div class="form-group" id="curd_table">
                                                 <label for="">Scope of work & Rate card:</label>
                                                 <div class="input-group">
-                                                    <input type="text" class="form-control" name="sow_name[]" placeholder="Sow">
-                                                    <input type="text" class="form-control" name="ratecard[]" placeholder="Rate card">
-                                                    <input type="date" class="form-control" name="time[]" placeholder="">
+                                                    <input type="text" class="form-control" name="sow_name[]" placeholder="Sow" required>
+                                                    <input type="text" class="form-control" name="ratecard[]" placeholder="Rate card" required>
+                                                    <input type="date" class="form-control" name="time[]" placeholder="" required>
                                                     <div class="input-group-append">
                                                         <button class="btn btnplus" id="add" type="button"><i class="fas fa-plus-circle"></i></button>
                                                     </div>
@@ -225,93 +225,111 @@
                             </thead>
                             <tbody>
                             <?php include('showkol.php'); ?>
-                            <?php foreach($results as $result): ?>
+                            <?php foreach($data as $value): ?>
                             <tr>
                                 <td>
-                                    <div class="row">
+                                    <div class="row name-job">
                                         <div class="col-xl-4">
-                                            <img src="upload/<?php echo $result['kol_img']; ?>" alt="" width="55px">
+                                            <img src="upload/<?php echo $value['kol_img']; ?>" alt="" width="55px">
                                         </div>
                                         <div class="col-xl-8">
-                                            <p class="kname"><?php echo $result['kol_name']; ?></p>
-                                            <span class="badge badge-success">singer</span>
-                                            <span class="badge badge-danger tag2">Youtuber</span>                                           
+                                            <p class="nametag"><?php echo $value['kol_name']; ?></p>
+                                            <?php foreach($value["job_name"] as $subkey2 => $subvalue2): ?>
+                                            <span class="badge badge-success nametag"><?php echo $subvalue2['job_name']?></span><br>
+                                            <?php endforeach; ?>                                       
                                         </div>
                                     </div>                                   
                                 </td>
                                 <td>
-                                    <div class="row">
+                                    <div class="row platform">
                                         <div class="col-xl-3">
-                                            <a href="#" class="platform"><i class="fab fa-facebook-square"></i></a><br>
+                                            <a href="<?php echo $value['link_fb']; ?>"><i class="fab fa-facebook-square"></i></a><br>
                                         </div>
                                         <div class="col-xl-9">
                                             <p class="api-pf">100 M</p>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row platform">
                                         <div class="col-xl-3">
-                                        <a href="#" class="platform"><i class="fab fa-instagram"></i></a><br>
+                                            <a href="<?php echo $value['link_ins']; ?>"><i class="fab fa-instagram"></i></a><br>
                                         </div>
                                         <div class="col-xl-9">
-                                        <p class="api-pf">36 M</p>
+                                            <p class="api-pf">36 M</p>
                                         </div>
                                     </div>
-                                    <div class="row">
+                                    <div class="row platform">
                                         <div class="col-xl-3">
-                                        <a href="#" class="platform"><i class="fab fa-youtube"></i></a>
+                                            <a href="<?php echo $value['link_yt']; ?>"><i class="fab fa-youtube"></i></a>
                                         </div>
                                         <div class="col-xl-9">
-                                        <p class="api-pf">1 M</p>
+                                            <p class="api-pf">1 M</p>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row">
+                                <?php foreach($value["sow_name"] as $subkey => $subvalue): ?>
+                                    <div class="row sow-rate">
                                         <div class="col-xl-8">
-                                            <p class="platform">Youtube Exclusive</p>
+                                            <p><?php echo $subvalue['sow_name']; ?></p>
                                         </div>
                                         <div class="col-xl-4">
-                                            <p class="api-pf">100 M</p>
+                                            <p><?php echo $subvalue['ratecard']; ?></p>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                                </td>
+                                <td>
+                                    <div class="row social">
+                                        <div class="col-xl-6">
+                                        <span class="d-inline-block" data-toggle="popover" data-placement="bottom" data-content="<?php echo $value['kol_tel']; ?>">
+                                            <i class="fas fa-phone-alt fass"></i>
+                                        </span>
+                                        </div>
+                                        <div class="col-xl-6">
+                                        <span class="d-inline-block" data-toggle="popover" data-placement="bottom" data-content="<?php echo $value['kol_mail']; ?>">
+                                            <i class="fas fa-envelope fass"></i>
+                                        </span>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="row social1">
-                                        <a href="#"><i class="fas fa-phone-alt fass"></i></a>
-                                        <a href="#"><i class="fas fa-envelope fass"></i></a>
+                                <?php foreach($value["note_txt"] as $subkey3 => $subvalue3): ?>
+                                    <div class="row note">
+                                        <div class="col-xl-12">
+                                            <p><?php echo $subvalue3['note_txt']?></p>
+                                        </div>
                                     </div>
+                                <?php endforeach; ?>
                                 </td>
                                 <td>
                                     <div class="row">
                                         <div class="col-xl-12">
-                                            <p class="platform">Fail</p>
+                                            <ul class="navbar-nav ml-auto">
+                                                <li class="nav-item dropdown no-arrow mx-1">
+                                                    <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="fas fa-ellipsis-h"></i>
+                                                    </a>
+                                                    <!-- Dropdown - Alerts -->
+                                                    <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                                                    <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#editKol">
+                                                        Edit Kol
+                                                    </button>
+                                                    <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#detailKol">
+                                                        Detail Kol
+                                                    </button>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div>Download Kol</div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div>Kol's contract</div>
+                                                    </a>
+                                                    <a class="dropdown-item" href="#">
+                                                        <div>Delete Kol</div>
+                                                    </a>
+                                                    </div>
+                                                </li>
+                                            </ul>
                                         </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="col-xl-12">
-                                        <ul class="navbar-nav ml-auto">
-                                            <li class="nav-item dropdown no-arrow mx-1">
-                                                <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-h"></i>
-                                                </a>
-                                                <!-- Dropdown - Alerts -->
-                                                <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
-                                                <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#editKol">
-                                                    Edit Kol
-                                                </button>
-                                                <a class="dropdown-item" href="#">
-                                                    <div>Download Kol</div>
-                                                </a>
-                                                <a class="dropdown-item" href="#">
-                                                    <div>Kol's contract</div>
-                                                </a>
-                                                <a class="dropdown-item" href="#">
-                                                    <div>Delete Kol</div>
-                                                </a>
-                                                </div>
-                                            </li>
-                                        </ul>
                                     </div>
                                 </td>
                             </tr>
@@ -338,6 +356,7 @@
         <!-- End of container-fluid -->
     <?php
         include('edit.php');
+        include('detailkol.php');
         include('js.php');
         include('footer.php');
     ?>

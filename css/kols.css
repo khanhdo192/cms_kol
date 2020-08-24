@@ -76,11 +76,6 @@
 .fass:hover{
     opacity: 0.8;
 }
-
-.social1{
-    margin-left: 10px;
-}
-
 .option1{
     margin-top: -10px;
 }
@@ -98,4 +93,27 @@
   }
 .token-input{
     width: 100% !important;
+}
+.name-job{
+}
+.nametag{
+    margin-bottom: 5px;
+}
+.platform{
+    margin-bottom: -15px;
+    margin-right: -50px;
+}
+.api-pf{
+    font-size: 13px;
+}
+.sow-rate{
+    margin-bottom: -15px;
+    font-size: 13px;
+}
+.social{
+    width: 65px;
+}
+.note{
+    margin-bottom: -15px;
+    font-size: 13px;
 }

@@ -36,7 +36,7 @@
         
         $count2 = count($sow_name);
         for($i=0;$i<$count2;$i++){
-            $sql3 = "INSERT INTO kol_sow (sow_name,ratecard,time,kol_id) VALUES ('{$sow_name[$i]}','{$ratecard[$i]}','{$time[$i]}','$id')";
+            $sql3 = "INSERT INTO kol_sow (sow_name,ratecard,time,id_kol) VALUES ('{$sow_name[$i]}','{$ratecard[$i]}','{$time[$i]}','$id')";
             $query_run3 = mysqli_query($connection,$sql3);
         }
         

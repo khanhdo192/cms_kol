@@ -18,9 +18,9 @@ $(document).ready(function(){
     $('#add').click(function(){
         count = count + 1;
         var html_code = "<div class='input-group' id='row"+count+"'>";
-        html_code += "<input type='text' class='form-control' name='sow_name[]' placeholder='Sow'>";
-        html_code += "<input type='text' class='form-control' name='ratecard[]' placeholder='Rate card'>";
-        html_code += "<input type='date' class='form-control' name='time[]' placeholder=''>";
+        html_code += "<input type='text' class='form-control' name='sow_name[]' placeholder='Sow' required>";
+        html_code += "<input type='text' class='form-control' name='ratecard[]' placeholder='Rate card' required>";
+        html_code += "<input type='date' class='form-control' name='time[]' placeholder='' required>";
         html_code += "<div class='input-group-append'>";
         html_code += "<button class='btn btnminus remove' data-row='row"+count+"' type='button'><i class='fas fa-minus-circle'></i></button>";
         html_code += "</div>";
@@ -105,4 +105,6 @@ $(document).ready(function(){
     });
 });
 
-
+$(function () {
+    $('[data-toggle="popover"]').popover()
+});
