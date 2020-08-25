@@ -117,3 +117,29 @@
     margin-bottom: -15px;
     font-size: 13px;
 }
+.kol-img{
+    border-radius: 50%;
+}
+.kol-ava{
+    margin-right: -30px;
+}
+.social-box{
+    border: 2px solid #3389ff;
+    border-radius: 10px;
+}
+.social-box p{
+    text-align: center;
+}
+.follow{
+    position: relative;
+}
+.social-icon{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.info-date{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

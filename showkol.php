@@ -12,6 +12,8 @@
     $data = array();
     while($row = mysqli_fetch_array($results)){
 
+        $data[$row["kol_id"]]["kol_id"] = $row["kol_id"];
+
         $data[$row["kol_id"]]["kol_name"] = $row["kol_name"];
 
         $data[$row["kol_id"]]["kol_img"] = $row["kol_img"];
