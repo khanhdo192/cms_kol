@@ -1,4 +1,9 @@
-<div class="modal fade" id="editKol" tabindex="-1" role="dialog" aria-hidden="true">
+<?php
+    include('editkol.php');
+?>
+
+
+<div class="modal fade" id="editKol<?php echo $value['kol_id']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -8,18 +13,22 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="getkol.php" method="POST" enctype="multipart/form-data">
+                <form action="editkol.php" method="POST" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>ID Kol:</label>
+                        <input type="text" class="form-control" name="kol_id" value="<?php echo $value['kol_id']; ?>">
+                    </div>
                     <div class="form-group">
                         <label>Tên Kol:</label>
-                        <input type="name" class="form-control" name="kol_name" placeholder="KOL name" required>
+                        <input type="name" class="form-control" name="kol_name" placeholder="KOL name" value="<?php echo $value['kol_name']?>" required>
                     </div>
                     <div class="form-group">
                         <label>Email:</label>
-                        <input type="email" class="form-control" name="kol_mail" placeholder="Email" required>
+                        <input type="email" class="form-control" name="kol_mail" placeholder="Email" value="<?php echo $value['kol_mail']?>" required>
                     </div>
                     <div class="form-group">
                         <label>Phone:</label>
-                        <input type="tel" class="form-control" name="kol_tel" placeholder="Phone" pattern="[0-9]{1,15}" required>
+                        <input type="tel" class="form-control" name="kol_tel" placeholder="Phone" pattern="[0-9]{1,15}" value="<?php echo $value['kol_tel']?>" required>
                     </div>
                     <div class="form-group">
                         <label>Hình ảnh:</label>
@@ -27,7 +36,10 @@
                     </div>
                     <div class="form-group">
                         <label>Lĩnh vực:</label>
-                        <input type="text" class="form-control" id="jobfield" name="job_name[]">
+                        <input type="text" class="form-control editjobfield" name="job_name[]" 
+                        value="<?php foreach(array_slice($value["job_name"],0,1) as $subkey2 => $subvalue2): ?>
+                                <?php echo $subvalue2['job_name']?>
+                                <?php endforeach; ?>">
                     </div>
                     <div class="form-group">
                         <label>Giới tính:</label>
@@ -44,7 +56,7 @@
                             <div class="input-group-prepend">
                                 <button class="btn btnfb" type="button"><i class="fab fa-facebook-square"></i></button>
                             </div>
-                            <input type="text" class="form-control" name="link_fb" placeholder="Link . . .">
+                            <input type="text" class="form-control" name="link_fb" placeholder="Link . . ." value="<?php echo $value['link_fb']?>">
                         </div>
                     </div>
                     <div class="form-group">
@@ -52,7 +64,7 @@
                             <div class="input-group-prepend">
                                 <button class="btn btnins" type="button"><i class="fab fa-instagram"></i></button>
                             </div>
-                            <input type="text" class="form-control" name="link_ins" placeholder="Link . . .">
+                            <input type="text" class="form-control" name="link_ins" placeholder="Link . . ." value="<?php echo $value['link_ins']?>">
                         </div>
                     </div>
                     <div class="form-group">
@@ -60,62 +72,78 @@
                             <div class="input-group-prepend">
                                 <button class="btn btnyt" type="button"><i class="fab fa-youtube-square"></i></button>
                             </div>
-                            <input type="text" class="form-control" name="link_yt" placeholder="Link . . .">
+                            <input type="text" class="form-control" name="link_yt" placeholder="Link . . ." value="<?php echo $value['link_yt']?>">
                         </div>
                     </div>
-                    <div class="form-group" id="postfb">
+                    <div class="form-group editpostfb">
                         <label>Tương tác Facebook:</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="in_fb[]" placeholder="Link ..." >
+                        <?php foreach($value["postfb_link"] as $subkey4 => $subvalue4): ?>
+                        <div class="input-group row3<?php echo $subkey4?>">
+                            <input type="text" class="form-control" name="in_fb[]" placeholder="Link ..." value="<?php echo $subvalue4['postfb_link']; ?>">
                             <div class="input-group-append">
-                                <button class="btn btnplus" id="addfb" type="button"><i class="fas fa-plus-circle"></i></button>
+                                <button class='btn btnminus removefbd' data-row="row3<?php echo $subkey4?>" type='button'><i class='fas fa-minus-circle'></i></button>
                             </div>
                         </div>
+                        <?php endforeach; ?>
                     </div>
-                    <div class="form-group" id="postins">
+                    <button class="btn btnplus editfb" type="button"><i class="fas fa-plus-circle"></i></button>
+                    <div class="form-group editpostins">
                         <label>Tương tác Instagram:</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="in_ins[]" placeholder="Link ..." >
+                        <?php foreach($value["postins_link"] as $subkey5 => $subvalue5): ?>
+                        <div class="input-group row4<?php echo $subkey5?>">
+                            <input type="text" class="form-control" name="in_ins[]" placeholder="Link ..." value="<?php echo $subvalue5['postins_link']; ?>">
                             <div class="input-group-append">
-                                <button class="btn btnplus" id="addins" type="button"><i class="fas fa-plus-circle"></i></button>
+                                <button class='btn btnminus removeinsd' data-row="row4<?php echo $subkey5?>" type='button'><i class='fas fa-minus-circle'></i></button>
                             </div>
                         </div>
+                        <?php endforeach; ?>
                     </div>
-                    <div class="form-group" id="postyt">
+                    <button class="btn btnplus editins" type="button"><i class="fas fa-plus-circle"></i></button>
+                    <div class="form-group editpostyt">
                         <label>Tương tác Youtube:</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="in_yt[]" placeholder="Link ..." >
+                        <?php foreach($value["postyt_link"] as $subkey6 => $subvalue6): ?>
+                        <div class="input-group row5<?php echo $subkey6?>">
+                            <input type="text" class="form-control" name="in_yt[]" placeholder="Link ..." value="<?php echo $subvalue6['postyt_link']; ?>">
                             <div class="input-group-append">
-                                <button class="btn btnplus" id="addyt" type="button"><i class="fas fa-plus-circle"></i></button>
+                                <button class='btn btnminus removeytd' data-row="row5<?php echo $subkey6?>" type='button'><i class='fas fa-minus-circle'></i></button>
                             </div>
                         </div>
+                        <?php endforeach; ?>
                     </div>
-                    <div class="form-group" id="curd_table">
+                    <button class="btn btnplus edityt" type="button"><i class="fas fa-plus-circle"></i></button>
+                    <div class="form-group editcurd_table">
                         <label for="">Scope of work & Rate card:</label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="sow_name[]" placeholder="Sow">
-                            <input type="text" class="form-control" name="ratecard[]" placeholder="Rate card">
-                            <input type="date" class="form-control" name="time[]" placeholder="">
+                        <?php foreach($value["sow_name"] as $subkey => $subvalue): ?>
+                        <div class="input-group row<?php echo $subkey?>">
+                            <input type="text" class="form-control" name="sow_name[]" placeholder="Sow" value="<?php echo $subvalue['sow_name']; ?>">
+                            <input type="text" class="form-control" name="ratecard[]" placeholder="Rate card" value="<?php echo $subvalue['ratecard']; ?>">
+                            <input type="date" class="form-control" name="time[]" placeholder="" value="<?php echo $subvalue['time']; ?>">
                             <div class="input-group-append">
-                                <button class="btn btnplus" id="add" type="button"><i class="fas fa-plus-circle"></i></button>
+                                <button class='btn btnminus removed' data-row="row<?php echo $subkey?>" type='button'><i class='fas fa-minus-circle'></i></button>
                             </div>
                         </div>
+                        <?php endforeach; ?>
                     </div>
-                    <div class="form-group" id="noteform">
+                    <button class="btn btnplus edit" type="button"><i class="fas fa-plus-circle"></i></button>
+                    <div class="form-group editnoteform">
                         <label>Lưu ý: </label>
-                        <div class="input-group">
-                            <input type="text" class="form-control" name="note_txt[]" placeholder="Note">
+                        <?php foreach($value["note_txt"] as $subkey3 => $subvalue3): ?>
+                        <div class="input-group row2<?php echo $subkey3?>">
+                            <input type="text" class="form-control" name="note_txt[]" placeholder="Note" value="<?php echo $subvalue3['note_txt']; ?>">
                             <div class="input-group-append">
-                                <button class="btn btnplus" id="addnote" type="button"><i class="fas fa-plus-circle"></i></button>
+                                <button class='btn btnminus removenoted' data-row="row2<?php echo $subkey3?>" type='button'><i class='fas fa-minus-circle'></i></button>
                             </div>
                         </div>
+                        <?php endforeach; ?>
                     </div>
+                    <button class="btn btnplus editnote" type="button"><i class="fas fa-plus-circle"></i></button>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" name="getkol">Save</button>
+                        <button type="submit" class="btn btn-primary" name="editkol">Save</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
