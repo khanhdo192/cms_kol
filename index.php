@@ -209,6 +209,16 @@
                                 unset($_SESSION['fail']);
                             }
                         ?>
+                        <?php
+                            if(isset($_SESSION['success_edit']) && $_SESSION['success_edit'] !=''){
+                                echo '<p> '.$_SESSION['success_edit'].' </p>';
+                                unset($_SESSION['success_edit']);
+                            }
+                            if(isset($_SESSION['fail_edit']) && $_SESSION['fail_edit'] !=''){
+                                echo '<p> '.$_SESSION['fail_edit'].' </p>';
+                                unset($_SESSION['fail_edit']);
+                            }
+                        ?>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

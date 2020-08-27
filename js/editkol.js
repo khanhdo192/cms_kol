@@ -76,6 +76,12 @@ $(document).ready(function(){
         html_code += "</div>";
         $('.editpostfb').append(html_code);
     });
+    $(document).on('click', '.removefb', function(){
+        var delete_row = $(this).data("row");
+        $('.' + delete_row).remove();
+    });
+});
+$(document).ready(function(){
     $(document).on('click', '.removefbd', function(){
         var delete_row = $(this).data("row");
         $('.' + delete_row).remove();
@@ -94,6 +100,12 @@ $(document).ready(function(){
         html_code += "</div>";
         $('.editpostins').append(html_code);
     });
+    $(document).on('click', '.removeins', function(){
+        var delete_row = $(this).data("row");
+        $('.' + delete_row).remove();
+    });
+});
+$(document).ready(function(){
     $(document).on('click', '.removeinsd', function(){
         var delete_row = $(this).data("row");
         $('.' + delete_row).remove();
@@ -112,6 +124,12 @@ $(document).ready(function(){
         html_code += "</div>";
         $('.editpostyt').append(html_code);
     });
+    $(document).on('click', '.removeyt', function(){
+        var delete_row = $(this).data("row");
+        $('.' + delete_row).remove();
+    });
+});
+$(document).ready(function(){
     $(document).on('click', '.removeytd', function(){
         var delete_row = $(this).data("row");
         $('.' + delete_row).remove();
