@@ -24,11 +24,15 @@
                     </div>
                     <div class="form-group">
                         <label>Hình ảnh:</label>
-                        <input class="btn" type="file" name="kol_img">
+                        <input class="btn" type="file" name="kol_img" required>
                     </div>
                     <div class="form-group">
                         <label>Lĩnh vực:</label>
-                        <input type="text" class="form-control editjobfield" name="job_name[]" 
+                        <input type="hidden" class="form-control" name="job_id" 
+                        value="<?php foreach($value["job_name"] as $subkey2 => $subvalue2): ?>
+                                <?php echo $subvalue2['job_id']?>
+                                <?php endforeach; ?>">
+                        <input type="text" class="form-control editjobfield" name="job_name" 
                         value="<?php foreach($value["job_name"] as $subkey2 => $subvalue2): ?>
                                 <?php echo $subvalue2['job_name']?>
                                 <?php endforeach; ?>">
@@ -70,6 +74,7 @@
                     <div class="form-group editpostfb">
                         <label>Tương tác Facebook:</label>
                         <?php foreach(array_slice($value["postfb_link"],0,1) as $subkey4 => $subvalue4): ?>
+                        <input type="hidden" class="form-control" name="postfb_id[]" value="<?php echo $subvalue4['postfb_id']; ?>">
                         <div class="input-group">
                             <input type="text" class="form-control" name="in_fb[]" placeholder="Link ..." value="<?php echo $subvalue4['postfb_link']; ?>">
                             <div class="input-group-append">
@@ -78,6 +83,7 @@
                         </div>
                         <?php endforeach; ?>
                         <?php foreach(array_slice($value["postfb_link"],1) as $subkey4 => $subvalue4): ?>
+                        <input type="hidden" class="form-control" name="postfb_id[]" value="<?php echo $subvalue4['postfb_id']; ?>">
                         <div class="input-group row3<?php echo $subkey4?>">
                             <input type="text" class="form-control" name="in_fb[]" placeholder="Link ..." value="<?php echo $subvalue4['postfb_link']; ?>">
                             <div class="input-group-append">
@@ -89,6 +95,7 @@
                     <div class="form-group editpostins">
                         <label>Tương tác Instagram:</label>
                         <?php foreach(array_slice($value["postins_link"],0,1) as $subkey5 => $subvalue5): ?>
+                        <input type="hidden" class="form-control" name="postins_id[]" value="<?php echo $subvalue5['postins_id']; ?>">
                         <div class="input-group">
                             <input type="text" class="form-control" name="in_ins[]" placeholder="Link ..." value="<?php echo $subvalue5['postins_link']; ?>">
                             <div class="input-group-append">
@@ -97,6 +104,7 @@
                         </div>
                         <?php endforeach; ?>
                         <?php foreach(array_slice($value["postins_link"],1) as $subkey5 => $subvalue5): ?>
+                        <input type="hidden" class="form-control" name="postins_id[]" value="<?php echo $subvalue5['postins_id']; ?>">
                         <div class="input-group row4<?php echo $subkey5?>">
                             <input type="text" class="form-control" name="in_ins[]" placeholder="Link ..." value="<?php echo $subvalue5['postins_link']; ?>">
                             <div class="input-group-append">
@@ -108,6 +116,7 @@
                     <div class="form-group editpostyt">
                         <label>Tương tác Youtube:</label>
                         <?php foreach(array_slice($value["postyt_link"],0,1) as $subkey6 => $subvalue6): ?>
+                        <input type="hidden" class="form-control" name="postyt_id[]" value="<?php echo $subvalue6['postyt_id']; ?>">
                         <div class="input-group">
                             <input type="text" class="form-control" name="in_yt[]" placeholder="Link ..." value="<?php echo $subvalue6['postyt_link']; ?>">
                             <div class="input-group-append">
@@ -116,6 +125,7 @@
                         </div>
                         <?php endforeach; ?>
                         <?php foreach(array_slice($value["postyt_link"],1) as $subkey6 => $subvalue6): ?>
+                        <input type="hidden" class="form-control" name="postyt_id[]" value="<?php echo $subvalue6['postyt_id']; ?>">
                         <div class="input-group row5<?php echo $subkey6?>">
                             <input type="text" class="form-control" name="in_yt[]" placeholder="Link ..." value="<?php echo $subvalue6['postyt_link']; ?>">
                             <div class="input-group-append">
@@ -127,6 +137,7 @@
                     <div class="form-group editcurd_table">
                         <label for="">Scope of work & Rate card:</label>
                         <?php foreach(array_slice($value["sow_name"],0,1) as $subkey => $subvalue): ?>
+                        <input type="hidden" class="form-control" name="sow_id[]" value="<?php echo $subvalue['sow_id']; ?>">
                         <div class="input-group">
                             <input type="text" class="form-control" name="sow_name[]" placeholder="Sow" value="<?php echo $subvalue['sow_name']; ?>">
                             <input type="text" class="form-control" name="ratecard[]" placeholder="Rate card" value="<?php echo $subvalue['ratecard']; ?>">
@@ -137,6 +148,7 @@
                         </div>
                         <?php endforeach; ?>
                         <?php foreach(array_slice($value["sow_name"],1) as $subkey => $subvalue): ?>
+                        <input type="hidden" class="form-control" name="sow_id[]" value="<?php echo $subvalue['sow_id']; ?>">
                         <div class="input-group row<?php echo $subkey?>">
                             <input type="text" class="form-control" name="sow_name[]" placeholder="Sow" value="<?php echo $subvalue['sow_name']; ?>">
                             <input type="text" class="form-control" name="ratecard[]" placeholder="Rate card" value="<?php echo $subvalue['ratecard']; ?>">
@@ -150,6 +162,7 @@
                     <div class="form-group editnoteform">
                         <label>Lưu ý: </label>
                         <?php foreach(array_slice($value["note_txt"],0,1) as $subkey3 => $subvalue3): ?>
+                        <input type="hidden" class="form-control" name="note_id[]" value="<?php echo $subvalue3['note_id']; ?>">
                         <div class="input-group">
                             <input type="text" class="form-control" name="note_txt[]" placeholder="Note" value="<?php echo $subvalue3['note_txt']; ?>">
                             <div class="input-group-append">
@@ -158,6 +171,7 @@
                         </div>
                         <?php endforeach; ?>
                         <?php foreach(array_slice($value["note_txt"],1) as $subkey3 => $subvalue3): ?>
+                        <input type="hidden" class="form-control" name="note_id[]" value="<?php echo $subvalue3['note_id']; ?>">
                         <div class="input-group row2<?php echo $subkey3?>">
                             <input type="text" class="form-control" name="note_txt[]" placeholder="Note" value="<?php echo $subvalue3['note_txt']; ?>">
                             <div class="input-group-append">

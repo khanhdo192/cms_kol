@@ -27,6 +27,7 @@
 
         $data[$row["kol_id"]]["job_name"][$row["job_id"]] = array(
             "job_name" => $row["job_name"],
+            "job_id" => $row["job_id"],
         );
 
         $data[$row["kol_id"]]["kol_gender"] = $row["kol_gender"];
@@ -37,18 +38,22 @@
 
         $data[$row["kol_id"]]["postfb_link"][$row["postfb_id"]] = array(
             "postfb_link" => $row["postfb_link"],
+            "postfb_id" => $row["postfb_id"],
         );
         $data[$row["kol_id"]]["postins_link"][$row["postins_id"]] = array(
             "postins_link" => $row["postins_link"],
+            "postins_id" => $row["postins_id"],
         );
         $data[$row["kol_id"]]["postyt_link"][$row["postyt_id"]] = array(
             "postyt_link" => $row["postyt_link"],
+            "postyt_id" => $row["postyt_id"],
         );
         
         $data[$row["kol_id"]]["sow_name"][$row["sow_id"]] = array(
             "sow_name" => $row["sow_name"],
             "ratecard" => $row["ratecard"],
             "time" => $row["time"],
+            "sow_id" => $row["sow_id"],
         );
 
         $data[$row["kol_id"]]["kol_tel"] = $row["kol_tel"];
@@ -57,6 +62,7 @@
 
         $data[$row["kol_id"]]["note_txt"][$row["note_id"]] = array(
             "note_txt" => $row["note_txt"],
+            "note_id" => $row["note_id"],
         );
     }
     //print_r ($data);

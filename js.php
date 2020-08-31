@@ -13,6 +13,7 @@
   <script src="js/kolform.js"></script>
   <script src="js/editkol.js"></script>
   <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
   <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
   <!-- Page level custom scripts -->

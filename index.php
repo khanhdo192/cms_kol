@@ -46,7 +46,8 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Hình ảnh:</label>
-                                                <input class="btn" type="file" name="kol_img" required>
+                                                <input class="btn" type="file" onchange="readURL(this);" name="kol_img" required>
+                                                <img id="imgCurrent" src="#" alt="chosen image" width="70px" height="70px" style="border-radius:50%;">
                                             </div>
                                             <div class="form-group">
                                                 <label>Lĩnh vực:</label>
@@ -198,7 +199,6 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-primary">Info of KOL</h6>
                         <?php
                             if(isset($_SESSION['success']) && $_SESSION['success'] !=''){
                                 echo '<p> '.$_SESSION['success'].' </p>';
@@ -222,15 +222,23 @@
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <table class="table" id="dataTable" width="100%" cellspacing="0">
                             <thead>
+                                <div class="form-group">
+                                    <div class="input-group" style="width: 70%;">
+                                        <input type="text" id="searchbox" class="form-control" placeholder="Tìm kiếm Kol theo tên, ảnh hưởng, sow ...">
+                                        <div class="input-group-append">
+                                            <button class="btn btnsearch" type="button"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
                             <tr>
-                                <th>Tên+Lĩnh vực</th>
+                                <th>Name</th>
                                 <th>Platform social</th>
-                                <th>Scope of work</th>
-                                <th>Liên hệ</th>
-                                <th>Lưu ý</th>
-                                <th></th>
+                                <th data-sortable="false">Scope of work</th>
+                                <th data-sortable="false">Liên hệ</th>
+                                <th data-sortable="false">Lưu ý</th>
+                                <th data-sortable="false"></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -243,8 +251,8 @@
                                             <img class="kol-img" src="upload/<?php echo $value['kol_img']; ?>" alt="" width="55px" height="55px">
                                         </div>
                                         <div class="col-xl-8">
-                                            <p class="nametag"><?php echo $value['kol_name']; ?></p>
-                                            <?php foreach(array_slice($value["job_name"],0,1) as $subkey2 => $subvalue2): ?>
+                                            <p class="nametag"><?php echo $value['kol_name']; ?> -- <?php echo $value['kol_gender'];?></p>
+                                            <?php foreach($value["job_name"] as $subkey2 => $subvalue2): ?>
                                             <span class="badge badge-success nametag"><?php echo $subvalue2['job_name']?></span><br>
                                             <?php endforeach; ?>                                       
                                         </div>
@@ -363,7 +371,85 @@
 
               <!-- Filter Screen -->
               <div class="col-sm-2 filter-screen">
-                
+                <div class="row">
+                    <div class="col-xl-9">
+                        <p><i class="fas fa-filter"></i> Bộ lọc tìm kiếm</p>
+                    </div>
+                    <div class="col-xl-3">
+                        <button class="btn btnrefresh" type="button"><i class="fas fa-redo-alt"></i></button>
+                    </div>
+                </div>
+                <div class="container-fuild">
+                    <div class="form-group">
+                        <label>Lĩnh vực</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="" placeholder="Thêm lĩnh vực">
+                            <div class="input-group-append">
+                                <button class="btn btnsearch" id="" type="submit"><i class="fas fa-angle-right"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fuild">
+                    <div class="form-group">
+                        <label>Ảnh hưởng (x1.000 người)</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" id="min" name="min" class="form-control" placeholder="Từ">
+                            </div>
+                            <div class="col">
+                                <input type="text" id="max" name="max" class="form-control" placeholder="Đến">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Tương tác (x1.000 đơn vị)</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Từ">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Đến">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Khoảng giá (x1.000 vnđ)</label>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Từ">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Đến">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Nam</label>
+                        </div>
+                        <div class="col">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Nữ</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Tổ hợp</label>
+                        </div>
+                        <div class="col">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                            <label class="form-check-label" for="inlineCheckbox1">Unknow</label>
+                        </div>
+                    </div>
+                </div>
+
+
+
               </div>
               <!-- End Filter Screen -->
             </div>

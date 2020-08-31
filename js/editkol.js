@@ -11,7 +11,6 @@ $(document).ready(function(){
 
 
 
-
 $(document).ready(function(){
     var count = 1;
     $('.edit').click(function(){

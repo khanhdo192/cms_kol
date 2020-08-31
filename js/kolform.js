@@ -11,6 +11,18 @@ $(document).ready(function(){
 });
 
 
+function readURL(input){
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#imgCurrent')
+                .attr('src', e.target.result)
+        };
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
 
 
 $(document).ready(function(){
@@ -108,3 +120,51 @@ $(document).ready(function(){
 $(function () {
     $('[data-toggle="popover"]').popover()
 });
+
+$(document).ready(function() {
+    $(document).ready(function() {
+        var dataTable = $('#dataTable').dataTable();
+        $("#searchbox").keyup(function() {
+            dataTable.fnFilter(this.value);
+        });    
+    });
+    
+    $('#dataTable').DataTable( {    
+        "bInfo" : false,
+        "pageLength": 10,
+        "lengthChange": false,
+        "language": {
+            "paginate": {
+                "previous": "Trước",
+                "next": "Sau",
+            }
+        },
+    } );
+} );
+
+jQuery.fn.dataTableExt.afnFiltering.push(
+	function( oSettings, aData, iDataIndex ) {
+		var iColumn = 3;
+		var iMin = document.getElementById('min').value * 1;
+		var iMax = document.getElementById('max').value * 1;
+
+		var iVersion = aData[iColumn] == "-" ? 0 : aData[iColumn]*1;
+		if ( iMin === "" && iMax === "" )
+		{
+			return true;
+		}
+		else if ( iMin === "" && iVersion < iMax )
+		{
+			return true;
+		}
+		else if ( iMin < iVersion && "" === iMax )
+		{
+			return true;
+		}
+		else if ( iMin < iVersion && iVersion < iMax )
+		{
+			return true;
+		}
+		return false;
+	}
+);

@@ -5,6 +5,12 @@
 
     if(isset($_POST['editkol'])){
         $id = $_POST['kol_id'];
+        $job_id = $_POST['job_id'];
+        $sow_id = $_POST['sow_id'];
+        $note_id = $_POST['note_id'];
+        $postfb_id = $_POST['postfb_id'];
+        $postins_id = $_POST['postins_id'];
+        $postyt_id = $_POST['postyt_id'];
         $kol_name = $_POST['kol_name'];
         $kol_mail = $_POST['kol_mail'];
         $kol_tel = $_POST['kol_tel'];
@@ -26,39 +32,41 @@
                 WHERE kol_id = '$id'";
         $query = mysqli_query($connection,$sql);
 
+        
         $count = count($job_name); 
         for($i=0;$i<$count;$i++){
-            $sql2 = "UPDATE kol_job SET job_name='$job_name[$i]' WHERE kol_id = '$id'";
+            $sql2 = "UPDATE kol_job SET job_name='$job_name[$i]' WHERE job_id='$job_id[$i]'";
             $query2 = mysqli_query($connection,$sql2);
         }
+        
 
         $count2 = count($sow_name);
         for($i=0;$i<$count2;$i++){
-            $sql3 = "UPDATE kol_sow SET sow_name='$sow_name[$i]',ratecard='$ratecard[$i]',time='$time[$i]' WHERE id_kol='$id'";
+            $sql3 = "UPDATE kol_sow SET sow_name='$sow_name[$i]',ratecard='$ratecard[$i]',time='$time[$i]' WHERE sow_id='$sow_id[$i]'";
             $query3 = mysqli_query($connection,$sql3);
         }
 
         $count3 = count($note_txt);
         for($i=0;$i<$count3;$i++){
-            $sql4 = "UPDATE kol_note SET note_txt='$note_txt[$i]' WHERE kol_id='$id'";
+            $sql4 = "UPDATE kol_note SET note_txt='$note_txt[$i]' WHERE note_id='$note_id[$i]'";
             $query4 = mysqli_query($connection,$sql4);
         }
 
         $count4 = count($in_fb);
         for($i=0;$i<$count4;$i++){
-            $sql5 = "UPDATE post_fb SET postfb_link='$in_fb[$i]' WHERE kol_id='$id'";
+            $sql5 = "UPDATE post_fb SET postfb_link='$in_fb[$i]' WHERE postfb_id='$postfb_id[$i]'";
             $query5 = mysqli_query($connection,$sql5);
         }
 
         $count5 = count($in_ins);
         for($i=0;$i<$count5;$i++){
-            $sql6 = "UPDATE post_ins SET postins_link='$in_ins[$i]' WHERE kol_id='$id'";
+            $sql6 = "UPDATE post_ins SET postins_link='$in_ins[$i]' WHERE postins_id='$postins_id[$i]'";
             $query6 = mysqli_query($connection,$sql6);
         }
 
         $count6 = count($in_yt);
         for($i=0;$i<$count6;$i++){
-            $sql7 = "UPDATE post_yt SET postyt_link='$in_yt[$i]' WHERE kol_id='$id'";
+            $sql7 = "UPDATE post_yt SET postyt_link='$in_yt[$i]' WHERE postyt_id='$postyt_id[$i]'";
             $query7 = mysqli_query($connection,$sql7);
         }
 

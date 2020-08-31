@@ -153,3 +153,15 @@
 .iconpng:hover{
     opacity: 0.7;
 }
+.btnrefresh{
+    background-color: #fff;
+    margin-left: -10px;
+}
+.btnsearch{
+    background-color: lightseagreen;
+    color: #fff;
+    border: none;
+}
+.dataTables_filter {
+    display: none;
+}
