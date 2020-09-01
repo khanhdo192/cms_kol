@@ -10,7 +10,6 @@ $(document).ready(function(){
   });
 });
 
-
 function readURL(input){
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -142,29 +141,12 @@ $(document).ready(function() {
     } );
 } );
 
-jQuery.fn.dataTableExt.afnFiltering.push(
-	function( oSettings, aData, iDataIndex ) {
-		var iColumn = 3;
-		var iMin = document.getElementById('min').value * 1;
-		var iMax = document.getElementById('max').value * 1;
-
-		var iVersion = aData[iColumn] == "-" ? 0 : aData[iColumn]*1;
-		if ( iMin === "" && iMax === "" )
-		{
-			return true;
-		}
-		else if ( iMin === "" && iVersion < iMax )
-		{
-			return true;
-		}
-		else if ( iMin < iVersion && "" === iMax )
-		{
-			return true;
-		}
-		else if ( iMin < iVersion && iVersion < iMax )
-		{
-			return true;
-		}
-		return false;
-	}
-);
+$(document).ready(function(){
+    $('#searchjob').on('keyup',function(event){
+        event.preventDefault();
+        var jobkey = $(this).val().toLowerCase();
+        $('#dataTable2 tr').filter(function(){
+            $(this).toggle($(this).text().toLowerCase().indexOf(jobkey)>-1);
+        });
+    });
+});

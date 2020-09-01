@@ -241,7 +241,7 @@
                                 <th data-sortable="false"></th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="dataTable2">
                             <?php include('showkol.php'); ?>
                             <?php foreach($data as $value): ?>
                             <tr>
@@ -251,7 +251,7 @@
                                             <img class="kol-img" src="upload/<?php echo $value['kol_img']; ?>" alt="" width="55px" height="55px">
                                         </div>
                                         <div class="col-xl-8">
-                                            <p class="nametag"><?php echo $value['kol_name']; ?> -- <?php echo $value['kol_gender'];?></p>
+                                            <p class="nametag"><?php echo $value['kol_name']; ?></p>
                                             <?php foreach($value["job_name"] as $subkey2 => $subvalue2): ?>
                                             <span class="badge badge-success nametag"><?php echo $subvalue2['job_name']?></span><br>
                                             <?php endforeach; ?>                                       
@@ -370,6 +370,7 @@
               <!-- End Main Screen -->
 
               <!-- Filter Screen -->
+              <?php include('filter.php');?>
               <div class="col-sm-2 filter-screen">
                 <div class="row">
                     <div class="col-xl-9">
@@ -383,7 +384,7 @@
                     <div class="form-group">
                         <label>Lĩnh vực</label>
                         <div class="input-group">
-                            <input type="text" class="form-control" name="" placeholder="Thêm lĩnh vực">
+                            <input type="text" class="form-control" id="searchjob" name="searchByJob" placeholder="Lĩnh vực">
                             <div class="input-group-append">
                                 <button class="btn btnsearch" id="" type="submit"><i class="fas fa-angle-right"></i></button>
                             </div>
@@ -422,6 +423,11 @@
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="Đến">
                             </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <button type="submit" class="btn btn-primary" name="filterbtn">Save</button>
                         </div>
                     </div>
                 </div>
