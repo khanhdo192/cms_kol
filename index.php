@@ -12,13 +12,14 @@
                 <div class="row toptable">
                     <div class="col-sm-8">
                         <p></p>
-                        <h1 class="m-0 font-weight-bold text-dark">KOL MANAGER</h1>
+                        <h1 class="m-0 font-weight-bold text-dark">Quản lý KOL</h1>
                         <p></p>
                     </div>
                     <!-- Button Add Kol -->
                     <div class="col-sm-4">
-                        <button type="button" class="btn btn-success btn-add" data-toggle="modal" data-target="#addNewKol">
+                        <button type="button" class="btn btn-info btn-add" data-toggle="modal" data-target="#addNewKol">
                             <i class="fas fa-podcast"></i>
+                            <p class="btnmodal">KOL</p>
                         </button>
                         <!-- Modal -->
                         <div class="modal fade" id="addNewKol" tabindex="-1" role="dialog" aria-hidden="true">
@@ -37,17 +38,17 @@
                                                 <input type="name" class="form-control" name="kol_name" placeholder="KOL name" required>
                                             </div>
                                             <div class="form-group">
-                                                <label>Email:</label>
-                                                <input type="email" class="form-control" name="kol_mail" placeholder="Email" required>
-                                            </div>
-                                            <div class="form-group">
                                                 <label>Phone:</label>
                                                 <input type="tel" class="form-control" name="kol_tel" placeholder="Phone" pattern="[0-9]{1,15}" required>
                                             </div>
                                             <div class="form-group">
+                                                <label>Email:</label>
+                                                <input type="email" class="form-control" name="kol_mail" placeholder="Email" required>
+                                            </div>
+                                            <div class="form-group">
                                                 <label>Hình ảnh:</label>
                                                 <input class="btn" type="file" onchange="readURL(this);" name="kol_img" required>
-                                                <img id="imgCurrent" src="#" alt="chosen image" width="70px" height="70px" style="border-radius:50%;">
+                                                <img id="imgCurrent" src="#" width="80px" height="auto">
                                             </div>
                                             <div class="form-group">
                                                 <label>Lĩnh vực:</label>
@@ -55,12 +56,22 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Giới tính:</label>
-                                                <select class="form-control" name="kol_gender" required>
-                                                    <option value="">Unknow</option>
-                                                    <option>Male</option>
-                                                    <option>Female</option>
-                                                    <option>Group</option>
-                                                </select>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="kol_gender" value="Nam">
+                                                    <label class="form-check-label" for="inlineRadio1">Nam</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="kol_gender" value="Nữ">
+                                                    <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="kol_gender" value="Nhóm">
+                                                    <label class="form-check-label" for="inlineRadio1">Nhóm</label>
+                                                </div>
+                                                <div class="form-check form-check-inline">
+                                                    <input class="form-check-input" type="radio" name="kol_gender" value="Không rõ">
+                                                    <label class="form-check-label" for="inlineRadio2">Không rõ</label>
+                                                </div>
                                             </div> 
                                             <div class="form-group">
                                                 <label>Nền tảng:</label>
@@ -136,7 +147,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary" name="getkol">Save</button>
+                                                <button type="submit" class="btn btn-info" name="getkol">Save</button>
                                             </div>
                                         </form>
                                     </div>
@@ -145,8 +156,9 @@
                         </div>
 
                     <!-- Button Add Contract -->
-                        <button type="button" class="btn btn-primary btn-contract" data-toggle="modal" data-target="#addNewContract">
+                        <button type="button" class="btn btn-info btn-contract" data-toggle="modal" data-target="#addNewContract">
                             <i class="fas fa-file-contract"></i>
+                            <p class="btnmodal">Hợp đồng</p>
                         </button>
                         <!-- Modal -->
                         <div class="modal fade" id="addNewContract" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -178,7 +190,7 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary" name="getuser">Save</button>
+                                                <button type="submit" class="btn btn-info" name="getuser">Save</button>
                                             </div>
                                         </form>
                                     </div>
@@ -198,28 +210,6 @@
                     <!-- Page Heading -->
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                    <div class="card-header py-3">
-                        <?php
-                            if(isset($_SESSION['success']) && $_SESSION['success'] !=''){
-                                echo '<p> '.$_SESSION['success'].' </p>';
-                                unset($_SESSION['success']);
-                            }
-                            if(isset($_SESSION['fail']) && $_SESSION['fail'] !=''){
-                                echo '<p> '.$_SESSION['fail'].' </p>';
-                                unset($_SESSION['fail']);
-                            }
-                        ?>
-                        <?php
-                            if(isset($_SESSION['success_edit']) && $_SESSION['success_edit'] !=''){
-                                echo '<p> '.$_SESSION['success_edit'].' </p>';
-                                unset($_SESSION['success_edit']);
-                            }
-                            if(isset($_SESSION['fail_edit']) && $_SESSION['fail_edit'] !=''){
-                                echo '<p> '.$_SESSION['fail_edit'].' </p>';
-                                unset($_SESSION['fail_edit']);
-                            }
-                        ?>
-                    </div>
                     <div class="card-body">
                         <div class="table-responsive">
                         <table class="table" id="dataTable" width="100%" cellspacing="0">
@@ -228,14 +218,34 @@
                                     <div class="input-group" style="width: 70%;">
                                         <input type="text" id="searchbox" class="form-control" placeholder="Tìm kiếm Kol theo tên, ảnh hưởng, sow ...">
                                         <div class="input-group-append">
-                                            <button class="btn btnsearch" type="button"><i class="fas fa-search"></i></button>
+                                            <button class="btn btn-info btnsearch" type="button"><i class="fas fa-search"></i></button>
                                         </div>
                                     </div>
+                                    <?php
+                                        if(isset($_SESSION['success']) && $_SESSION['success'] !=''){
+                                            echo '<p> '.$_SESSION['success'].' </p>';
+                                            unset($_SESSION['success']);
+                                        }
+                                        if(isset($_SESSION['fail']) && $_SESSION['fail'] !=''){
+                                            echo '<p> '.$_SESSION['fail'].' </p>';
+                                            unset($_SESSION['fail']);
+                                        }
+                                    ?>
+                                    <?php
+                                        if(isset($_SESSION['success_edit']) && $_SESSION['success_edit'] !=''){
+                                            echo '<p> '.$_SESSION['success_edit'].' </p>';
+                                            unset($_SESSION['success_edit']);
+                                        }
+                                        if(isset($_SESSION['fail_edit']) && $_SESSION['fail_edit'] !=''){
+                                            echo '<p> '.$_SESSION['fail_edit'].' </p>';
+                                            unset($_SESSION['fail_edit']);
+                                        }
+                                    ?>
                                 </div>
                             <tr>
-                                <th>Name</th>
-                                <th>Platform social</th>
-                                <th data-sortable="false">Scope of work</th>
+                                <th>Tên+Lĩnh vực</th>
+                                <th>Ảnh hưởng</th>
+                                <th data-sortable="false">Chi phí</th>
                                 <th data-sortable="false">Liên hệ</th>
                                 <th data-sortable="false">Lưu ý</th>
                                 <th data-sortable="false"></th>
@@ -247,13 +257,13 @@
                             <tr>
                                 <td>
                                     <div class="row name-job">
-                                        <div class="col-xl-4">
-                                            <img class="kol-img" src="upload/<?php echo $value['kol_img']; ?>" alt="" width="55px" height="55px">
+                                        <div class="col-xl-3 col-sm-3">
+                                            <img class="rounded" src="upload/<?php echo $value['kol_img']; ?>" alt="" width="55px" height="55px">
                                         </div>
-                                        <div class="col-xl-8">
+                                        <div class="col-xl-9 col-sm-9">
                                             <p class="nametag"><?php echo $value['kol_name']; ?></p>
-                                            <?php foreach($value["job_name"] as $subkey2 => $subvalue2): ?>
-                                            <span class="badge badge-success nametag"><?php echo $subvalue2['job_name']?></span><br>
+                                            <?php foreach(array_slice($value["job_name"],0,1) as $subkey2 => $subvalue2): ?>
+                                            <span class="badge badge-success nametag"><?php echo $subvalue2['job_name']?></span>
                                             <?php endforeach; ?>                                       
                                         </div>
                                     </div>                                   
@@ -287,10 +297,10 @@
                                 <td>
                                 <?php foreach(array_slice($value["sow_name"],0,3) as $subkey => $subvalue): ?>
                                     <div class="row sow-rate">
-                                        <div class="col-xl-8">
+                                        <div class="col-xl-8 padding-0">
                                             <p><?php echo $subvalue['sow_name']; ?></p>
                                         </div>
-                                        <div class="col-xl-4">
+                                        <div class="col-xl-4 padding-0">
                                             <p><?php echo $subvalue['ratecard']; ?></p>
                                         </div>
                                     </div>
@@ -372,28 +382,29 @@
               <!-- Filter Screen -->
               <?php include('filter.php');?>
               <div class="col-sm-2 filter-screen">
-                <div class="row">
+                <div class="row rowfilter1">
                     <div class="col-xl-9">
-                        <p><i class="fas fa-filter"></i> Bộ lọc tìm kiếm</p>
+                        <p class="p-filter"><i class="fas fa-filter"></i>&nbsp&nbspBộ lọc tìm kiếm</p>
                     </div>
                     <div class="col-xl-3">
                         <button class="btn btnrefresh" type="button"><i class="fas fa-redo-alt"></i></button>
                     </div>
                 </div>
-                <div class="container-fuild">
+                <form action="" id="filterForm">
+                <div class="container-fuild boxfilter">
                     <div class="form-group">
-                        <label>Lĩnh vực</label>
+                        <label class="p-filter">Lĩnh vực</label>
                         <div class="input-group">
                             <input type="text" class="form-control" id="searchjob" name="searchByJob" placeholder="Lĩnh vực">
                             <div class="input-group-append">
-                                <button class="btn btnsearch" id="" type="submit"><i class="fas fa-angle-right"></i></button>
+                                <button class="btn btn-info btnsearch" id="" type="submit"><i class="fas fa-angle-right"></i></button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="container-fuild">
+                <div class="container-fuild boxfilter">
                     <div class="form-group">
-                        <label>Ảnh hưởng (x1.000 người)</label>
+                        <label class="p-filter">Ảnh hưởng&ensp;</label><label class="labelfilter">(x1.000 người)</label>
                         <div class="row">
                             <div class="col">
                                 <input type="text" id="min" name="min" class="form-control" placeholder="Từ">
@@ -404,7 +415,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Tương tác (x1.000 đơn vị)</label>
+                        <label class="p-filter">Tương tác&ensp;</label><label class="labelfilter">(x1.000 đơn vị)</label>
                         <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="Từ">
@@ -415,7 +426,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label>Khoảng giá (x1.000 vnđ)</label>
+                        <label class="p-filter">Khoảng giá&ensp;</label><label class="labelfilter">(x1.000 vnđ)</label>
                         <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="Từ">
@@ -426,33 +437,42 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="input-group">
-                            <button type="submit" class="btn btn-primary" name="filterbtn">Save</button>
+                        <div class="input-group justify-content-center">
+                            <button type="submit" class="btn btn-info btngo" name="filterbtn">Áp dụng</button>
                         </div>
                     </div>
                 </div>
-                <div class="container">
+                <div class="container-fuild boxfilter">
                     <div class="row">
-                        <div class="col">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                            <label class="form-check-label" for="inlineCheckbox1">Nam</label>
+                        <div class="col-xl-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="kol_gender" value="Nam">
+                            <label class="form-check-label labelfilter p-filter" for="inlineRadio1">Nam</label>
                         </div>
-                        <div class="col">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                            <label class="form-check-label" for="inlineCheckbox1">Nữ</label>
+                        </div>
+                        <div class="col-xl-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="kol_gender" value="Nữ">
+                            <label class="form-check-label labelfilter p-filter" for="inlineRadio2">Nữ</label>
+                        </div>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                            <label class="form-check-label" for="inlineCheckbox1">Tổ hợp</label>
+                    <div class="col-xl-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="kol_gender" value="Nhóm">
+                            <label class="form-check-label labelfilter p-filter" for="inlineRadio1">Nhóm</label>
                         </div>
-                        <div class="col">
-                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                            <label class="form-check-label" for="inlineCheckbox1">Unknow</label>
+                        </div>
+                        <div class="col-xl-6">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="kol_gender" value="Không rõ">
+                            <label class="form-check-label labelfilter p-filter" for="inlineRadio2">Không rõ</label>
+                        </div>
                         </div>
                     </div>
                 </div>
+                </form>
 
 
 

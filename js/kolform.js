@@ -120,6 +120,12 @@ $(function () {
     $('[data-toggle="popover"]').popover()
 });
 
+$(document).ready(function(){
+    $(".btnrefresh").click(function(){
+        $("#filterForm").trigger("reset");
+    });
+});
+
 $(document).ready(function() {
     $(document).ready(function() {
         var dataTable = $('#dataTable').dataTable();

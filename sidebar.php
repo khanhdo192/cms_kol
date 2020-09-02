@@ -2,8 +2,8 @@
 
 <!-- Sidebar - Brand -->
 <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.php">
-  <div class="sidebar-brand-icon rotate-n-15">
-    <i class="fas fa-bread-slice"></i>
+  <div class="sidebar-brand-icon rotate-n-0">
+    <img src="img/TAL.png" alt="" width="55px">
   </div>
   <div class="sidebar-brand-text mx-3">Kols Manager</div>
 </a>
@@ -22,9 +22,6 @@
 <hr class="sidebar-divider">
 
 <!-- Heading -->
-<div class="sidebar-heading">
-  Interface
-</div>
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
@@ -69,9 +66,7 @@
 <hr class="sidebar-divider">
 
 <!-- Heading -->
-<div class="sidebar-heading">
-  Addons
-</div>
+
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">

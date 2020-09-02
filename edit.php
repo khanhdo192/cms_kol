@@ -15,12 +15,12 @@
                         <input type="name" class="form-control" name="kol_name" placeholder="KOL name" value="<?php echo $value['kol_name']?>" required>
                     </div>
                     <div class="form-group">
-                        <label>Email:</label>
-                        <input type="email" class="form-control" name="kol_mail" placeholder="Email" value="<?php echo $value['kol_mail']?>" required>
-                    </div>
-                    <div class="form-group">
                         <label>Phone:</label>
                         <input type="tel" class="form-control" name="kol_tel" placeholder="Phone" pattern="[0-9]{1,15}" value="<?php echo $value['kol_tel']?>" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="email" class="form-control" name="kol_mail" placeholder="Email" value="<?php echo $value['kol_mail']?>" required>
                     </div>
                     <div class="form-group">
                         <label>Hình ảnh:</label>
@@ -39,12 +39,22 @@
                     </div>
                     <div class="form-group">
                         <label>Giới tính:</label>
-                        <select class="form-control" name="kol_gender">
-                            <option>Unknow</option>
-                            <option>Male</option>
-                            <option>Female</option>
-                            <option>Group</option>
-                        </select>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="kol_gender" value="Nam" <?php echo ($value['kol_gender']=='Nam')?'checked':'' ?>>
+                            <label class="form-check-label" for="inlineRadio1">Nam</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="kol_gender" value="Nữ" <?php echo ($value['kol_gender']=='Nữ')?'checked':'' ?>>
+                            <label class="form-check-label" for="inlineRadio2">Nữ</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="kol_gender" value="Nhóm" <?php echo ($value['kol_gender']=='Nhóm')?'checked':'' ?>>
+                            <label class="form-check-label" for="inlineRadio1">Nhóm</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="kol_gender" value="Không rõ" <?php echo ($value['kol_gender']=='Không rõ')?'checked':'' ?>>
+                            <label class="form-check-label" for="inlineRadio2">Không rõ</label>
+                        </div>
                     </div> 
                     <div class="form-group">
                         <label>Nền tảng:</label>
@@ -182,7 +192,7 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary" name="editkol">Save</button>
+                        <button type="submit" class="btn btn-info" name="editkol">Save</button>
                     </div>
                 </form>
             </div>
