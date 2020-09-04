@@ -117,7 +117,9 @@ $(document).ready(function(){
 });
 
 $(function () {
-    $('[data-toggle="popover"]').popover()
+    $('[data-toggle="popover"]').popover({
+        trigger:"hover"
+    });
 });
 
 $(document).ready(function(){
@@ -154,5 +156,27 @@ $(document).ready(function(){
         $('#dataTable2 tr').filter(function(){
             $(this).toggle($(this).text().toLowerCase().indexOf(jobkey)>-1);
         });
+    });
+});
+
+$(document).ready(function(){
+    $("#fbshow").click(function(){
+        $(".pf2").hide();
+        $(".pf3").hide();
+        $(".pf1").show();
+    });
+});
+$(document).ready(function(){
+    $("#inshow").click(function(){
+        $(".pf1").hide();
+        $(".pf3").hide();
+        $(".pf2").show();
+    });
+});
+$(document).ready(function(){
+    $("#ytshow").click(function(){
+        $(".pf1").hide();
+        $(".pf2").hide();
+        $(".pf3").show();
     });
 });

@@ -16,7 +16,7 @@
                         <div class="col-xl-3 mr-2 social-box">
                             <div class="row">
                                 <div class="col-xl-12 follow">
-                                    <a class="social-icon" href="<?php echo $value['link_fb']; ?>"><img class="iconpng" src="img/fb.png" alt="" width="30px" height="30px"></a>
+                                    <a class="social-icon" target="_blank" href="<?php echo $value['link_fb']; ?>"><img class="iconpng" src="img/fb.png" alt="" width="30px" height="30px"></a>
                                     <p class="api-fb">2.5m</p>
                                     <p class="api-follow">FOLLOWERS</p>
                                     <a class="info-date" href="#"><i class="fas fa-info"></i></a>
@@ -37,7 +37,7 @@
                         <div class="col-xl-3 mr-2 social-box">
                         <div class="row">
                                 <div class="col-xl-12 follow">
-                                    <a class="social-icon" href="<?php echo $value['link_fb']; ?>"><img class="iconpng" src="img/insta.png" alt="" width="30px" height="30px"></a>
+                                    <a class="social-icon" target="_blank" href="<?php echo $value['link_ins']; ?>"><img class="iconpng" src="img/insta.png" alt="" width="30px" height="30px"></a>
                                     <p class="api-fb">2.5m</p>
                                     <p class="api-follow">FOLLOWERS</p>
                                     <a class="info-date" href="#"><i class="fas fa-info"></i></a>
@@ -58,7 +58,7 @@
                         <div class="col-xl-3 mr-2 social-box">
                         <div class="row">
                                 <div class="col-xl-12 follow">
-                                    <a class="social-icon" href="<?php echo $value['link_fb']; ?>"><img class="iconpng" src="img/yt.png" alt="" width="30px" height="30px"></a>
+                                    <a class="social-icon" target="_blank" href="<?php echo $value['link_yt']; ?>"><img class="iconpng" src="img/yt.png" alt="" width="30px" height="30px"></a>
                                     <p class="api-fb">2.5m</p>
                                     <p class="api-follow">FOLLOWERS</p>
                                     <a class="info-date" href="#"><i class="fas fa-info"></i></a>
@@ -79,6 +79,16 @@
                     </div>
                     <div class="row rowdetail2">
                         <div class="col-xl-4">
+                            <div class="row">
+                                <div class="col-xl-2">
+                                    <span class="d-inline-block" style="padding-left:8px;">
+                                        <i class="fas fa-male"></i><i class="fas fa-female"></i>
+                                    </span>
+                                </div>
+                                <div class="col-xl-10">
+                                    <p class="tel-mail"><?php echo $value['kol_gender']; ?></p>
+                                </div>
+                            </div>
                             <div class="row">
                                 <div class="col-xl-2">
                                     <span class="d-inline-block">

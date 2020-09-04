@@ -73,8 +73,9 @@
 .main-table{
     padding-top: 20px;
 }
-
-
+.tdkol{
+    text-align: center;
+}
 .fa-phone-alt{
     background-color: #2ecf6c;
     color: #fff;
@@ -114,29 +115,69 @@
 .token-input{
     width: 100% !important;
 }
+.cardtable{
+    background-color: #eef2f5;
+    margin-right:-30px;
+    margin-left: -20px;
+}
+.tablekol{
+    background-color: #fff;
+}
 .nametag{
     margin-bottom: 5px;
+    color: #000;
+    font-weight: bold;
 }
-.name-job{
-    margin-right: -30px;
+.kolgender{
+    margin-left: 10px;
 }
-.platform{
-    margin-bottom: -15px;
-    margin-right: -50px;
+.fa-male{
+    color: #1877F2  ;
+}
+.fa-female{
+    color: #d6249f;
+}
+.iconpng{
+    margin-right: 5px;
+    margin-bottom: 5px;
 }
 .api-pf{
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+    padding-top: 5px;
+    text-align: center;
+}
+.api-pf2{
+    font-size: 14px;
+    color: #000;
+    font-weight: bold;
+    padding-top: 5px;
+    text-align: center;
+}
+.api-date{
     font-size: 13px;
+    margin-top: -5px;
+    text-align: center;
+}
+.api-date2{
+    font-size: 13px;
+    margin-top: -5px;
+    text-align: center;
 }
 .sow-rate{
-    margin-bottom: -15px;
-    font-size: 13px;
+    padding-top: 2px;
+    margin-bottom: -22px;
+    font-size: 14px;
 }
 .social{
+    padding-top: 10px;
     width: 65px;
 }
 .note{
-    margin-bottom: -15px;
-    font-size: 13px;
+    padding-top: 2px;
+    margin-bottom: -22px;
+    font-size: 14px;
 }
 .kol-img{
     border-radius: 50%;
