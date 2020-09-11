@@ -132,10 +132,10 @@
                             <?php foreach($value["sow_name"] as $subkey => $subvalue): ?>
                             <div class="row row-sow2">
                                 <div class="col-xl-8">
-                                    <p><?php echo $subvalue['sow_name']?></p>
+                                    <p><?php echo $subvalue['sowfb_name']?></p>
                                 </div>
                                 <div class="col-xl-4">
-                                    <p><?php echo $subvalue['ratecard']?></p>
+                                    <p><?php echo $subvalue['ratefb']?></p>
                                 </div>
                             </div>
                             <?php endforeach; ?>
@@ -152,9 +152,7 @@
                             </div>
                             <div class="row row-note2">
                                 <div class="col-xl-12">
-                                    <?php foreach($value["note_txt"] as $subkey3 => $subvalue3): ?>
-                                    <p class="p-note"><?php echo $subvalue3['note_txt']; ?></p>
-                                    <?php endforeach; ?>
+                                    <p class="p-note"><?php echo $value['kol_note']; ?></p>
                                 </div>
                             </div>
                         </div>    

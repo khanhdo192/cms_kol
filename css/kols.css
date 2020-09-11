@@ -50,6 +50,16 @@
     color: #fff;
     border: none;
 }
+.btntk{
+    background-color: #000;
+    color: #fff;
+    border: none;
+}
+.btnot{
+    background-color: #daa458;
+    color: #fff;
+    border: none;
+}
 .btnplus{
     background-color: #27d367;
     color: #fff;
@@ -167,8 +177,8 @@
 }
 .sow-rate{
     padding-top: 2px;
-    margin-bottom: -22px;
-    font-size: 14px;
+    
+    font-size: 13px;
 }
 .social{
     padding-top: 10px;
@@ -337,4 +347,90 @@
     color: #000;
     font-weight: bold;
 }
+.avatar-wrapper{
+	position: relative;
+	height: 200px;
+	width: 200px;
+	margin: 50px auto;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.avatar-wrapper:hover{
+    cursor: pointer;
+}
+.avatar-wrapper:hover .profile-pic{
+    opacity: .5;
+}
+
+.profile-pic {
+    height: 100%;
+    width: 100%;
+    transition: all .3s ease;
+}
+.profile-pic:after{
+    font-family: FontAwesome;
+    content: "\f007";
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 190px;
+    background: #ecf0f1;
+    color: #34495e;
+    text-align: center;
+}
+
+.upload-button {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+}
+.avatar-wrapper2{
+	position: relative;
+	height: 200px;
+	width: 200px;
+	margin: 50px auto;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.avatar-wrapper2:hover{
+    cursor: pointer;
+}
+.avatar-wrapper2:hover .profile-pic2{
+    opacity: .5;
+}
+
+.profile-pic2 {
+    height: 100%;
+    width: 100%;
+    transition: all .3s ease;
+}
+.profile-pic2:after{
+    font-family: FontAwesome;
+    content: "\f007";
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    font-size: 190px;
+    background: #ecf0f1;
+    color: #34495e;
+    text-align: center;
+}
+
+.upload-button2 {
+    position: absolute;
+    top: 0; left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.file-upload2{
+    position: absolute;
+    top: 110px;
+    left: 40px;
+}
+    
+
 
