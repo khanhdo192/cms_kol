@@ -50,10 +50,12 @@ $(document).ready(function(){
         html_code += '<input type="text" class="form-control" name="sowfb_name[]" placeholder="Sow" value="">';
         html_code += '</div>';
         html_code += '<div class="col-xl-5">';
-        html_code += '<div class="input-group row'+count+'">';
+        html_code += '<div class="form-row row'+count+'">';
+        html_code += '<div class="col-xl-10">';
         html_code += '<input type="text" class="form-control" name="ratefb[]" placeholder="Rate card" value="">';
-        html_code += '<div class="input-group-append">';
-        html_code += '<button class="btn btnminus remove" data-row="row'+count+'" type="button"><i class="fas fa-minus-circle"></i></button>';
+        html_code += '</div>';
+        html_code += '<div class="col-xl-2" style="padding-top:8px">';
+        html_code += '<span class="minusinput remove" data-row="row'+count+'"><i class="fas fa-times"></i></span>';
         html_code += '</div>';
         html_code += '</div>';
         $('.editcurd_tablefb').append(html_code);
@@ -80,10 +82,12 @@ $(document).ready(function(){
         html_code += '<input type="text" class="form-control" name="sowins_name[]" placeholder="Sow" value="">';
         html_code += '</div>';
         html_code += '<div class="col-xl-5">';
-        html_code += '<div class="input-group row2'+count+'">';
+        html_code += '<div class="form-row row2'+count+'">';
+        html_code += '<div class="col-xl-10">';
         html_code += '<input type="text" class="form-control" name="rateins[]" placeholder="Rate card" value="">';
-        html_code += '<div class="input-group-append">';
-        html_code += '<button class="btn btnminus remove" data-row="row2'+count+'" type="button"><i class="fas fa-minus-circle"></i></button>';
+        html_code += '</div>';
+        html_code += '<div class="col-xl-2" style="padding-top:8px">';
+        html_code += '<span class="minusinput remove" data-row="row2'+count+'"><i class="fas fa-times"></i></span>';
         html_code += '</div>';
         html_code += '</div>';
         $('.editcurd_tableins').append(html_code);
@@ -95,6 +99,102 @@ $(document).ready(function(){
 });
 $(document).ready(function(){
     $(document).on('click', '.removeins', function(){
+        var delete_row = $(this).data("row");
+        $('.' + delete_row).remove();
+    });
+});
+
+$(document).ready(function(){
+    var count = 1;
+    $('.edityt').click(function(){
+        count = count + 1;
+
+        var html_code = '<div class="row row3'+count+'">';
+        html_code += '<div class="col-xl-7">';
+        html_code += '<input type="text" class="form-control" name="sowyt_name[]" placeholder="Sow" value="">';
+        html_code += '</div>';
+        html_code += '<div class="col-xl-5">';
+        html_code += '<div class="form-row row3'+count+'">';
+        html_code += '<div class="col-xl-10">';
+        html_code += '<input type="text" class="form-control" name="rateyt[]" placeholder="Rate card" value="">';
+        html_code += '</div>';
+        html_code += '<div class="col-xl-2" style="padding-top:8px">';
+        html_code += '<span class="minusinput remove" data-row="row3'+count+'"><i class="fas fa-times"></i></span>';
+        html_code += '</div>';
+        html_code += '</div>';
+        $('.editcurd_tableyt').append(html_code);
+    });
+    $(document).on('click', '.remove', function(){
+        var delete_row = $(this).data("row");
+        $('.' + delete_row).remove();
+    });
+});
+$(document).ready(function(){
+    $(document).on('click', '.removeyt', function(){
+        var delete_row = $(this).data("row");
+        $('.' + delete_row).remove();
+    });
+});
+
+$(document).ready(function(){
+    var count = 1;
+    $('.edittk').click(function(){
+        count = count + 1;
+
+        var html_code = '<div class="row row4'+count+'">';
+        html_code += '<div class="col-xl-7">';
+        html_code += '<input type="text" class="form-control" name="sowtk_name[]" placeholder="Sow" value="">';
+        html_code += '</div>';
+        html_code += '<div class="col-xl-5">';
+        html_code += '<div class="form-row row4'+count+'">';
+        html_code += '<div class="col-xl-10">';
+        html_code += '<input type="text" class="form-control" name="ratetk[]" placeholder="Rate card" value="">';
+        html_code += '</div>';
+        html_code += '<div class="col-xl-2" style="padding-top:8px">';
+        html_code += '<span class="minusinput remove" data-row="row4'+count+'"><i class="fas fa-times"></i></span>';
+        html_code += '</div>';
+        html_code += '</div>';
+        $('.editcurd_tabletk').append(html_code);
+    });
+    $(document).on('click', '.remove', function(){
+        var delete_row = $(this).data("row");
+        $('.' + delete_row).remove();
+    });
+});
+$(document).ready(function(){
+    $(document).on('click', '.removetk', function(){
+        var delete_row = $(this).data("row");
+        $('.' + delete_row).remove();
+    });
+});
+
+$(document).ready(function(){
+    var count = 1;
+    $('.editoff').click(function(){
+        count = count + 1;
+
+        var html_code = '<div class="row row5'+count+'">';
+        html_code += '<div class="col-xl-7">';
+        html_code += '<input type="text" class="form-control" name="sowoff_name[]" placeholder="Sow" value="">';
+        html_code += '</div>';
+        html_code += '<div class="col-xl-5">';
+        html_code += '<div class="form-row row5'+count+'">';
+        html_code += '<div class="col-xl-10">';
+        html_code += '<input type="text" class="form-control" name="rateoff[]" placeholder="Rate card" value="">';
+        html_code += '</div>';
+        html_code += '<div class="col-xl-2" style="padding-top:8px">';
+        html_code += '<span class="minusinput remove" data-row="row5'+count+'"><i class="fas fa-times"></i></span>';
+        html_code += '</div>';
+        html_code += '</div>';
+        $('.editcurd_tableoff').append(html_code);
+    });
+    $(document).on('click', '.remove', function(){
+        var delete_row = $(this).data("row");
+        $('.' + delete_row).remove();
+    });
+});
+$(document).ready(function(){
+    $(document).on('click', '.removeoff', function(){
         var delete_row = $(this).data("row");
         $('.' + delete_row).remove();
     });

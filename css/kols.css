@@ -65,6 +65,22 @@
     color: #fff;
     border: none;
 }
+.plusinput{
+    font-weight: bold;
+    color: #2ec7cf !important;
+    cursor: pointer;
+}
+.plusinput:hover{
+    text-shadow: 0 0 1px #000;
+}
+.minusinput{
+    font-weight: bold;
+    color: gray !important;
+    cursor: pointer;
+}
+.minusinput:hover{
+    text-shadow: 0 0 1px #000;
+}
 .btnminus{
     background-color: #f20001;
     color: #fff;
@@ -138,14 +154,12 @@
     color: #000;
     font-weight: bold;
 }
-.kolgender{
-    margin-left: 10px;
-}
 .fa-male{
     color: #1877F2  ;
 }
 .fa-female{
     color: #d6249f;
+    padding-right: 2px;
 }
 .iconpng{
     margin-right: 5px;

@@ -10,8 +10,8 @@
         $kol_address = $_POST['kol_address'];
         $kol_location = $_POST['kol_location'];
         $kol_img = $_FILES['kol_img']['name'];
-        $company_name = $_POST['company_name'];
-        $job_name = $_POST['job_name'];
+        $company_name = implode(",",$_POST['company_name']);
+        $job_name = implode(",",$_POST['job_name']);
         $kol_gender = $_POST['kol_gender'];
         $link_yt = $_POST['link_yt'];
         $link_fb = $_POST['link_fb'];

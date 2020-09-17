@@ -87,10 +87,30 @@
                         </div>
                     <tr>
                         <th>Tên+Lĩnh vực</th>
+                        <th data-sortable="false"></th>
+
                         <th class="tdkol">Ảnh hưởng</th>
                         <th class="tdkol" data-sortable="false">Tương tác</th>
                         <th data-sortable="false">Chi phí</th>
+
+                        <th class="tdkol">Ảnh hưởng</th>
+                        <th class="tdkol" data-sortable="false">Tương tác</th>
+                        <th data-sortable="false">Chi phí</th>
+
+                        <th class="tdkol">Ảnh hưởng</th>
+                        <th class="tdkol" data-sortable="false">Tương tác</th>
+                        <th data-sortable="false">Chi phí</th>
+
+                        <th class="tdkol">Ảnh hưởng</th>
+                        <th class="tdkol" data-sortable="false">Tương tác</th>
+                        <th data-sortable="false">Chi phí</th>
+
+                        <th class="tdkol">Ảnh hưởng</th>
+                        <th class="tdkol" data-sortable="false">Tương tác</th>
+                        <th data-sortable="false">Chi phí</th>
+
                         <th data-sortable="false">Liên hệ</th>
+                        <th data-sortable="false">Miền</th>
                         <th data-sortable="false">Lưu ý</th>
                         <th data-sortable="false"></th>
                     </tr>
@@ -101,56 +121,32 @@
                     <tr>
                         <td>
                             <div class="row name-job">
-                                <div class="col-xl-3 col-sm-12">
+                                <div class="col-xl-4 col-sm-12">
                                     <img class="rounded" src="upload/<?php echo $value['kol_img']; ?>" alt="kol image" width="55px" height="55px">
                                 </div>
-                                <div class="col-xl-9 col-sm-12">
-                                    <p class="nametag"><?php echo $value['kol_name']; ?>
-                                    <span class="d-inline-block kolgender" data-toggle="popover" data-placement="top" data-trigger="hover" data-content="<?php echo $value['kol_gender']; ?>">
-                                    <i class="fas fa-male"></i><i class="fas fa-female"></i>
-                                    </span></p>
-                                    <?php foreach(array_slice($value["job_name"],0,1) as $subkey2 => $subvalue2): ?>
+                                <div class="col-xl-8 col-sm-12">
+                                    <p class="nametag"><?php echo $value['kol_name'];?></p>
+                                    <?php foreach($value["job_name"] as $subkey2 => $subvalue2): ?>
                                     <span class="badge badge-success tagging"><?php echo $subvalue2['job_name']?></span>
                                     <?php endforeach; ?>                                       
                                 </div>
                             </div>                                   
                         </td>
                         <td>
-                            <div class="row platform pf1">
+                            <p style="color:#000;" class="note"><i class="fas fa-male"></i><i class="fas fa-female"></i><?php echo $value['kol_gender']; ?></p>
+                        </td>
+                        <td>
+                            <div class="row platform">
                                 <div class="col-xl-12">
-                                    <p class="api-pf"><a target="_blank" href="<?php echo $value['link_fb']; ?>"><img class="iconpng" src="img/fb.png" alt="" width="15px" height="15px"></a>100.000.000</p>
-                                    <p class="api-date">(03 Aug 2020)</p>
-                                </div>
-                            </div>
-                            <div class="row platform pf2" style="display:none;">
-                                <div class="col-xl-12">
-                                    <p class="api-pf"><a target="_blank" href="<?php echo $value['link_ins']; ?>"><img class="iconpng" src="img/insta.png" alt="" width="15px" height="15px"></a>36.000.000</p>
-                                    <p class="api-date">(03 Aug 2020)</p>
-                                </div>
-                            </div>
-                            <div class="row platform pf3" style="display:none;">
-                                <div class="col-xl-12">
-                                    <p class="api-pf"><a target="_blank" href="<?php echo $value['link_yt']; ?>"><img class="iconpng" src="img/yt.png" alt="" width="15px" height="15px"></a>1.000.000</p>
+                                    <p class="api-pf"><a target="_blank" href="<?php echo $value['link_fb']; ?>"><img class="iconpng" src="img/fb.png" alt="" width="15px" height="15px"></a><?php echo $value['kol_id'];?></p>
                                     <p class="api-date">(03 Aug 2020)</p>
                                 </div>
                             </div>
                         </td>
                         <td>
-                            <div class="row pf1">
+                            <div class="row">
                                 <div class="col-xl-12">
-                                    <p class="api-pf2">38.532</p>
-                                    <p class="api-date2">(03 Aug 2020)</p>
-                                </div>
-                            </div>
-                            <div class="row pf2" style="display:none;">
-                                <div class="col-xl-12">
-                                    <p class="api-pf2">20.798</p>
-                                    <p class="api-date2">(03 Aug 2020)</p>
-                                </div>
-                            </div>
-                            <div class="row pf3" style="display:none;">
-                                <div class="col-xl-12">
-                                    <p class="api-pf2">50.123</p>
+                                    <p class="api-pf2">38532</p>
                                     <p class="api-date2">(03 Aug 2020)</p>
                                 </div>
                             </div>
@@ -159,6 +155,142 @@
                         <?php foreach($value["sowfb_name"] as $subkey => $subvalue): ?>
                         <?php $sow = explode(PHP_EOL,$subvalue['sowfb_name']);?>
                         <?php $rate = explode(PHP_EOL,$subvalue['ratefb']);?>     
+                            <div class="row sow-rate">
+                                <div class="col-xl-7">
+                                    <?php foreach($sow as $sows): ?>
+                                    <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
+                                    <?php endforeach; ?>
+                                </div>
+                                <div class="col-xl-5">
+                                    <?php foreach($rate as $rates): ?>
+                                    <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                        </td>
+                        <td>
+                            <div class="row platform">
+                                <div class="col-xl-12">
+                                    <p class="api-pf"><a target="_blank" href="<?php echo $value['link_ins']; ?>"><img class="iconpng" src="img/insta.png" alt="" width="15px" height="15px"></a>36</p>
+                                    <p class="api-date">(03 Aug 2020)</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <p class="api-pf2">20798</p>
+                                    <p class="api-date2">(03 Aug 2020)</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                        <?php foreach($value["sowins_name"] as $subkeyins => $subvalueins): ?>
+                        <?php $sow = explode(PHP_EOL,$subvalueins['sowins_name']);?>
+                        <?php $rate = explode(PHP_EOL,$subvalueins['rateins']);?>     
+                            <div class="row sow-rate">
+                                <div class="col-xl-7">
+                                    <?php foreach($sow as $sows): ?>
+                                    <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
+                                    <?php endforeach; ?>
+                                </div>
+                                <div class="col-xl-5">
+                                    <?php foreach($rate as $rates): ?>
+                                    <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                        </td>
+                        <td>
+                            <div class="row platform">
+                                <div class="col-xl-12">
+                                    <p class="api-pf"><a target="_blank" href="<?php echo $value['link_yt']; ?>"><img class="iconpng" src="img/yt.png" alt="" width="15px" height="15px"></a>1.000.000</p>
+                                    <p class="api-date">(03 Aug 2020)</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <p class="api-pf2">50123</p>
+                                    <p class="api-date2">(03 Aug 2020)</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                        <?php foreach($value["sowyt_name"] as $subkeyyt => $subvalueyt): ?>
+                        <?php $sow = explode(PHP_EOL,$subvalueyt['sowyt_name']);?>
+                        <?php $rate = explode(PHP_EOL,$subvalueyt['rateyt']);?>     
+                            <div class="row sow-rate">
+                                <div class="col-xl-7">
+                                    <?php foreach($sow as $sows): ?>
+                                    <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
+                                    <?php endforeach; ?>
+                                </div>
+                                <div class="col-xl-5">
+                                    <?php foreach($rate as $rates): ?>
+                                    <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                        </td>
+                        <td>
+                            <div class="row platform">
+                                <div class="col-xl-12">
+                                    <p class="api-pf"><img class="iconpng" src="img/tk.png" alt="" width="15px" height="15px">No data</p>
+                                    <p class="api-date">No data</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <p class="api-pf2">No data</p>
+                                    <p class="api-date2">No data</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                        <?php foreach($value["sowtk_name"] as $subkeytk => $subvaluetk): ?>
+                        <?php $sow = explode(PHP_EOL,$subvaluetk['sowtk_name']);?>
+                        <?php $rate = explode(PHP_EOL,$subvaluetk['ratetk']);?>     
+                            <div class="row sow-rate">
+                                <div class="col-xl-7">
+                                    <?php foreach($sow as $sows): ?>
+                                    <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
+                                    <?php endforeach; ?>
+                                </div>
+                                <div class="col-xl-5">
+                                    <?php foreach($rate as $rates): ?>
+                                    <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        <?php endforeach; ?>
+                        </td>
+                        <td>
+                            <div class="row platform">
+                                <div class="col-xl-12">
+                                    <p class="api-pf"><img class="iconpng" src="img/TAL.png" alt="" width="15px" height="15px">No data</p>
+                                    <p class="api-date">No data</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <p class="api-pf2">No data</p>
+                                    <p class="api-date2">No data</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                        <?php foreach($value["sowoff_name"] as $subkeyoff => $subvalueoff): ?>
+                        <?php $sow = explode(PHP_EOL,$subvalueoff['sowoff_name']);?>
+                        <?php $rate = explode(PHP_EOL,$subvalueoff['rateoff']);?>     
                             <div class="row sow-rate">
                                 <div class="col-xl-7">
                                     <?php foreach($sow as $sows): ?>
@@ -186,6 +318,9 @@
                                 </span>
                                 </div>
                             </div>
+                        </td>
+                        <td>
+                            <p style="color:#000;" class="note"><?php echo $value['kol_location']?></p>
                         </td>
                         <td>
                             <div class="row note">
@@ -258,65 +393,152 @@
         <div class="container-fuild boxfilter">
             <div class="form-group">
                 <label class="p-filter">Lĩnh vực</label>
-                <div class="input-group">
+                <select class="form-control" id="filterjob">
+                    <option value=""></option>
+                    <option value="Actor">Actor</option>
+                    <option value="Singer">Singer</option>
+                    <option value="Influencer">Influencer</option>
+                    <option value="Youtuber">Youtuber</option>
+                    <option value="Family">Family</option>
+                    <option value="Player">Player</option>
+                </select>
+                <!-- <div class="input-group">
                     <input type="text" class="form-control" id="searchjob" name="searchByJob" placeholder="Lĩnh vực">
                     <div class="input-group-append">
                         <button class="btn btn-info btnsearch" id="" type="button"><i class="fas fa-angle-right"></i></button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="container-fuild boxfilter">
             <div class="form-group">
                 <label class="p-filter">Ảnh hưởng&ensp;</label><label class="labelfilter">(x1.000 người)</label>
-                <div class="row">
+                <div class="row pf1">
                     <div class="col">
-                        <input type="text" id="min" name="min" class="form-control" placeholder="Từ">
+                        <input type="text" id="minfb1" name="minfb1" class="form-control" placeholder="Từ">
                     </div>
                     <div class="col">
-                        <input type="text" id="max" name="max" class="form-control" placeholder="Đến">
+                        <input type="text" id="maxfb1" name="maxfb1" class="form-control" placeholder="Đến">
+                    </div>
+                </div>
+                <div class="row pf2" style="display:none;">
+                    <div class="col">
+                        <input type="text" id="minins1" name="minins1" class="form-control" placeholder="Từ">
+                    </div>
+                    <div class="col">
+                        <input type="text" id="maxins1" name="maxins1" class="form-control" placeholder="Đến">
+                    </div>
+                </div>
+                <div class="row pf3" style="display:none;">
+                    <div class="col">
+                        <input type="text" id="minyt1" name="minyt1" class="form-control" placeholder="Từ">
+                    </div>
+                    <div class="col">
+                        <input type="text" id="maxyt1" name="maxyt1" class="form-control" placeholder="Đến">
+                    </div>
+                </div>
+                <div class="row pf4" style="display:none;">
+                    <div class="col">
+                        <input type="text" id="mintk1" name="mintk1" class="form-control" placeholder="Từ">
+                    </div>
+                    <div class="col">
+                        <input type="text" id="maxtk1" name="maxtk1" class="form-control" placeholder="Đến">
+                    </div>
+                </div>
+                <div class="row pf5" style="display:none;">
+                    <div class="col">
+                        <input type="text" id="minoff1" name="minoff1" class="form-control" placeholder="Từ">
+                    </div>
+                    <div class="col">
+                        <input type="text" id="maxoff1" name="maxoff1" class="form-control" placeholder="Đến">
                     </div>
                 </div>
             </div>
             <div class="form-group">
                 <label class="p-filter">Tương tác&ensp;</label><label class="labelfilter">(x1.000 đơn vị)</label>
-                <div class="row">
+                <div class="row pf1">
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Từ">
+                        <input type="text" id="minfb2" name="minfb2" class="form-control" placeholder="Từ">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Đến">
+                        <input type="text" id="maxfb2" name="maxfb2" class="form-control" placeholder="Đến">
+                    </div>
+                </div>
+                <div class="row pf2" style="display:none;">
+                    <div class="col">
+                        <input type="text" id="minins2" name="minins2" class="form-control" placeholder="Từ">
+                    </div>
+                    <div class="col">
+                        <input type="text" id="maxins2" name="maxins2" class="form-control" placeholder="Đến">
+                    </div>
+                </div>
+                <div class="row pf3" style="display:none;">
+                    <div class="col">
+                        <input type="text" id="minyt2" name="minyt2" class="form-control" placeholder="Từ">
+                    </div>
+                    <div class="col">
+                        <input type="text" id="maxyt2" name="maxyt2" class="form-control" placeholder="Đến">
+                    </div>
+                </div>
+                <div class="row pf4" style="display:none;">
+                    <div class="col">
+                        <input type="text" id="mintk2" name="mintk2" class="form-control" placeholder="Từ">
+                    </div>
+                    <div class="col">
+                        <input type="text" id="maxtk2" name="maxtk2" class="form-control" placeholder="Đến">
+                    </div>
+                </div>
+                <div class="row pf5" style="display:none;">
+                    <div class="col">
+                        <input type="text" id="minoff2" name="minoff2" class="form-control" placeholder="Từ">
+                    </div>
+                    <div class="col">
+                        <input type="text" id="maxoff2" name="maxoff2" class="form-control" placeholder="Đến">
                     </div>
                 </div>
             </div>
             <div class="form-group">
-                <label class="p-filter">Khoảng giá&ensp;</label><label class="labelfilter">(x1.000 vnđ)</label>
+                <label class="p-filter">Location</label>
                 <div class="row">
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Từ">
+                    <div class="col-xl-6">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input filterlocation" type="checkbox" name="kol_location" value="Bắc">
+                        <label class="form-check-label labelfilter p-filter" for="inlineRadio1">Bắc</label>
                     </div>
-                    <div class="col">
-                        <input type="text" class="form-control" placeholder="Đến">
+                    </div>
+                    <div class="col-xl-6">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input filterlocation" type="checkbox" name="kol_location" value="Trung">
+                        <label class="form-check-label labelfilter p-filter" for="inlineRadio2">Trung</label>
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col-xl-6">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input filterlocation" type="checkbox" name="kol_location" value="Nam">
+                        <label class="form-check-label labelfilter p-filter" for="inlineRadio1">Nam</label>
+                    </div>
                     </div>
                 </div>
             </div>
-            <div class="form-group">
+            <!-- <div class="form-group">
                 <div class="input-group justify-content-center">
                     <button type="submit" class="btn btn-info btngo" name="filterbtn">Áp dụng</button>
                 </div>
-            </div>
+            </div> -->
         </div>
         <div class="container-fuild boxfilter">
             <div class="row">
                 <div class="col-xl-6">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="kol_gender" value="Nam">
+                    <input class="form-check-input" type="checkbox" name="kol_gender" value="Nam">
                     <label class="form-check-label labelfilter p-filter" for="inlineRadio1">Nam</label>
                 </div>
                 </div>
                 <div class="col-xl-6">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="kol_gender" value="Nữ">
+                    <input class="form-check-input" type="checkbox" name="kol_gender" value="Nữ">
                     <label class="form-check-label labelfilter p-filter" for="inlineRadio2">Nữ</label>
                 </div>
                 </div>
@@ -324,13 +546,13 @@
             <div class="row">
             <div class="col-xl-6">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="kol_gender" value="Nhóm">
+                    <input class="form-check-input" type="checkbox" name="kol_gender" value="Nhóm">
                     <label class="form-check-label labelfilter p-filter" for="inlineRadio1">Nhóm</label>
                 </div>
                 </div>
                 <div class="col-xl-6">
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="kol_gender" value="Không rõ">
+                    <input class="form-check-input" type="checkbox" name="kol_gender" value="Không rõ">
                     <label class="form-check-label labelfilter p-filter" for="inlineRadio2">Không rõ</label>
                 </div>
                 </div>

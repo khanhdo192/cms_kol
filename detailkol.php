@@ -119,23 +119,26 @@
                     <div class="row rowdetail3">
                         <div class="col-xl-6">
                             <div class="row row-sow1">
-                                <div class="col-xl-8">
+                                <div class="col-xl-7">
                                     <p>Công việc</p>
                                 </div>
                                 <div class="col-xl-2">
                                     <p>Chi phí</p><a class="info-date" href="#">
                                 </div>
-                                <div class="col-xl-2">
+                                <div class="col-xl-3">
                                     <a class="info-date2" href="#"><i class="fas fa-info"></i></a>
                                 </div>
                             </div>
-                            <?php foreach($value["sow_name"] as $subkey => $subvalue): ?>
+                            <?php foreach($value["sowfb_name"] as $subkey => $subvalue): ?>
                             <div class="row row-sow2">
-                                <div class="col-xl-8">
+                                <div class="col-xl-7">
                                     <p><?php echo $subvalue['sowfb_name']?></p>
                                 </div>
-                                <div class="col-xl-4">
+                                <div class="col-xl-2">
                                     <p><?php echo $subvalue['ratefb']?></p>
+                                </div>
+                                <div class="col-xl-3">
+                                    <p>Facebook</p>
                                 </div>
                             </div>
                             <?php endforeach; ?>
@@ -152,7 +155,7 @@
                             </div>
                             <div class="row row-note2">
                                 <div class="col-xl-12">
-                                    <p class="p-note"><?php echo $value['kol_note']; ?></p>
+                                    <p style="white-space: pre-line;" class="p-note"><?php echo $value['kol_note']; ?></p>
                                 </div>
                             </div>
                         </div>    

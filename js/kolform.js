@@ -1,4 +1,3 @@
-$(".tt-dropdown-menu").css("z-index","11001");
 $(document).ready(function(){
     $('#jobfield').tokenfield({
         autocomplete: {
@@ -20,6 +19,7 @@ $(document).ready(function(){
             
   });
 });
+
 
 $(document).ready(function() {
 	
@@ -49,15 +49,17 @@ $(document).ready(function(){
     var count = 1;
     $('#addfb').click(function(){
         count = count + 1;
-        var html_code = '<div class="row row1'+count+'">';
+        var html_code = '<div class="row row'+count+'">';
         html_code += '<div class="col-xl-7">';
         html_code += '<input type="text" class="form-control" name="sowfb_name[]" placeholder="Sow" value="">';
         html_code += '</div>';
         html_code += '<div class="col-xl-5">';
-        html_code += '<div class="input-group row'+count+'">';
+        html_code += '<div class="form-row row'+count+'">';
+        html_code += '<div class="col-xl-10">';
         html_code += '<input type="text" class="form-control" name="ratefb[]" placeholder="Rate card" value="">';
-        html_code += '<div class="input-group-append">';
-        html_code += '<button class="btn btnminus remove" data-row="row1'+count+'" type="button"><i class="fas fa-minus-circle"></i></button>';
+        html_code += '</div>';
+        html_code += '<div class="col-xl-2" style="padding-top:8px">';
+        html_code += '<span class="minusinput remove" data-row="row'+count+'"><i class="fas fa-times"></i></span>';
         html_code += '</div>';
         html_code += '</div>';
         $('#curd_tablefb').append(html_code);
@@ -77,10 +79,12 @@ $(document).ready(function(){
         html_code += '<input type="text" class="form-control" name="sowins_name[]" placeholder="Sow" value="">';
         html_code += '</div>';
         html_code += '<div class="col-xl-5">';
-        html_code += '<div class="input-group row'+count+'">';
+        html_code += '<div class="form-row row2'+count+'">';
+        html_code += '<div class="col-xl-10">';
         html_code += '<input type="text" class="form-control" name="rateins[]" placeholder="Rate card" value="">';
-        html_code += '<div class="input-group-append">';
-        html_code += '<button class="btn btnminus remove" data-row="row2'+count+'" type="button"><i class="fas fa-minus-circle"></i></button>';
+        html_code += '</div>';
+        html_code += '<div class="col-xl-2" style="padding-top:8px">';
+        html_code += '<span class="minusinput remove" data-row="row2'+count+'"><i class="fas fa-times"></i></span>';
         html_code += '</div>';
         html_code += '</div>';
         $('#curd_tableins').append(html_code);
@@ -100,10 +104,12 @@ $(document).ready(function(){
         html_code += '<input type="text" class="form-control" name="sowyt_name[]" placeholder="Sow" value="">';
         html_code += '</div>';
         html_code += '<div class="col-xl-5">';
-        html_code += '<div class="input-group row'+count+'">';
+        html_code += '<div class="form-row row3'+count+'">';
+        html_code += '<div class="col-xl-10">';
         html_code += '<input type="text" class="form-control" name="rateyt[]" placeholder="Rate card" value="">';
-        html_code += '<div class="input-group-append">';
-        html_code += '<button class="btn btnminus remove" data-row="row3'+count+'" type="button"><i class="fas fa-minus-circle"></i></button>';
+        html_code += '</div>';
+        html_code += '<div class="col-xl-2" style="padding-top:8px">';
+        html_code += '<span class="minusinput remove" data-row="row3'+count+'"><i class="fas fa-times"></i></span>';
         html_code += '</div>';
         html_code += '</div>';
         $('#curd_tableyt').append(html_code);
@@ -123,10 +129,12 @@ $(document).ready(function(){
         html_code += '<input type="text" class="form-control" name="sowtk_name[]" placeholder="Sow" value="">';
         html_code += '</div>';
         html_code += '<div class="col-xl-5">';
-        html_code += '<div class="input-group row'+count+'">';
+        html_code += '<div class="form-row row4'+count+'">';
+        html_code += '<div class="col-xl-10">';
         html_code += '<input type="text" class="form-control" name="ratetk[]" placeholder="Rate card" value="">';
-        html_code += '<div class="input-group-append">';
-        html_code += '<button class="btn btnminus remove" data-row="row4'+count+'" type="button"><i class="fas fa-minus-circle"></i></button>';
+        html_code += '</div>';
+        html_code += '<div class="col-xl-2" style="padding-top:8px">';
+        html_code += '<span class="minusinput remove" data-row="row4'+count+'"><i class="fas fa-times"></i></span>';
         html_code += '</div>';
         html_code += '</div>';
         $('#curd_tabletk').append(html_code);
@@ -146,10 +154,12 @@ $(document).ready(function(){
         html_code += '<input type="text" class="form-control" name="sowoff_name[]" placeholder="Sow" value="">';
         html_code += '</div>';
         html_code += '<div class="col-xl-5">';
-        html_code += '<div class="input-group row'+count+'">';
+        html_code += '<div class="form-row row5'+count+'">';
+        html_code += '<div class="col-xl-10">';
         html_code += '<input type="text" class="form-control" name="rateoff[]" placeholder="Rate card" value="">';
-        html_code += '<div class="input-group-append">';
-        html_code += '<button class="btn btnminus remove" data-row="row5'+count+'" type="button"><i class="fas fa-minus-circle"></i></button>';
+        html_code += '</div>';
+        html_code += '<div class="col-xl-2" style="padding-top:8px">';
+        html_code += '<span class="minusinput remove" data-row="row5'+count+'"><i class="fas fa-times"></i></span>';
         html_code += '</div>';
         html_code += '</div>';
         $('#curd_tableoff').append(html_code);
@@ -238,24 +248,386 @@ $(function () {
     });
 });
 
-$(document).ready(function(){
-    $(".btnrefresh").click(function(){
-        $("#filterForm").trigger("reset");
-    });
-});
-
+        
+        
 $(document).ready(function() {
+    
+    $(document).ready(function(){
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min = parseInt( $('#minfb1').val(), 10 );
+                var max = parseInt( $('#maxfb1').val(), 10 );
+                var impact = parseFloat( data[2] ) || 0; // use data for the age column
+         
+                if ( ( isNaN( min ) && isNaN( max ) ) ||
+                     ( isNaN( min ) && impact <= max ) ||
+                     ( min <= impact   && isNaN( max ) ) ||
+                     ( min <= impact   && impact <= max ) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        var table = $('#dataTable').DataTable();
+        $('#minfb1, #maxfb1').keyup( function() {
+            table.draw();
+        });
+    });
+
+    $(document).ready(function(){
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min2 = parseInt( $('#minfb2').val(), 10 );
+                var max2 = parseInt( $('#maxfb2').val(), 10 );
+                var active = parseFloat( data[3] ) || 0; // use data for the age column
+         
+                if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
+                     ( isNaN( min2 ) && active <= max2 ) ||
+                     ( min2 <= active   && isNaN( max2 ) ) ||
+                     ( min2 <= active   && active <= max2 ) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        var table2 = $('#dataTable').DataTable();
+        $('#minfb2, #maxfb2').keyup( function() {
+            table2.draw();
+        });
+    });
+
+    $(document).ready(function(){
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min = parseInt( $('#minins1').val(), 10 );
+                var max = parseInt( $('#maxins1').val(), 10 );
+                var impact = parseFloat( data[5] ) || 0; // use data for the age column
+         
+                if ( ( isNaN( min ) && isNaN( max ) ) ||
+                     ( isNaN( min ) && impact <= max ) ||
+                     ( min <= impact   && isNaN( max ) ) ||
+                     ( min <= impact   && impact <= max ) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        var table = $('#dataTable').DataTable();
+        $('#minins1, #maxins1').keyup( function() {
+            table.draw();
+        });
+    });
+
+    $(document).ready(function(){
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min2 = parseInt( $('#minins2').val(), 10 );
+                var max2 = parseInt( $('#maxins2').val(), 10 );
+                var active = parseFloat( data[6] ) || 0; // use data for the age column
+         
+                if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
+                     ( isNaN( min2 ) && active <= max2 ) ||
+                     ( min2 <= active   && isNaN( max2 ) ) ||
+                     ( min2 <= active   && active <= max2 ) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        var table2 = $('#dataTable').DataTable();
+        $('#minins2, #maxins2').keyup( function() {
+            table2.draw();
+        });
+    });
+
+    $(document).ready(function(){
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min = parseInt( $('#minyt1').val(), 10 );
+                var max = parseInt( $('#maxyt1').val(), 10 );
+                var impact = parseFloat( data[8] ) || 0; // use data for the age column
+         
+                if ( ( isNaN( min ) && isNaN( max ) ) ||
+                     ( isNaN( min ) && impact <= max ) ||
+                     ( min <= impact   && isNaN( max ) ) ||
+                     ( min <= impact   && impact <= max ) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        var table = $('#dataTable').DataTable();
+        $('#minyt1, #maxyt1').keyup( function() {
+            table.draw();
+        });
+    });
+
+    $(document).ready(function(){
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min2 = parseInt( $('#minyt2').val(), 10 );
+                var max2 = parseInt( $('#maxyt2').val(), 10 );
+                var active = parseFloat( data[9] ) || 0; // use data for the age column
+         
+                if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
+                     ( isNaN( min2 ) && active <= max2 ) ||
+                     ( min2 <= active   && isNaN( max2 ) ) ||
+                     ( min2 <= active   && active <= max2 ) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        var table2 = $('#dataTable').DataTable();
+        $('#minyt2, #maxyt2').keyup( function() {
+            table2.draw();
+        });
+    });
+
+    $(document).ready(function(){
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min = parseInt( $('#mintk1').val(), 10 );
+                var max = parseInt( $('#maxtk1').val(), 10 );
+                var impact = parseFloat( data[11] ) || 0; // use data for the age column
+         
+                if ( ( isNaN( min ) && isNaN( max ) ) ||
+                     ( isNaN( min ) && impact <= max ) ||
+                     ( min <= impact   && isNaN( max ) ) ||
+                     ( min <= impact   && impact <= max ) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        var table = $('#dataTable').DataTable();
+        $('#mintk1, #maxtk1').keyup( function() {
+            table.draw();
+        });
+    });
+
+    $(document).ready(function(){
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min2 = parseInt( $('#mintk2').val(), 10 );
+                var max2 = parseInt( $('#maxtk2').val(), 10 );
+                var active = parseFloat( data[12] ) || 0; // use data for the age column
+         
+                if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
+                     ( isNaN( min2 ) && active <= max2 ) ||
+                     ( min2 <= active   && isNaN( max2 ) ) ||
+                     ( min2 <= active   && active <= max2 ) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        var table2 = $('#dataTable').DataTable();
+        $('#mintk2, #maxtk2').keyup( function() {
+            table2.draw();
+        });
+    });
+
+    $(document).ready(function(){
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min = parseInt( $('#minoff1').val(), 10 );
+                var max = parseInt( $('#maxoff1').val(), 10 );
+                var impact = parseFloat( data[14] ) || 0; // use data for the age column
+         
+                if ( ( isNaN( min ) && isNaN( max ) ) ||
+                     ( isNaN( min ) && impact <= max ) ||
+                     ( min <= impact   && isNaN( max ) ) ||
+                     ( min <= impact   && impact <= max ) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        var table = $('#dataTable').DataTable();
+        $('#minoff1, #maxoff1').keyup( function() {
+            table.draw();
+        });
+    });
+
+    $(document).ready(function(){
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min2 = parseInt( $('#minoff2').val(), 10 );
+                var max2 = parseInt( $('#maxoff2').val(), 10 );
+                var active = parseFloat( data[15] ) || 0; // use data for the age column
+         
+                if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
+                     ( isNaN( min2 ) && active <= max2 ) ||
+                     ( min2 <= active   && isNaN( max2 ) ) ||
+                     ( min2 <= active   && active <= max2 ) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+        var table2 = $('#dataTable').DataTable();
+        $('#minoff2, #maxoff2').keyup( function() {
+            table2.draw();
+        });
+    });
+    
+    $(document).ready(function(){
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, index, rowData, counter ) {
+              var locations = $('input:checkbox[name="kol_location"]:checked').map(function() {
+                return this.value;
+              }).get();
+           
+              if (locations.length === 0) {
+                return true;
+              }
+              
+              if (locations.indexOf(data[18]) !== -1) {
+                return true;
+              }
+              
+              return false;
+            }
+          );
+
+          $.fn.dataTable.ext.search.push(
+            function( settings, data, index, rowData, counter ) {
+              var genders = $('input:checkbox[name="kol_gender"]:checked').map(function() {
+                return this.value;
+              }).get();
+           
+              if (genders.length === 0) {
+                return true;
+              }
+              
+              if (genders.indexOf(data[1]) !== -1) {
+                return true;
+              }
+              
+              return false;
+            }
+          );
+
+          var table3 = $('#dataTable').DataTable();
+          $('input:checkbox').on('change',function(){
+              table3.draw();
+          });
+    });
+
     $(document).ready(function() {
         var dataTable = $('#dataTable').dataTable();
         $("#searchbox").keyup(function() {
             dataTable.fnFilter(this.value);
-        });    
+        });   
     });
-    
-    $('#dataTable').DataTable( {    
+
+    $(document).ready(function(){
+        var table4 = $('#dataTable').DataTable();
+        table4.columns([1,5,6,7,8,9,10,11,12,13,14,15,16,18]).visible(false);
+
+        
+            $('#fbshow').click(function(){
+                table4.columns([2,3,4]).visible(true);
+                table4.columns([5,6,7]).visible(false);
+                table4.columns([8,9,10]).visible(false);
+                table4.columns([11,12,13]).visible(false);
+                table4.columns([14,15,16]).visible(false);
+                $('.pf1').show();
+                $('.pf2').hide();
+                $('.pf3').hide();
+                $('.pf4').hide();
+                $('.pf5').hide();
+            });
+            $('#inshow').click(function(){
+                table4.columns([5,6,7]).visible(true);
+                table4.columns([2,3,4]).visible(false);
+                table4.columns([8,9,10]).visible(false);
+                table4.columns([11,12,13]).visible(false);
+                table4.columns([14,15,16]).visible(false);
+                $('.pf1').hide();
+                $('.pf2').show();
+                $('.pf3').hide();
+                $('.pf4').hide();
+                $('.pf5').hide();
+            });
+            $('#ytshow').click(function(){
+                table4.columns([8,9,10]).visible(true);
+                table4.columns([5,6,7]).visible(false);
+                table4.columns([2,3,4]).visible(false);
+                table4.columns([11,12,13]).visible(false);
+                table4.columns([14,15,16]).visible(false);
+                $('.pf1').hide();
+                $('.pf2').hide();
+                $('.pf3').show();
+                $('.pf4').hide();
+                $('.pf5').hide();
+            });
+            $('#tkshow').click(function(){
+                table4.columns([5,6,7]).visible(false);
+                table4.columns([2,3,4]).visible(false);
+                table4.columns([8,9,10]).visible(false);
+                table4.columns([11,12,13]).visible(true);
+                table4.columns([14,15,16]).visible(false);
+                $('.pf1').hide();
+                $('.pf2').hide();
+                $('.pf3').hide();
+                $('.pf4').show();
+                $('.pf5').hide();
+            });
+            $('#otshow').click(function(){
+                table4.columns([5,6,7]).visible(false);
+                table4.columns([2,3,4]).visible(false);
+                table4.columns([8,9,10]).visible(false);
+                table4.columns([11,12,13]).visible(false);
+                table4.columns([14,15,16]).visible(true);
+                $('.pf1').hide();
+                $('.pf2').hide();
+                $('.pf3').hide();
+                $('.pf4').hide();
+                $('.pf5').show();
+            });
+    });
+
+    $(document).ready(function(){
+        $(".btnrefresh").click(function(){
+            $("#filterForm")[0].reset()
+            
+        });
+    });
+
+    $(document).ready(function(){
+        var table5 = $('#dataTable').DataTable();
+            $('#filterjob').on('change', function () {
+                table5.columns(0).search( this.value ).draw();
+            } );
+    });
+
+    $('#dataTable').dataTable( {    
         "bInfo" : false,
         "pageLength": 10,
         "lengthChange": false,
+        "scrollX": false,
         "language": {
             "paginate": {
                 "previous": "Trước",
@@ -265,34 +637,19 @@ $(document).ready(function() {
     } );
 } );
 
-$(document).ready(function(){
-    $('#searchjob').on('keyup',function(event){
-        event.preventDefault();
-        var jobkey = $(this).val().toLowerCase();
-        $('#dataTable2 tr').filter(function(){
-            $(this).toggle($(this).text().toLowerCase().indexOf(jobkey)>-1);
-        });
-    });
-});
 
-$(document).ready(function(){
-    $("#fbshow").click(function(){
-        $(".pf2").hide();
-        $(".pf3").hide();
-        $(".pf1").show();
-    });
-});
-$(document).ready(function(){
-    $("#inshow").click(function(){
-        $(".pf1").hide();
-        $(".pf3").hide();
-        $(".pf2").show();
-    });
-});
-$(document).ready(function(){
-    $("#ytshow").click(function(){
-        $(".pf1").hide();
-        $(".pf2").hide();
-        $(".pf3").show();
-    });
-});
+
+// $(document).ready(function(){
+//     $('#searchjob').on('keyup',function(event){
+//         event.preventDefault();
+//         var jobkey = $(this).val().toLowerCase();
+//         $('#dataTable2 tr').filter(function(){
+//             $(this).toggle($(this).text().toLowerCase().indexOf(jobkey)>-1);
+//         });
+//     });
+// });
+
+
+
+
+ 

@@ -218,97 +218,114 @@
                                 <label style="color:#1877F2;font-weight:bold;">Sow facebook</label>
                                 <div class="row">
                                     <div class="col-xl-7">
-                                        <input type="text" class="form-control" name="sowfb_name[]" placeholder="Sow" required>
+                                        <input type="text" class="form-control" name="sowfb_name[]" placeholder="Sow">
                                     </div>
                                     <div class="col-xl-5">
-                                        <div class="input-group">   
-                                            <input type="text" class="form-control" name="ratefb[]" placeholder="Rate card" required>
-                                            <div class="input-group-append">
-                                                <button class="btn btnplus" id="addfb" type="button"><i class="fas fa-plus-circle"></i></button>
+                                        <div class="form-row"> 
+                                            <div class="col-xl-10">  
+                                                <input type="text" class="form-control" name="ratefb[]" placeholder="Rate card">
+                                            </div>
+                                            <div class="col-xl-2" style="padding-top:8px">
+                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <span class="plusinput" id="addfb"><i class="fas fa-plus"></i> Thêm sow</span>
                         </div>
                         <div class="col-xl-6">
                             <div class="form-group" id="curd_tableins">
                                 <label style="color:#d6249f;font-weight:bold;">Sow instagram</label>
                                 <div class="row">
                                     <div class="col-xl-7">
-                                        <input type="text" class="form-control" name="sowins_name[]" placeholder="Sow" required>
+                                        <input type="text" class="form-control" name="sowins_name[]" placeholder="Sow">
                                     </div>
                                     <div class="col-xl-5">
-                                        <div class="input-group">   
-                                            <input type="text" class="form-control" name="rateins[]" placeholder="Rate card" required>
-                                            <div class="input-group-append">
-                                                <button class="btn btnplus" id="addins" type="button"><i class="fas fa-plus-circle"></i></button>
+                                        <div class="form-row">  
+                                            <div class="col-xl-10"> 
+                                                <input type="text" class="form-control" name="rateins[]" placeholder="Rate card">
+                                            </div>
+                                            <div class="col-xl-2" style="padding-top:8px">
+                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <span class="plusinput" id="addins"><i class="fas fa-plus"></i> Thêm sow</span>
                         </div>
                     </div>
-
-
-                    <div class="row" style="padding-top:20px;">
+                    
+                    <hr style="border: 2px solid #e6e9ee;background-color:#e6e9ee;margin-top:10px">
+                    <div class="row">
                         <div class="col-xl-6">
                             <div class="form-group" id="curd_tableyt">
                                 <label style="color:#FE0000;font-weight:bold;">Sow youtube</label>
                                 <div class="row">
                                     <div class="col-xl-7">
-                                        <input type="text" class="form-control" name="sowyt_name[]" placeholder="Sow" required>
+                                        <input type="text" class="form-control" name="sowyt_name[]" placeholder="Sow">
                                     </div>
                                     <div class="col-xl-5">
-                                        <div class="input-group">   
-                                            <input type="text" class="form-control" name="rateyt[]" placeholder="Rate card" required>
-                                            <div class="input-group-append">
-                                                <button class="btn btnplus" id="addyt" type="button"><i class="fas fa-plus-circle"></i></button>
+                                        <div class="form-row">  
+                                            <div class="col-xl-10">  
+                                                <input type="text" class="form-control" name="rateyt[]" placeholder="Rate card">
+                                            </div>
+                                            <div class="col-xl-2" style="padding-top:8px">
+                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <span class="plusinput" id="addyt"><i class="fas fa-plus"></i> Thêm sow</span>
                         </div>
                         <div class="col-xl-6">
                             <div class="form-group" id="curd_tabletk">
                                 <label style="color:#000;font-weight:bold;">Sow tik tok</label>
                                 <div class="row">
                                     <div class="col-xl-7">
-                                        <input type="text" class="form-control" name="sowtk_name[]" placeholder="Sow" required>
+                                        <input type="text" class="form-control" name="sowtk_name[]" placeholder="Sow">
                                     </div>
                                     <div class="col-xl-5">
-                                        <div class="input-group">   
-                                            <input type="text" class="form-control" name="ratetk[]" placeholder="Rate card" required>
-                                            <div class="input-group-append">
-                                                <button class="btn btnplus" id="addtk" type="button"><i class="fas fa-plus-circle"></i></button>
+                                        <div class="form-row">   
+                                            <div class="col-xl-10">
+                                                <input type="text" class="form-control" name="ratetk[]" placeholder="Rate card">
+                                            </div>
+                                            <div class="col-xl-2" style="padding-top:8px">
+                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <span class="plusinput" id="addtk"><i class="fas fa-plus"></i> Thêm sow</span>
                         </div>
                     </div>
 
-                    <div class="row" style="padding-top:20px;">
+
+                    <hr style="border: 2px solid #e6e9ee;background-color:#e6e9ee;margin-top:10px">
+                    <div class="row">
                         <div class="col-xl-6">
                             <div class="form-group" id="curd_tableoff">
                                 <label style="color:#daa458;font-weight:bold;">Sow offline</label>
                                 <div class="row">
                                     <div class="col-xl-7">
-                                        <input type="text" class="form-control" name="sowoff_name[]" placeholder="Sow" required>
+                                        <input type="text" class="form-control" name="sowoff_name[]" placeholder="Sow">
                                     </div>
                                     <div class="col-xl-5">
-                                        <div class="input-group">   
-                                            <input type="text" class="form-control" name="rateoff[]" placeholder="Rate card" required>
-                                            <div class="input-group-append">
-                                                <button class="btn btnplus" id="addoff" type="button"><i class="fas fa-plus-circle"></i></button>
+                                        <div class="form-row"> 
+                                            <div class="col-xl-10">  
+                                                <input type="text" class="form-control" name="rateoff[]" placeholder="Rate card">
+                                            </div>
+                                            <div class="col-xl-2" style="padding-top:8px">
+                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <span class="plusinput" id="addoff"><i class="fas fa-plus"></i> Thêm sow</span>
                         </div>
                         <div class="col-xl-6">
                             <div class="form-group" id="noteform">
