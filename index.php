@@ -26,7 +26,7 @@
             <!-- Button Add Contract -->
                 <button type="button" class="btn btn-info btn-contract" data-toggle="modal" data-target="#addNewContract">
                     <i class="fas fa-file-contract"></i>
-                    <p class="btnmodal">Hợp đồng</p>
+                    <p class="btnmodal">Contact</p>
                 </button>
                 <?php include("formcontractkol.php"); ?>
             </div>
@@ -91,23 +91,28 @@
 
                         <th class="tdkol">Ảnh hưởng</th>
                         <th class="tdkol" data-sortable="false">Tương tác</th>
-                        <th data-sortable="false">Chi phí</th>
+                        <th data-sortable="false">Sow</th>
+                        <th data-sortable="false">Giá</th>
 
                         <th class="tdkol">Ảnh hưởng</th>
                         <th class="tdkol" data-sortable="false">Tương tác</th>
-                        <th data-sortable="false">Chi phí</th>
+                        <th data-sortable="false">Sow</th>
+                        <th data-sortable="false">Giá</th>
 
                         <th class="tdkol">Ảnh hưởng</th>
                         <th class="tdkol" data-sortable="false">Tương tác</th>
-                        <th data-sortable="false">Chi phí</th>
+                        <th data-sortable="false">Sow</th>
+                        <th data-sortable="false">Giá</th>
 
                         <th class="tdkol">Ảnh hưởng</th>
                         <th class="tdkol" data-sortable="false">Tương tác</th>
-                        <th data-sortable="false">Chi phí</th>
+                        <th data-sortable="false">Sow</th>
+                        <th data-sortable="false">Giá</th>
 
                         <th class="tdkol">Ảnh hưởng</th>
                         <th class="tdkol" data-sortable="false">Tương tác</th>
-                        <th data-sortable="false">Chi phí</th>
+                        <th data-sortable="false">Sow</th>
+                        <th data-sortable="false">Giá</th>
 
                         <th data-sortable="false">Liên hệ</th>
                         <th data-sortable="false">Miền</th>
@@ -126,9 +131,7 @@
                                 </div>
                                 <div class="col-xl-8 col-sm-12">
                                     <p class="nametag"><?php echo $value['kol_name'];?></p>
-                                    <?php foreach($value["job_name"] as $subkey2 => $subvalue2): ?>
-                                    <span class="badge badge-success tagging"><?php echo $subvalue2['job_name']?></span>
-                                    <?php endforeach; ?>                                       
+                                                                           
                                 </div>
                             </div>                                   
                         </td>
@@ -153,15 +156,21 @@
                         </td>
                         <td>
                         <?php foreach($value["sowfb_name"] as $subkey => $subvalue): ?>
-                        <?php $sow = explode(PHP_EOL,$subvalue['sowfb_name']);?>
-                        <?php $rate = explode(PHP_EOL,$subvalue['ratefb']);?>     
+                        <?php $sow = explode(PHP_EOL,$subvalue['sowfb_name']);?>     
                             <div class="row sow-rate">
-                                <div class="col-xl-7">
+                                <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
                                     <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
                                     <?php endforeach; ?>
                                 </div>
-                                <div class="col-xl-5">
+                            </div>
+                        <?php endforeach; ?>
+                        </td>
+                        <td>
+                        <?php foreach($value["sowfb_name"] as $subkey => $subvalue): ?>
+                        <?php $rate = explode(PHP_EOL,$subvalue['ratefb']);?>
+                            <div class="row sow-rate">
+                                <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
                                     <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
                                     <?php endforeach; ?>
@@ -187,15 +196,21 @@
                         </td>
                         <td>
                         <?php foreach($value["sowins_name"] as $subkeyins => $subvalueins): ?>
-                        <?php $sow = explode(PHP_EOL,$subvalueins['sowins_name']);?>
-                        <?php $rate = explode(PHP_EOL,$subvalueins['rateins']);?>     
+                        <?php $sow = explode(PHP_EOL,$subvalueins['sowins_name']);?>     
                             <div class="row sow-rate">
-                                <div class="col-xl-7">
+                                <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
                                     <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
                                     <?php endforeach; ?>
                                 </div>
-                                <div class="col-xl-5">
+                            </div>
+                        <?php endforeach; ?>
+                        </td>
+                        <td>
+                        <?php foreach($value["sowins_name"] as $subkeyins => $subvalueins): ?>
+                        <?php $rate = explode(PHP_EOL,$subvalueins['rateins']);?>     
+                            <div class="row sow-rate">
+                                <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
                                     <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
                                     <?php endforeach; ?>
@@ -221,15 +236,21 @@
                         </td>
                         <td>
                         <?php foreach($value["sowyt_name"] as $subkeyyt => $subvalueyt): ?>
-                        <?php $sow = explode(PHP_EOL,$subvalueyt['sowyt_name']);?>
-                        <?php $rate = explode(PHP_EOL,$subvalueyt['rateyt']);?>     
+                        <?php $sow = explode(PHP_EOL,$subvalueyt['sowyt_name']);?>     
                             <div class="row sow-rate">
-                                <div class="col-xl-7">
+                                <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
                                     <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
                                     <?php endforeach; ?>
                                 </div>
-                                <div class="col-xl-5">
+                            </div>
+                        <?php endforeach; ?>
+                        </td>
+                        <td>
+                        <?php foreach($value["sowyt_name"] as $subkeyyt => $subvalueyt): ?>
+                        <?php $rate = explode(PHP_EOL,$subvalueyt['rateyt']);?>     
+                            <div class="row sow-rate">
+                                <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
                                     <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
                                     <?php endforeach; ?>
@@ -255,15 +276,21 @@
                         </td>
                         <td>
                         <?php foreach($value["sowtk_name"] as $subkeytk => $subvaluetk): ?>
-                        <?php $sow = explode(PHP_EOL,$subvaluetk['sowtk_name']);?>
-                        <?php $rate = explode(PHP_EOL,$subvaluetk['ratetk']);?>     
+                        <?php $sow = explode(PHP_EOL,$subvaluetk['sowtk_name']);?>     
                             <div class="row sow-rate">
-                                <div class="col-xl-7">
+                                <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
                                     <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
                                     <?php endforeach; ?>
                                 </div>
-                                <div class="col-xl-5">
+                            </div>
+                        <?php endforeach; ?>
+                        </td>
+                        <td>
+                        <?php foreach($value["sowtk_name"] as $subkeytk => $subvaluetk): ?>
+                        <?php $rate = explode(PHP_EOL,$subvaluetk['ratetk']);?>     
+                            <div class="row sow-rate">
+                                <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
                                     <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
                                     <?php endforeach; ?>
@@ -289,15 +316,21 @@
                         </td>
                         <td>
                         <?php foreach($value["sowoff_name"] as $subkeyoff => $subvalueoff): ?>
-                        <?php $sow = explode(PHP_EOL,$subvalueoff['sowoff_name']);?>
-                        <?php $rate = explode(PHP_EOL,$subvalueoff['rateoff']);?>     
+                        <?php $sow = explode(PHP_EOL,$subvalueoff['sowoff_name']);?>   
                             <div class="row sow-rate">
-                                <div class="col-xl-7">
+                                <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
                                     <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
                                     <?php endforeach; ?>
                                 </div>
-                                <div class="col-xl-5">
+                            </div>
+                        <?php endforeach; ?>
+                        </td>
+                        <td>
+                        <?php foreach($value["sowoff_name"] as $subkeyoff => $subvalueoff): ?>
+                        <?php $rate = explode(PHP_EOL,$subvalueoff['rateoff']);?>     
+                            <div class="row sow-rate">
+                                <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
                                     <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
                                     <?php endforeach; ?>
@@ -342,14 +375,15 @@
                                             <button type="button" class="btn btn-primary dropdown-item" data-toggle="modal" data-target="#editKol<?php echo $value['kol_id']; ?>">
                                                 Edit Kol
                                             </button>
+                                            
                                             <button type="button" class="btn btn-primary dropdown-item view-data" data-toggle="modal" data-target="#detailKol<?php echo $value['kol_id']; ?>">
                                                 Detail Kol
                                             </button>
                                             
-                                            <a class="dropdown-item" href="#">
+                                            <a class="dropdown-item" target="_blank" href="pdfkol.php?KolID=<?php echo $value['kol_id']?>">
                                                 <div>Download Kol</div>
                                             </a>
-                                            <a class="dropdown-item" href="#">
+                                            <a class="dropdown-item" target="_blank" href="#">
                                                 <div>Kol's contract</div>
                                             </a>
                                             <a class="dropdown-item" href="#">
@@ -360,12 +394,12 @@
                                     </ul>
                                 </div>
                             </div>
+                            <?php 
+                                include('edit.php');
+                                include('detailkol.php'); 
+                            ?>
                         </td>
                     </tr>
-                    <?php 
-                        include('detailkol.php');
-                        include('edit.php'); 
-                    ?>
                     <?php endforeach; ?>          
                     </tbody>
                 </table>
@@ -394,7 +428,7 @@
             <div class="form-group">
                 <label class="p-filter">Lĩnh vực</label>
                 <select class="form-control" id="filterjob">
-                    <option value=""></option>
+                    <option value="">All</option>
                     <option value="Actor">Actor</option>
                     <option value="Singer">Singer</option>
                     <option value="Influencer">Influencer</option>
@@ -560,6 +594,9 @@
         </div>
         </form>
 
+        <div class="form-group">
+        <input class="form-control" type="button" value="Excel">
+        </div>
 
 
         </div>

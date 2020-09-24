@@ -10,8 +10,8 @@
         $kol_address = $_POST['kol_address'];
         $kol_location = $_POST['kol_location'];
         $kol_img = $_FILES['kol_img']['name'];
-        $company_name = implode(",",$_POST['company_name']);
-        $job_name = implode(",",$_POST['job_name']);
+        // $company_name = implode(",",$_POST['company_name']);
+        // $job_name = implode(",",$_POST['job_name']);
         $kol_gender = $_POST['kol_gender'];
         $link_yt = $_POST['link_yt'];
         $link_fb = $_POST['link_fb'];
@@ -58,11 +58,11 @@
         $id = $connection->insert_id;
 
     
-        $sql2 = "INSERT INTO kol_job (job_name,kol_id) VALUES ('$job_name','$id')";
-        $query_run2 = mysqli_query($connection,$sql2);
+        // $sql2 = "INSERT INTO kol_job (job_name,kol_id) VALUES ('$job_name','$id')";
+        // $query_run2 = mysqli_query($connection,$sql2);
 
-        $sql3 = "INSERT INTO kol_company (company_name,kol_id) VALUES ('$company_name','$id')";
-        $query_run3 = mysqli_query($connection,$sql3);
+        // $sql3 = "INSERT INTO kol_company (company_name,kol_id) VALUES ('$company_name','$id')";
+        // $query_run3 = mysqli_query($connection,$sql3);
         
         
         $sql4 = "INSERT INTO kol_sowfb (sowfb_name,ratefb,kol_id) VALUES ('$sowfb_name','$ratefb','$id')";
@@ -90,7 +90,7 @@
         $query_run11 = mysqli_query($connection,$sql11);
         
 
-        if($query_run1 && $query_run2 && $query_run3 && $query_run4 && $query_run5 && $query_run6 && $query_run7 && $query_run8 && $query_run9 && $query_run10 && $query_run11){
+        if($query_run1 && $query_run4 && $query_run5 && $query_run6 && $query_run7 && $query_run8 && $query_run9 && $query_run10 && $query_run11){
             move_uploaded_file($_FILES['kol_img']['tmp_name'], "upload/".$_FILES['kol_img']['name']);
             $_SESSION['success'] = "KOL Added";
             header('Location: index.php');

@@ -125,7 +125,7 @@
 
 
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <div class="col-xl-6">
                             <div class="form-group">
                                 <div class="row">
@@ -150,7 +150,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
                     <hr style="border: 2px solid #e6e9ee;background-color:#e6e9ee;margin-top:5px;margin-bottom:25px">
 

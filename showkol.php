@@ -1,7 +1,7 @@
 <?php
     $sql = "SELECT kol_info.kol_id,kol_info.kol_name,kol_info.kol_img,kol_info.kol_gender,kol_info.link_fb,kol_info.link_ins,kol_info.link_yt,kol_info.kol_tel,kol_info.kol_mail,kol_info.kol_note,kol_info.kol_address,kol_info.kol_location,
-                   kol_job.job_id,kol_job.job_name,
-                   kol_company.company_id,kol_company.company_name,
+                --    kol_job.job_id,kol_job.job_name,
+                --    kol_company.company_id,kol_company.company_name,
                    kol_sowfb.sowfb_id,kol_sowfb.sowfb_name,kol_sowfb.ratefb,
                    kol_sowins.sowins_id,kol_sowins.sowins_name,kol_sowins.rateins,
                    kol_sowyt.sowyt_id,kol_sowyt.sowyt_name,kol_sowyt.rateyt,
@@ -11,8 +11,8 @@
                    post_ins.postins_id,post_ins.postins_link1,post_ins.postins_link2,post_ins.postins_link3,post_ins.postins_link4,post_ins.postins_link5,
                    post_yt.postyt_id,post_yt.postyt_link1,post_yt.postyt_link2,post_yt.postyt_link3,post_yt.postyt_link4,post_yt.postyt_link5
             FROM kol_info 
-            INNER JOIN kol_job ON kol_info.kol_id = kol_job.kol_id
-            INNER JOIN kol_company ON kol_info.kol_id = kol_company.kol_id
+            -- INNER JOIN kol_job ON kol_info.kol_id = kol_job.kol_id
+            -- INNER JOIN kol_company ON kol_info.kol_id = kol_company.kol_id
             INNER JOIN kol_sowfb ON kol_info.kol_id = kol_sowfb.kol_id
             INNER JOIN kol_sowins ON kol_info.kol_id = kol_sowins.kol_id
             INNER JOIN kol_sowyt ON kol_info.kol_id = kol_sowyt.kol_id
@@ -33,15 +33,15 @@
 
         $data[$row["kol_id"]]["kol_img"] = $row["kol_img"];
 
-        $data[$row["kol_id"]]["job_name"][$row["job_id"]] = array(
-            "job_name" => $row["job_name"],
-            "job_id" => $row["job_id"],
-        );
+        // $data[$row["kol_id"]]["job_name"][$row["job_id"]] = array(
+        //     "job_name" => $row["job_name"],
+        //     "job_id" => $row["job_id"],
+        // );
 
-        $data[$row["kol_id"]]["company_name"][$row["company_id"]] = array(
-            "company_name" => $row["company_name"],
-            "company_id" => $row["company_id"],
-        );
+        // $data[$row["kol_id"]]["company_name"][$row["company_id"]] = array(
+        //     "company_name" => $row["company_name"],
+        //     "company_id" => $row["company_id"],
+        // );
 
         $data[$row["kol_id"]]["kol_gender"] = $row["kol_gender"];
 

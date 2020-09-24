@@ -110,6 +110,18 @@
     background-color: #2ec7cf;
     color: #fff;
 }
+.fa-location-arrow{
+    background-color: #1877F2;
+    color: #fff;
+}
+.fa-map-marker-alt{
+    background-color: #FE0000;
+    color: #fff;
+}
+.fa-tags{
+    background-color:  #daa458;
+    color: #fff;
+}
 .fass{
     padding: 5px;
     font-size: 15px;
@@ -145,6 +157,10 @@
     background-color: #eef2f5;
     margin-right:-30px;
     margin-left: -20px;
+}
+.table-responsive{
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 .tablekol{
     background-color: #fff;
@@ -289,12 +305,30 @@
     font-size: 18px;
     font-weight: bold;
 }
-.row-sow2{
-    border: 1.5px solid #bbc6c8;
-    border-radius: 20px;
-    margin-bottom: 7px;
-    height: 30px;
+.pfb{
+    color: #1877F2;
+    font-weight: bold;
+}
+.pins{
+    color: #d6249f;
+    font-weight: bold;
+}
+.pyt{
+    color: #FE0000;
+    font-weight: bold;
+}
+.ptk{
     color: #000;
+    font-weight: bold;
+}
+.poff{
+    color: #daa458;
+    font-weight: bold;
+}
+.allsow{
+    background-color: #ecfafa;
+    border-radius: 15px;
+    padding: 10px;
 }
 .row-note1{
     font-size: 18px;
@@ -304,12 +338,13 @@
     background-color: #ecfafa;
     border-radius: 15px;
     color: #000;
+    padding: 5px;
 }
 .p-note{
     margin-bottom: 15px;
 }
 .rowdetail4{
-    padding-top: 30px;
+    padding-top: 10px;
     font-size: 18px;
     font-weight: bold;
 }

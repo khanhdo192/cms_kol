@@ -1,24 +1,24 @@
-$(document).ready(function(){
-    $('#jobfield').tokenfield({
-        autocomplete: {
-            source: ['Singer','Actor','Influencer','Youtuber','Family','Comedy','Music'],
-            delay: 100
-        },
-        showAutocompleteOnFocus: true,            
+// $(document).ready(function(){
+//     $('#jobfield').tokenfield({
+//         autocomplete: {
+//             source: ['Singer','Actor','Influencer','Youtuber','Family','Comedy','Music'],
+//             delay: 100
+//         },
+//         showAutocompleteOnFocus: true,            
             
-  });
-});
+//   });
+//});
 
-$(document).ready(function(){
-    $('#companyfield').tokenfield({
-        autocomplete: {
-            source: ['Bread n tea','Actor','Influencer','Youtuber','Family','Comedy','Music'],
-            delay: 100
-        },
-        showAutocompleteOnFocus: true,            
+// $(document).ready(function(){
+//     $('#companyfield').tokenfield({
+//         autocomplete: {
+//             source: ['Bread n tea','Actor','Influencer','Youtuber','Family','Comedy','Music'],
+//             delay: 100
+//         },
+//         showAutocompleteOnFocus: true,            
             
-  });
-});
+//   });
+// });
 
 
 $(document).ready(function() {
@@ -305,7 +305,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min = parseInt( $('#minins1').val(), 10 );
                 var max = parseInt( $('#maxins1').val(), 10 );
-                var impact = parseFloat( data[5] ) || 0; // use data for the age column
+                var impact = parseFloat( data[6] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min ) && isNaN( max ) ) ||
                      ( isNaN( min ) && impact <= max ) ||
@@ -329,7 +329,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min2 = parseInt( $('#minins2').val(), 10 );
                 var max2 = parseInt( $('#maxins2').val(), 10 );
-                var active = parseFloat( data[6] ) || 0; // use data for the age column
+                var active = parseFloat( data[7] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
                      ( isNaN( min2 ) && active <= max2 ) ||
@@ -353,7 +353,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min = parseInt( $('#minyt1').val(), 10 );
                 var max = parseInt( $('#maxyt1').val(), 10 );
-                var impact = parseFloat( data[8] ) || 0; // use data for the age column
+                var impact = parseFloat( data[10] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min ) && isNaN( max ) ) ||
                      ( isNaN( min ) && impact <= max ) ||
@@ -377,7 +377,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min2 = parseInt( $('#minyt2').val(), 10 );
                 var max2 = parseInt( $('#maxyt2').val(), 10 );
-                var active = parseFloat( data[9] ) || 0; // use data for the age column
+                var active = parseFloat( data[11] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
                      ( isNaN( min2 ) && active <= max2 ) ||
@@ -401,7 +401,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min = parseInt( $('#mintk1').val(), 10 );
                 var max = parseInt( $('#maxtk1').val(), 10 );
-                var impact = parseFloat( data[11] ) || 0; // use data for the age column
+                var impact = parseFloat( data[14] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min ) && isNaN( max ) ) ||
                      ( isNaN( min ) && impact <= max ) ||
@@ -425,7 +425,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min2 = parseInt( $('#mintk2').val(), 10 );
                 var max2 = parseInt( $('#maxtk2').val(), 10 );
-                var active = parseFloat( data[12] ) || 0; // use data for the age column
+                var active = parseFloat( data[15] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
                      ( isNaN( min2 ) && active <= max2 ) ||
@@ -449,7 +449,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min = parseInt( $('#minoff1').val(), 10 );
                 var max = parseInt( $('#maxoff1').val(), 10 );
-                var impact = parseFloat( data[14] ) || 0; // use data for the age column
+                var impact = parseFloat( data[18] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min ) && isNaN( max ) ) ||
                      ( isNaN( min ) && impact <= max ) ||
@@ -473,7 +473,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min2 = parseInt( $('#minoff2').val(), 10 );
                 var max2 = parseInt( $('#maxoff2').val(), 10 );
-                var active = parseFloat( data[15] ) || 0; // use data for the age column
+                var active = parseFloat( data[19] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
                      ( isNaN( min2 ) && active <= max2 ) ||
@@ -503,7 +503,7 @@ $(document).ready(function() {
                 return true;
               }
               
-              if (locations.indexOf(data[18]) !== -1) {
+              if (locations.indexOf(data[23]) !== -1) {
                 return true;
               }
               
@@ -544,15 +544,15 @@ $(document).ready(function() {
 
     $(document).ready(function(){
         var table4 = $('#dataTable').DataTable();
-        table4.columns([1,5,6,7,8,9,10,11,12,13,14,15,16,18]).visible(false);
+        table4.columns([1,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23]).visible(false);
 
         
             $('#fbshow').click(function(){
-                table4.columns([2,3,4]).visible(true);
-                table4.columns([5,6,7]).visible(false);
-                table4.columns([8,9,10]).visible(false);
-                table4.columns([11,12,13]).visible(false);
-                table4.columns([14,15,16]).visible(false);
+                table4.columns([2,3,4,5]).visible(true);
+                table4.columns([6,7,8,9]).visible(false);
+                table4.columns([10,11,12,13]).visible(false);
+                table4.columns([14,15,16,17]).visible(false);
+                table4.columns([18,19,20,21]).visible(false);
                 $('.pf1').show();
                 $('.pf2').hide();
                 $('.pf3').hide();
@@ -560,11 +560,11 @@ $(document).ready(function() {
                 $('.pf5').hide();
             });
             $('#inshow').click(function(){
-                table4.columns([5,6,7]).visible(true);
-                table4.columns([2,3,4]).visible(false);
-                table4.columns([8,9,10]).visible(false);
-                table4.columns([11,12,13]).visible(false);
-                table4.columns([14,15,16]).visible(false);
+                table4.columns([2,3,4,5]).visible(false);
+                table4.columns([6,7,8,9]).visible(true);
+                table4.columns([10,11,12,13]).visible(false);
+                table4.columns([14,15,16,17]).visible(false);
+                table4.columns([18,19,20,21]).visible(false);
                 $('.pf1').hide();
                 $('.pf2').show();
                 $('.pf3').hide();
@@ -572,11 +572,11 @@ $(document).ready(function() {
                 $('.pf5').hide();
             });
             $('#ytshow').click(function(){
-                table4.columns([8,9,10]).visible(true);
-                table4.columns([5,6,7]).visible(false);
-                table4.columns([2,3,4]).visible(false);
-                table4.columns([11,12,13]).visible(false);
-                table4.columns([14,15,16]).visible(false);
+                table4.columns([2,3,4,5]).visible(false);
+                table4.columns([6,7,8,9]).visible(false);
+                table4.columns([10,11,12,13]).visible(true);
+                table4.columns([14,15,16,17]).visible(false);
+                table4.columns([18,19,20,21]).visible(false);
                 $('.pf1').hide();
                 $('.pf2').hide();
                 $('.pf3').show();
@@ -584,11 +584,11 @@ $(document).ready(function() {
                 $('.pf5').hide();
             });
             $('#tkshow').click(function(){
-                table4.columns([5,6,7]).visible(false);
-                table4.columns([2,3,4]).visible(false);
-                table4.columns([8,9,10]).visible(false);
-                table4.columns([11,12,13]).visible(true);
-                table4.columns([14,15,16]).visible(false);
+                table4.columns([2,3,4,5]).visible(false);
+                table4.columns([6,7,8,9]).visible(false);
+                table4.columns([10,11,12,13]).visible(false);
+                table4.columns([14,15,16,17]).visible(true);
+                table4.columns([18,19,20,21]).visible(false);
                 $('.pf1').hide();
                 $('.pf2').hide();
                 $('.pf3').hide();
@@ -596,11 +596,11 @@ $(document).ready(function() {
                 $('.pf5').hide();
             });
             $('#otshow').click(function(){
-                table4.columns([5,6,7]).visible(false);
-                table4.columns([2,3,4]).visible(false);
-                table4.columns([8,9,10]).visible(false);
-                table4.columns([11,12,13]).visible(false);
-                table4.columns([14,15,16]).visible(true);
+                table4.columns([2,3,4,5]).visible(false);
+                table4.columns([6,7,8,9]).visible(false);
+                table4.columns([10,11,12,13]).visible(false);
+                table4.columns([14,15,16,17]).visible(false);
+                table4.columns([18,19,20,21]).visible(true);
                 $('.pf1').hide();
                 $('.pf2').hide();
                 $('.pf3').hide();
@@ -611,8 +611,8 @@ $(document).ready(function() {
 
     $(document).ready(function(){
         $(".btnrefresh").click(function(){
-            $("#filterForm")[0].reset()
-            
+            $("#filterForm").trigger("reset");
+            $('#dataTable').DataTable().search('').draw();
         });
     });
 
@@ -623,11 +623,15 @@ $(document).ready(function() {
             } );
     });
 
+
     $('#dataTable').dataTable( {    
         "bInfo" : false,
         "pageLength": 10,
         "lengthChange": false,
-        "scrollX": false,
+        //"dom": 'Bfrtip',
+        // "buttons": [
+        //     'copy', 'csv', 'excel', 'pdf', 'print'
+        // ],
         "language": {
             "paginate": {
                 "previous": "Trước",

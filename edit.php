@@ -126,7 +126,7 @@
                     </div>
 
 
-                    <input type="hidden" class="form-control" name="job_id" 
+                    <!-- <input type="hidden" class="form-control" name="job_id" 
                         value="<?php foreach($value["job_name"] as $subkey2 => $subvalue2): ?>
                                 <?php echo $subvalue2['job_id']?>
                                 <?php endforeach; ?>">
@@ -165,7 +165,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
 
 
                     <hr style="border: 2px solid #e6e9ee;background-color:#e6e9ee;margin-top:5px;margin-bottom:25px">
@@ -239,7 +239,7 @@
                     <hr style="border: 2px solid #e6e9ee;background-color:#e6e9ee;margin-top:10px">
                     <div class="row">
                         <div class="col-xl-6">
-                            <div class="form-group editcurd_tablefb">
+                            <div class="form-group editcurd_tablefb" id="mylist">
                                 <label style="color:#1877F2;font-weight:bold;">Sow facebook</label>
                                 <?php foreach($value["sowfb_name"] as $subkey => $subvalue): ?>
                                 <input type="hidden" class="form-control" name="sowfb_id" value="<?php echo $subvalue['sowfb_id']; ?>">
@@ -263,9 +263,6 @@
                                             <div class="col-xl-2" style="padding-top:8px">
                                                 <span class="minusinput removefb row<?php echo $count?>" data-row="row<?php echo $count?>"><i class="fas fa-times"></i></span>
                                             </div>
-                                            <!-- <div class="input-group-append">                                   
-                                                <button class="btn btnminus removefb row<?php echo $count?>" data-row="row<?php echo $count?>" type="button"><i class='fas fa-minus-circle'></i></button>
-                                            </div> -->
                                         </div>
                                         <?php endforeach; ?>
                                     </div>
@@ -273,7 +270,6 @@
                                 <?php endforeach; ?>
                             </div>
                             <span class="plusinput editfb"><i class="fas fa-plus"></i> Thêm sow</span>
-                            <!-- <button class="btn btnplus editfb" type="button"><i class="fas fa-plus-circle"></i></button> -->
                         </div>
                         <div class="col-xl-6">
                             <div class="form-group editcurd_tableins">
@@ -444,13 +440,9 @@
 
 
 
-
-
-
-                    
-            
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <!--button type="submit" class="btn btn-info" name="editkol">Save</button-->
                         <button type="submit" class="btn btn-info" name="editkol">Save</button>
                     </div>
                 </form>

@@ -15,11 +15,11 @@
         $kol_mail = $_POST['kol_mail'];
         $kol_tel = $_POST['kol_tel'];
         $kol_img = $_FILES['kol_img']['name'];
-        $job_name = implode(",",$_POST['job_name']);
         $kol_gender = $_POST['kol_gender'];
         $kol_location = $_POST['kol_location'];
         $kol_address = $_POST['kol_address'];
-        $company_name = implode(",",$_POST['company_name']);
+        // $job_name = implode(",",$_POST['job_name']);
+        // $company_name = implode(",",$_POST['company_name']);
 
         $link_yt = $_POST['link_yt'];
         $link_fb = $_POST['link_fb'];
@@ -69,11 +69,11 @@
                 WHERE kol_id = '$id'";
         $query1 = mysqli_query($connection,$sql1);
 
-        $sql2 = "UPDATE kol_job SET job_name='$job_name' WHERE job_id='$job_id'";
-        $query2 = mysqli_query($connection,$sql2);
+        // $sql2 = "UPDATE kol_job SET job_name='$job_name' WHERE job_id='$job_id'";
+        // $query2 = mysqli_query($connection,$sql2);
 
-        $sql3 = "UPDATE kol_company SET company_name='$company_name' WHERE company_id='$company_id'";
-        $query3 = mysqli_query($connection,$sql3);
+        // $sql3 = "UPDATE kol_company SET company_name='$company_name' WHERE company_id='$company_id'";
+        // $query3 = mysqli_query($connection,$sql3);
         
 
         $sql4 = "UPDATE kol_sowfb SET sowfb_name='$sowfb_name',ratefb='$ratefb' WHERE sowfb_id='$sowfb_id'";
@@ -101,7 +101,7 @@
         $sql11 = "UPDATE post_yt SET postyt_link1='$in_yt1',postyt_link2='$in_yt2',postyt_link3='$in_yt3',postyt_link4='$in_yt4',postyt_link5='$in_yt5' WHERE postyt_id='$postyt_id'";
         $query11 = mysqli_query($connection,$sql11);
 
-        if($query1 && $query2 && $query3 && $query4 && $query5 && $query6 && $query7 && $query8 && $query9 && $query10 && $query11){
+        if($query1 && $query4 && $query5 && $query6 && $query7 && $query8 && $query9 && $query10 && $query11){
             move_uploaded_file($_FILES['kol_img']['tmp_name'], "upload/".$_FILES['kol_img']['name']);
             $_SESSION['success_edit'] = "KOL Edited";
             header('Location: index.php');
