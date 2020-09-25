@@ -1,5 +1,6 @@
 <?php
-    $sql = "SELECT kol_info.kol_id,kol_info.kol_name,kol_info.kol_img,kol_info.kol_gender,kol_info.link_fb,kol_info.link_ins,kol_info.link_yt,kol_info.kol_tel,kol_info.kol_mail,kol_info.kol_note,kol_info.kol_address,kol_info.kol_location,
+    $sql = "SELECT kol_info.kol_id,kol_info.kol_name,kol_info.kol_img,kol_info.kol_gender,kol_info.link_fb,kol_info.link_ins,kol_info.link_yt,kol_info.kol_tel,
+                   kol_info.kol_mail,kol_info.kol_note,kol_info.kol_address,kol_info.kol_location,kol_info.kol_job,kol_info.kol_company,
                 --    kol_job.job_id,kol_job.job_name,
                 --    kol_company.company_id,kol_company.company_name,
                    kol_sowfb.sowfb_id,kol_sowfb.sowfb_name,kol_sowfb.ratefb,
@@ -32,6 +33,10 @@
         $data[$row["kol_id"]]["kol_name"] = $row["kol_name"];
 
         $data[$row["kol_id"]]["kol_img"] = $row["kol_img"];
+
+        $data[$row["kol_id"]]["kol_job"] = $row["kol_job"];
+
+        $data[$row["kol_id"]]["kol_company"] = $row["kol_company"];
 
         // $data[$row["kol_id"]]["job_name"][$row["job_id"]] = array(
         //     "job_name" => $row["job_name"],

@@ -5,8 +5,8 @@
 
     if(isset($_POST['editkol'])){
         $id = $_POST['kol_id'];
-        $job_id = $_POST['job_id'];
-        $company_id = $_POST['company_id'];
+        // $job_id = $_POST['job_id'];
+        // $company_id = $_POST['company_id'];
         $note_id = $_POST['note_id'];
         $postfb_id = $_POST['postfb_id'];
         $postins_id = $_POST['postins_id'];
@@ -18,8 +18,8 @@
         $kol_gender = $_POST['kol_gender'];
         $kol_location = $_POST['kol_location'];
         $kol_address = $_POST['kol_address'];
-        // $job_name = implode(",",$_POST['job_name']);
-        // $company_name = implode(",",$_POST['company_name']);
+        $job_name = $_POST['job_name'];
+        $company_name = $_POST['company_name'];
 
         $link_yt = $_POST['link_yt'];
         $link_fb = $_POST['link_fb'];
@@ -65,7 +65,8 @@
 
         $kol_note = $_POST['kol_note'];
 
-        $sql1 = "UPDATE kol_info SET kol_name='$kol_name',kol_mail='$kol_mail',kol_tel='$kol_tel',kol_address='$kol_address',kol_location='$kol_location',kol_img='$kol_img',kol_gender='$kol_gender',link_fb='$link_fb',link_ins='$link_ins',link_yt='$link_yt',kol_note='$kol_note'
+        $sql1 = "UPDATE kol_info SET kol_name='$kol_name',kol_mail='$kol_mail',kol_tel='$kol_tel',kol_address='$kol_address',kol_location='$kol_location',kol_img='$kol_img',kol_gender='$kol_gender',
+                link_fb='$link_fb',link_ins='$link_ins',link_yt='$link_yt',kol_note='$kol_note',kol_job='$job_name',kol_company='$company_name'
                 WHERE kol_id = '$id'";
         $query1 = mysqli_query($connection,$sql1);
 

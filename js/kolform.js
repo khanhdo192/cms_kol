@@ -1,24 +1,24 @@
-// $(document).ready(function(){
-//     $('#jobfield').tokenfield({
-//         autocomplete: {
-//             source: ['Singer','Actor','Influencer','Youtuber','Family','Comedy','Music'],
-//             delay: 100
-//         },
-//         showAutocompleteOnFocus: true,            
+$(document).ready(function(){
+    $('#jobfield').tokenfield({
+        autocomplete: {
+            source: ['Singer','Actor','Influencer','Youtuber','Family','Comedy','Music'],
+            delay: 100
+        },
+        showAutocompleteOnFocus: true,            
             
-//   });
-//});
+  });
+});
 
-// $(document).ready(function(){
-//     $('#companyfield').tokenfield({
-//         autocomplete: {
-//             source: ['Bread n tea','Actor','Influencer','Youtuber','Family','Comedy','Music'],
-//             delay: 100
-//         },
-//         showAutocompleteOnFocus: true,            
+$(document).ready(function(){
+    $('#companyfield').tokenfield({
+        autocomplete: {
+            source: ['Bread n tea','Actor','Influencer','Youtuber','Family','Comedy','Music'],
+            delay: 100
+        },
+        showAutocompleteOnFocus: true,            
             
-//   });
-// });
+  });
+});
 
 
 $(document).ready(function() {
@@ -623,7 +623,6 @@ $(document).ready(function() {
             } );
     });
 
-
     $('#dataTable').dataTable( {    
         "bInfo" : false,
         "pageLength": 10,
@@ -637,6 +636,87 @@ $(document).ready(function() {
                 "previous": "Trước",
                 "next": "Sau",
             }
+        },
+        'columnDefs': [
+            { "width": "220px", "targets": 0 },
+            { "width": "80px", "targets": 24 },
+            { "width": "100px", "targets": 2 },
+            { "width": "100px", "targets": 3 },
+            { "width": "180px", "targets": 4 },
+            { "width": "90px", "targets": 5 },
+            { "width": "100px", "targets": 6 },
+            { "width": "100px", "targets": 7 },
+            { "width": "180px", "targets": 8 },
+            { "width": "90px", "targets": 9 },
+            { "width": "100px", "targets": 10 },
+            { "width": "100px", "targets": 11 },
+            { "width": "180px", "targets": 12 },
+            { "width": "90px", "targets": 13 },
+            { "width": "100px", "targets": 14 },
+            { "width": "100px", "targets": 15 },
+            { "width": "180px", "targets": 16 },
+            { "width": "90px", "targets": 17 },
+            { "width": "100px", "targets": 18 },
+            { "width": "100px", "targets": 19 },
+            { "width": "180px", "targets": 20 },
+            { "width": "90px", "targets": 21 },
+            { "width": "60px", "targets": 22 },
+            { "width": "30px", "targets": 25 },
+            {
+               'targets': 26,
+               'checkboxes': {
+                  'selectRow': true
+               }
+            }
+         ],
+         'select': {
+            'style': 'multi'
+         },
+         'order': [[1, 'asc']],
+
+
+        'dom': 'Bfrtip',
+
+
+                'buttons': [
+                    {
+                        'extend': 'pdfHtml5',
+                        'className': 'btn btn-success',
+                        'text': 'PDF',
+                        'exportOptions': {
+                            'columns': [0,1,2,3,4,5,22,23,24],
+                            'modifier': {
+                                'selected': true
+                            }
+                        },
+                        'title': 'Kol PDF'
+                    }, 
+                    {
+                        'extend': 'excelHtml5',
+                        'className': 'btn btn-success',
+                        'text': 'EXCEL',
+                        'exportOptions': {
+                            'columns': [0,1,2,3,4,5,22,23,24],
+                            'modifier': {
+                                'selected': true
+                            }
+                        },
+                        'title': 'Kol Excel'
+                    },
+                ],
+              
+
+        initComplete: function() {
+       	 var $buttons = $('.dt-buttons').hide();
+         $('#exportLink').on('change', function() {
+            var btnClass = $(this).find(":selected")[0].id 
+               ? '.buttons-' + $(this).find(":selected")[0].id 
+               : null;
+            if (btnClass) $buttons.find(btnClass).click(); 
+         })
+        },
+        'select': {
+            'style': 'multi'
         },
     } );
 } );

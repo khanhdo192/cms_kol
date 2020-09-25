@@ -1,24 +1,24 @@
-// $(document).ready(function(){
-//     $('.editjobfield').tokenfield({
-//         autocomplete: {
-//             source: ['Singer','Actor','Influencer','Youtuber','Family','Comedy','Music'],
-//             delay: 100
-//         },
-//         showAutocompleteOnFocus: true,            
+$(document).ready(function(){
+    $('.editjobfield').tokenfield({
+        autocomplete: {
+            source: ['Singer','Actor','Influencer','Youtuber','Family','Comedy','Music'],
+            delay: 100
+        },
+        showAutocompleteOnFocus: true,            
             
-//   });
-// });
+  });
+});
 
-// $(document).ready(function(){
-//     $('.editcompanyfield').tokenfield({
-//         autocomplete: {
-//             source: ['Bread n tea','Actor','Influencer','Youtuber','Family','Comedy','Music'],
-//             delay: 100
-//         },
-//         showAutocompleteOnFocus: true,            
+$(document).ready(function(){
+    $('.editcompanyfield').tokenfield({
+        autocomplete: {
+            source: ['Bread n tea','Actor','Influencer','Youtuber','Family','Comedy','Music'],
+            delay: 100
+        },
+        showAutocompleteOnFocus: true,            
             
-//   });
-// });
+  });
+});
 
 $(document).ready(function() {
 	

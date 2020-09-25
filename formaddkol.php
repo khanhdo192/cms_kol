@@ -125,7 +125,7 @@
 
 
 
-                    <!-- <div class="row">
+                    <div class="row">
                         <div class="col-xl-6">
                             <div class="form-group">
                                 <div class="row">
@@ -133,7 +133,7 @@
                                         <label style="font-weight:bold;">Lĩnh vực</label>
                                     </div>
                                     <div class="col-xl-10">
-                                        <input type="text" class="form-control" id="jobfield" name="job_name[]">
+                                        <input type="text" class="form-control" id="jobfield" name="job_name">
                                     </div>
                                 </div>                               
                             </div>
@@ -145,12 +145,12 @@
                                         <label style="font-weight:bold;">Công ty</label>
                                     </div>
                                     <div class="col-xl-10">
-                                        <input type="text" class="form-control" id="companyfield" name="company_name[]">
+                                        <input type="text" class="form-control" id="companyfield" name="company_name">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
                     <hr style="border: 2px solid #e6e9ee;background-color:#e6e9ee;margin-top:5px;margin-bottom:25px">
 

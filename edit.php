@@ -126,14 +126,8 @@
                     </div>
 
 
-                    <!-- <input type="hidden" class="form-control" name="job_id" 
-                        value="<?php foreach($value["job_name"] as $subkey2 => $subvalue2): ?>
-                                <?php echo $subvalue2['job_id']?>
-                                <?php endforeach; ?>">
-                    <input type="hidden" class="form-control" name="company_id" 
-                        value="<?php foreach($value["company_name"] as $subkey7 => $subvalue7): ?>
-                                <?php echo $subvalue7['company_id']?>
-                                <?php endforeach; ?>">
+                    <input type="hidden" class="form-control" name="job_id" >
+                    <input type="hidden" class="form-control" name="company_id" >
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="form-group">
@@ -142,10 +136,7 @@
                                         <label>Lĩnh vực</label>
                                     </div>
                                     <div class="col-xl-10">
-                                        <input type="text" class="form-control editjobfield" name="job_name[]"
-                                            value="<?php foreach($value["job_name"] as $subkey2 => $subvalue2): ?>
-                                                <?php echo $subvalue2['job_name']?>
-                                                <?php endforeach; ?>">
+                                        <input type="text" class="form-control editjobfield" name="job_name" value="<?php echo $value['kol_job']?>">
                                     </div>
                                 </div>                               
                             </div>
@@ -157,15 +148,12 @@
                                         <label>Công ty</label>
                                     </div>
                                     <div class="col-xl-10">
-                                        <input type="text" class="form-control editcompanyfield" name="company_name[]"
-                                            value="<?php foreach($value["company_name"] as $subkey7 => $subvalue7): ?>
-                                                    <?php echo $subvalue7['company_name']?>
-                                                    <?php endforeach; ?>">
+                                        <input type="text" class="form-control editcompanyfield" name="company_name" value="<?php echo $value['kol_company']?>">
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div> -->
+                    </div>
 
 
                     <hr style="border: 2px solid #e6e9ee;background-color:#e6e9ee;margin-top:5px;margin-bottom:25px">

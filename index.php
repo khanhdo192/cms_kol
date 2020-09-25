@@ -43,48 +43,56 @@
             <div class="card mb-4 cardtable">
             <div class="card-body">
                 <div class="table-responsive">
-                <table class="table tablekol" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-xl-7 col-lg-12">
-                                    <div class="input-group">
-                                        <input type="text" id="searchbox" class="form-control" placeholder="Tìm kiếm Kol theo tên, ảnh hưởng, sow ...">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-info btnsearch" type="button"><i class="fas fa-search"></i></button>
-                                        </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-12">
+                                <div class="input-group">
+                                    <input type="text" id="searchbox" class="form-control" placeholder="Tìm kiếm Kol theo tên, ảnh hưởng, sow ...">
+                                    <div class="input-group-append">
+                                        <button class="btn btn-info btnsearch" type="button"><i class="fas fa-search"></i></button>
                                     </div>
                                 </div>
-                                <div class="col-xl-5 col-lg-12">
-                                    <label style="color:#000;font-weight:bold;padding-left:50px;padding-right:10px;">Platform</label>
-                                    <button style="margin-right:5px;" id="fbshow" class="btn btnfb" type="button"><i class="fab fa-facebook-square"></i></button>
-                                    <button style="margin-right:5px;" id="inshow" class="btn btnins" type="button"><i class="fab fa-instagram"></i></button>
-                                    <button style="margin-right:5px;" id="ytshow" class="btn btnyt" type="button"><i class="fab fa-youtube-square"></i></button>
-                                    <button style="margin-right:5px;" id="tkshow" class="btn btntk" type="button"><i class="fab fa-tiktok"></i></button>
-                                    <button style="margin-right:5px;" id="otshow" class="btn btnot" type="button"><i class="fas fa-ad"></i></button>
+                            </div>
+                            <div class="col-xl-6 col-lg-12">
+                                <div class="row float-right">
+                                <label style="color:#000;font-weight:bold;padding-right:15px;padding-top:5px;">Platform</label>
+                                <button style="margin-right:8px;" id="fbshow" class="btn btnfb" type="button"><i class="fab fa-facebook-square"></i></button>
+                                <button style="margin-right:8px;" id="inshow" class="btn btnins" type="button"><i class="fab fa-instagram"></i></button>
+                                <button style="margin-right:8px;" id="ytshow" class="btn btnyt" type="button"><i class="fab fa-youtube-square"></i></button>
+                                <button style="margin-right:8px;" id="tkshow" class="btn btntk" type="button"><i class="fab fa-tiktok"></i></button>
+                                <button style="margin-right:8px;" id="otshow" class="btn btnot" type="button"><i class="fas fa-ad"></i></button>
+                                <select style="margin-right:12px;width:100px;font-weight:bold;" class="form-control" id="exportLink">
+                                    <option>Export</option>
+                                    <option id="pdf">PDF</option>
+                                    <option id="excel">Excel</option>                                     
+                                </select>
+                         
                                 </div>
                             </div>
-                            <?php
-                                if(isset($_SESSION['success']) && $_SESSION['success'] !=''){
-                                    echo '<p> '.$_SESSION['success'].' </p>';
-                                    unset($_SESSION['success']);
-                                }
-                                if(isset($_SESSION['fail']) && $_SESSION['fail'] !=''){
-                                    echo '<p> '.$_SESSION['fail'].' </p>';
-                                    unset($_SESSION['fail']);
-                                }
-                            ?>
-                            <?php
-                                if(isset($_SESSION['success_edit']) && $_SESSION['success_edit'] !=''){
-                                    echo '<p> '.$_SESSION['success_edit'].' </p>';
-                                    unset($_SESSION['success_edit']);
-                                }
-                                if(isset($_SESSION['fail_edit']) && $_SESSION['fail_edit'] !=''){
-                                    echo '<p> '.$_SESSION['fail_edit'].' </p>';
-                                    unset($_SESSION['fail_edit']);
-                                }
-                            ?>
                         </div>
+                        <?php
+                            if(isset($_SESSION['success']) && $_SESSION['success'] !=''){
+                                echo '<p> '.$_SESSION['success'].' </p>';
+                                unset($_SESSION['success']);
+                            }
+                            if(isset($_SESSION['fail']) && $_SESSION['fail'] !=''){
+                                echo '<p> '.$_SESSION['fail'].' </p>';
+                                unset($_SESSION['fail']);
+                            }
+                        ?>
+                        <?php
+                            if(isset($_SESSION['success_edit']) && $_SESSION['success_edit'] !=''){
+                                echo '<p> '.$_SESSION['success_edit'].' </p>';
+                                unset($_SESSION['success_edit']);
+                            }
+                            if(isset($_SESSION['fail_edit']) && $_SESSION['fail_edit'] !=''){
+                                echo '<p> '.$_SESSION['fail_edit'].' </p>';
+                                unset($_SESSION['fail_edit']);
+                            }
+                        ?>
+                </div>
+                <table class="table tablekol" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
                     <tr>
                         <th>Tên+Lĩnh vực</th>
                         <th data-sortable="false"></th>
@@ -118,6 +126,7 @@
                         <th data-sortable="false">Miền</th>
                         <th data-sortable="false">Lưu ý</th>
                         <th data-sortable="false"></th>
+                        <th data-sortable="false"></th>
                     </tr>
                     </thead>
                     <tbody id="dataTable2">
@@ -131,7 +140,7 @@
                                 </div>
                                 <div class="col-xl-8 col-sm-12">
                                     <p class="nametag"><?php echo $value['kol_name'];?></p>
-                                                                           
+                                    <span class="badge badge-info"><?php echo $value['kol_job'];?></span>                                      
                                 </div>
                             </div>                                   
                         </td>
@@ -156,7 +165,7 @@
                         </td>
                         <td>
                         <?php foreach($value["sowfb_name"] as $subkey => $subvalue): ?>
-                        <?php $sow = explode(PHP_EOL,$subvalue['sowfb_name']);?>     
+                        <?php $sow = array_slice(explode(PHP_EOL,$subvalue['sowfb_name']),0,3);?>     
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
@@ -168,7 +177,7 @@
                         </td>
                         <td>
                         <?php foreach($value["sowfb_name"] as $subkey => $subvalue): ?>
-                        <?php $rate = explode(PHP_EOL,$subvalue['ratefb']);?>
+                        <?php $rate = array_slice(explode(PHP_EOL,$subvalue['ratefb']),0,3);?>
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
@@ -196,7 +205,7 @@
                         </td>
                         <td>
                         <?php foreach($value["sowins_name"] as $subkeyins => $subvalueins): ?>
-                        <?php $sow = explode(PHP_EOL,$subvalueins['sowins_name']);?>     
+                        <?php $sow = array_slice(explode(PHP_EOL,$subvalueins['sowins_name']),0,3);?>     
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
@@ -208,7 +217,7 @@
                         </td>
                         <td>
                         <?php foreach($value["sowins_name"] as $subkeyins => $subvalueins): ?>
-                        <?php $rate = explode(PHP_EOL,$subvalueins['rateins']);?>     
+                        <?php $rate = array_slice(explode(PHP_EOL,$subvalueins['rateins']),0,3);?>     
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
@@ -236,7 +245,7 @@
                         </td>
                         <td>
                         <?php foreach($value["sowyt_name"] as $subkeyyt => $subvalueyt): ?>
-                        <?php $sow = explode(PHP_EOL,$subvalueyt['sowyt_name']);?>     
+                        <?php $sow = array_slice(explode(PHP_EOL,$subvalueyt['sowyt_name']),0,3);?>     
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
@@ -248,7 +257,7 @@
                         </td>
                         <td>
                         <?php foreach($value["sowyt_name"] as $subkeyyt => $subvalueyt): ?>
-                        <?php $rate = explode(PHP_EOL,$subvalueyt['rateyt']);?>     
+                        <?php $rate = array_slice(explode(PHP_EOL,$subvalueyt['rateyt']),0,3);?>     
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
@@ -276,7 +285,7 @@
                         </td>
                         <td>
                         <?php foreach($value["sowtk_name"] as $subkeytk => $subvaluetk): ?>
-                        <?php $sow = explode(PHP_EOL,$subvaluetk['sowtk_name']);?>     
+                        <?php $sow = array_slice(explode(PHP_EOL,$subvaluetk['sowtk_name']),0,3);?>     
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
@@ -288,7 +297,7 @@
                         </td>
                         <td>
                         <?php foreach($value["sowtk_name"] as $subkeytk => $subvaluetk): ?>
-                        <?php $rate = explode(PHP_EOL,$subvaluetk['ratetk']);?>     
+                        <?php $rate = array_slice(explode(PHP_EOL,$subvaluetk['ratetk']),0,3);?>     
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
@@ -316,7 +325,7 @@
                         </td>
                         <td>
                         <?php foreach($value["sowoff_name"] as $subkeyoff => $subvalueoff): ?>
-                        <?php $sow = explode(PHP_EOL,$subvalueoff['sowoff_name']);?>   
+                        <?php $sow = array_slice(explode(PHP_EOL,$subvalueoff['sowoff_name']),0,3);?>   
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
@@ -328,7 +337,7 @@
                         </td>
                         <td>
                         <?php foreach($value["sowoff_name"] as $subkeyoff => $subvalueoff): ?>
-                        <?php $rate = explode(PHP_EOL,$subvalueoff['rateoff']);?>     
+                        <?php $rate = array_slice(explode(PHP_EOL,$subvalueoff['rateoff']),0,3);?>     
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
@@ -379,10 +388,7 @@
                                             <button type="button" class="btn btn-primary dropdown-item view-data" data-toggle="modal" data-target="#detailKol<?php echo $value['kol_id']; ?>">
                                                 Detail Kol
                                             </button>
-                                            
-                                            <a class="dropdown-item" target="_blank" href="pdfkol.php?KolID=<?php echo $value['kol_id']?>">
-                                                <div>Download Kol</div>
-                                            </a>
+
                                             <a class="dropdown-item" target="_blank" href="#">
                                                 <div>Kol's contract</div>
                                             </a>
@@ -399,6 +405,7 @@
                                 include('detailkol.php'); 
                             ?>
                         </td>
+                        <td></td>
                     </tr>
                     <?php endforeach; ?>          
                     </tbody>
@@ -593,10 +600,6 @@
             </div>
         </div>
         </form>
-
-        <div class="form-group">
-        <input class="form-control" type="button" value="Excel">
-        </div>
 
 
         </div>

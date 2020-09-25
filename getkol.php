@@ -10,8 +10,8 @@
         $kol_address = $_POST['kol_address'];
         $kol_location = $_POST['kol_location'];
         $kol_img = $_FILES['kol_img']['name'];
-        // $company_name = implode(",",$_POST['company_name']);
-        // $job_name = implode(",",$_POST['job_name']);
+        $company_name = $_POST['company_name'];
+        $job_name = $_POST['job_name'];
         $kol_gender = $_POST['kol_gender'];
         $link_yt = $_POST['link_yt'];
         $link_fb = $_POST['link_fb'];
@@ -52,8 +52,8 @@
 
         $kol_note = $_POST['kol_note'];
         
-        $sql1 = "INSERT INTO kol_info (kol_name,kol_mail,kol_tel,kol_address,kol_location,kol_img,kol_gender,link_fb,link_ins,link_yt,kol_note)
-                    VALUES ('$kol_name','$kol_mail','$kol_tel','$kol_address','$kol_location','$kol_img','$kol_gender','$link_fb','$link_ins','$link_yt','$kol_note')";
+        $sql1 = "INSERT INTO kol_info (kol_name,kol_mail,kol_tel,kol_address,kol_location,kol_img,kol_gender,link_fb,link_ins,link_yt,kol_note,kol_job,kol_company)
+                    VALUES ('$kol_name','$kol_mail','$kol_tel','$kol_address','$kol_location','$kol_img','$kol_gender','$link_fb','$link_ins','$link_yt','$kol_note','$job_name','$company_name')";
         $query_run1 = mysqli_query($connection,$sql1);
         $id = $connection->insert_id;
 
