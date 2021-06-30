@@ -99,6 +99,9 @@
 .main-table{
     padding-top: 20px;
 }
+#dataTable th{
+    font-size: 12px;
+}
 .tdkol{
     text-align: center;
 }
@@ -120,6 +123,10 @@
 }
 .fa-tags{
     background-color:  #daa458;
+    color: #fff;
+}
+.fa-building{
+    background-color: #fd5949;
     color: #fff;
 }
 .fass{
@@ -166,9 +173,13 @@
     background-color: #fff;
 }
 .nametag{
-    margin-bottom: 5px;
+    margin-bottom: 2px;
     color: #000;
     font-weight: bold;
+    font-size: 10px;
+}
+.tags{
+    font-size: 10px;
 }
 .fa-male{
     color: #1877F2  ;
@@ -182,42 +193,37 @@
     margin-bottom: 5px;
 }
 .api-pf{
-    font-size: 14px;
+    font-size: 12px;
     color: #000;
     font-weight: bold;
-    padding-top: 5px;
     text-align: center;
+    margin-top: 3px;
 }
 .api-pf2{
-    font-size: 14px;
+    font-size: 12px;
     color: #000;
     font-weight: bold;
-    padding-top: 5px;
     text-align: center;
+    margin-top: 3px;
 }
 .api-date{
-    font-size: 13px;
-    margin-top: -5px;
+    font-size: 10px;
     text-align: center;
+    margin-top: -5px;
 }
 .api-date2{
-    font-size: 13px;
-    margin-top: -5px;
+    font-size: 10px;
     text-align: center;
+    margin-top: -5px;
 }
 .sow-rate{
-    padding-top: 2px;
-    
-    font-size: 13px;
+    font-size: 10px;
 }
 .social{
-    padding-top: 10px;
     width: 65px;
 }
 .note{
-    padding-top: 2px;
-    margin-bottom: -22px;
-    font-size: 14px;
+    font-size: 10px;
 }
 .kol-img{
     border-radius: 50%;
@@ -296,7 +302,8 @@
     color: #000;
 }
 .nametag2{
-    font-size: 20px;
+    font-weight: bold;
+    font-size: 15px;
 }
 .rowdetail3{
     padding-top: 10px;
@@ -362,7 +369,7 @@
     margin-top: -10px;
 }
 .fa-redo-alt{
-    font-size: 20px;
+    font-size: 15px;
     margin: -5px;
     margin-top: 1px;
 }
@@ -395,6 +402,12 @@
 .p-filter{
     color: #000;
     font-weight: bold;
+    font-size: 12px;
+}
+.p-checkbox{
+    color: #000;
+    font-weight: bold;
+    font-size: 10px;
 }
 .avatar-wrapper{
 	position: relative;
@@ -480,6 +493,11 @@
     top: 110px;
     left: 40px;
 }
-    
-
-
+.inputform{
+    color:#000;
+}   
+@media (min-width: 768px) {
+    .sidebar {
+      width: 10.5rem !important;
+    }
+}

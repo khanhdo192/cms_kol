@@ -17,6 +17,9 @@
         </button>
       </div>
       <div class="modal-body">
+
+
+
         <form action="" method="POST">
             <div class="form-group">
                 <label for="exampleInputEmail1">Username</label>
@@ -29,9 +32,10 @@
             <div class="form-group">
                 <label for="exampleInputPassword1">Role</label>
                 <select class="form-control" name="role">
-                    <option>Admin</option>
-                    <option>Employee</option>
-                    <option>User</option>
+                    <option value="Super Admin">Super Admin</option>
+                    <option value="Admin">Admin</option>
+                    <option value="Employee">Employee</option>
+                    <option value="Visitor">Visitor</option>
                 </select>
             </div>
             <div class="modal-footer">
@@ -39,6 +43,9 @@
                 <button type="submit" class="btn btn-primary" name="getuser">Submit</button>
             </div>
         </form>
+
+
+        
       </div>
     </div>
   </div>

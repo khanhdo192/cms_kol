@@ -16,40 +16,40 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xl-2 mt-2">
-                                        <label>Tên Kol</label>
+                                        <label style="font-weight:bold;color:#000;">Tên Kol</label>
                                     </div>
                                     <div class="col-xl-10">
-                                        <input type="name" class="form-control" name="kol_name" placeholder="KOL name" value="<?php echo $value['kol_name']?>" required>
+                                        <input type="name" class="form-control inputform" name="kol_name" placeholder="KOL name" value="<?php echo $value['kol_name']?>" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xl-2 mt-2">
-                                        <label>Phone</label>
+                                        <label style="font-weight:bold;color:#000;">Phone</label>
                                     </div>
                                     <div class="col-xl-10">
-                                        <input type="tel" class="form-control" name="kol_tel" placeholder="Phone" pattern="[0-9]{1,15}" value="<?php echo $value['kol_tel']?>" required>
+                                        <input type="tel" class="form-control inputform" name="kol_tel" placeholder="Phone" pattern="[0-9]{1,15}" value="<?php echo $value['kol_tel']?>" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xl-2 mt-2">
-                                        <label>Email</label>
+                                        <label style="font-weight:bold;color:#000;">Email</label>
                                     </div>
                                     <div class="col-xl-10">
-                                        <input type="email" class="form-control" name="kol_mail" placeholder="Email" value="<?php echo $value['kol_mail']?>" required>
+                                        <input type="email" class="form-control inputform" name="kol_mail" placeholder="Email" value="<?php echo $value['kol_mail']?>" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xl-2 mt-2">
-                                        <label>Address</label>
+                                        <label style="font-weight:bold;color:#000;">Address</label>
                                     </div>
                                     <div class="col-xl-10">
-                                        <input type="text" class="form-control" name="kol_address" placeholder="Address" value="<?php echo $value['kol_address']?>" required>
+                                        <input type="text" class="form-control inputform" name="kol_address" placeholder="Address" value="<?php echo $value['kol_address']?>" required>
                                     </div>
                                 </div>
                             </div>
@@ -77,7 +77,7 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xl-2">
-                                        <label>Location</label>
+                                        <label style="font-weight:bold;color:#000;">Location</label>
                                     </div>
                                     <div class="col-xl-10">
                                         <div class="form-check form-check-inline">
@@ -100,7 +100,7 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xl-2">
-                                        <label>Giới tính</label>
+                                        <label style="font-weight:bold;color:#000;">Giới tính</label>
                                     </div>
                                     <div class="col-xl-10">
                                         <div class="form-check form-check-inline">
@@ -133,10 +133,10 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xl-2 mt-2">
-                                        <label>Lĩnh vực</label>
+                                        <label style="font-weight:bold;color:#000;">Lĩnh vực</label>
                                     </div>
                                     <div class="col-xl-10">
-                                        <input type="text" class="form-control editjobfield" name="job_name" value="<?php echo $value['kol_job']?>">
+                                        <input type="text" class="form-control editjobfield inputform" name="job_name" value="<?php echo $value['kol_job']?>">
                                     </div>
                                 </div>                               
                             </div>
@@ -145,10 +145,10 @@
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-xl-2 mt-2">
-                                        <label>Công ty</label>
+                                        <label style="font-weight:bold;color:#000;">Công ty</label>
                                     </div>
                                     <div class="col-xl-10">
-                                        <input type="text" class="form-control editcompanyfield" name="company_name" value="<?php echo $value['kol_company']?>">
+                                        <input type="text" class="form-control editcompanyfield inputform" name="company_name" value="<?php echo $value['kol_company']?>">
                                     </div>
                                 </div>
                             </div>
@@ -165,18 +165,18 @@
                                     <div class="input-group-prepend">
                                         <button class="btn btnfb" type="button"><i class="fab fa-facebook-square"></i></button>
                                     </div>
-                                    <input type="text" class="form-control" name="link_fb" placeholder="Link . . ." value="<?php echo $value['link_fb']?>">
+                                    <input type="text" class="form-control inputform" name="link_fb" placeholder="Link . . ." value="<?php echo $value['link_fb']?>">
                                 </div>
                             </div>
                             <div class="form-group" id="postfb">
-                                <label>Tương tác Facebook</label>
+                                <label style="font-weight:bold;color:#000;">Tương tác Facebook</label>
                                 <?php foreach($value["postfb_link1"] as $subkey4 => $subvalue4): ?>
                                 <input type="hidden" class="form-control" name="postfb_id" value="<?php echo $subvalue4['postfb_id']; ?>">
-                                <input type="text" class="form-control" name="in_fb1" placeholder="Link ..." value="<?php echo $subvalue4['postfb_link1'] ?>">
-                                <input type="text" class="form-control" name="in_fb2" placeholder="Link ..." value="<?php echo $subvalue4['postfb_link2'] ?>">
-                                <input type="text" class="form-control" name="in_fb3" placeholder="Link ..." value="<?php echo $subvalue4['postfb_link3'] ?>">
-                                <input type="text" class="form-control" name="in_fb4" placeholder="Link ..." value="<?php echo $subvalue4['postfb_link4'] ?>">
-                                <input type="text" class="form-control" name="in_fb5" placeholder="Link ..." value="<?php echo $subvalue4['postfb_link5'] ?>">
+                                <input type="text" class="form-control inputform" name="in_fb1" placeholder="Link ..." value="<?php echo $subvalue4['postfb_link1'] ?>">
+                                <input type="text" class="form-control inputform" name="in_fb2" placeholder="Link ..." value="<?php echo $subvalue4['postfb_link2'] ?>">
+                                <input type="text" class="form-control inputform" name="in_fb3" placeholder="Link ..." value="<?php echo $subvalue4['postfb_link3'] ?>">
+                                <input type="text" class="form-control inputform" name="in_fb4" placeholder="Link ..." value="<?php echo $subvalue4['postfb_link4'] ?>">
+                                <input type="text" class="form-control inputform" name="in_fb5" placeholder="Link ..." value="<?php echo $subvalue4['postfb_link5'] ?>">
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -186,18 +186,18 @@
                                     <div class="input-group-prepend">
                                         <button class="btn btnins" type="button"><i class="fab fa-instagram"></i></button>
                                     </div>
-                                    <input type="text" class="form-control" name="link_ins" placeholder="Link . . ." value="<?php echo $value['link_ins']?>">
+                                    <input type="text" class="form-control inputform" name="link_ins" placeholder="Link . . ." value="<?php echo $value['link_ins']?>">
                                 </div>
                             </div>
                             <div class="form-group" id="postins">
-                                <label>Tương tác Instagram</label>
+                                <label style="font-weight:bold;color:#000;">Tương tác Instagram</label>
                                 <?php foreach($value["postins_link1"] as $subkey5 => $subvalue5): ?>
                                 <input type="hidden" class="form-control" name="postins_id" value="<?php echo $subvalue5['postins_id']; ?>">                      
-                                <input type="text" class="form-control" name="in_ins1" placeholder="Link ..." value="<?php echo $subvalue5['postins_link1']; ?>">
-                                <input type="text" class="form-control" name="in_ins2" placeholder="Link ..." value="<?php echo $subvalue5['postins_link2']; ?>">
-                                <input type="text" class="form-control" name="in_ins3" placeholder="Link ..." value="<?php echo $subvalue5['postins_link3']; ?>">
-                                <input type="text" class="form-control" name="in_ins4" placeholder="Link ..." value="<?php echo $subvalue5['postins_link4']; ?>">
-                                <input type="text" class="form-control" name="in_ins5" placeholder="Link ..." value="<?php echo $subvalue5['postins_link5']; ?>">
+                                <input type="text" class="form-control inputform" name="in_ins1" placeholder="Link ..." value="<?php echo $subvalue5['postins_link1']; ?>">
+                                <input type="text" class="form-control inputform" name="in_ins2" placeholder="Link ..." value="<?php echo $subvalue5['postins_link2']; ?>">
+                                <input type="text" class="form-control inputform" name="in_ins3" placeholder="Link ..." value="<?php echo $subvalue5['postins_link3']; ?>">
+                                <input type="text" class="form-control inputform" name="in_ins4" placeholder="Link ..." value="<?php echo $subvalue5['postins_link4']; ?>">
+                                <input type="text" class="form-control inputform" name="in_ins5" placeholder="Link ..." value="<?php echo $subvalue5['postins_link5']; ?>">
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -207,18 +207,18 @@
                                     <div class="input-group-prepend">
                                         <button class="btn btnyt" type="button"><i class="fab fa-youtube-square"></i></button>
                                     </div>
-                                    <input type="text" class="form-control" name="link_yt" placeholder="Link . . ." value="<?php echo $value['link_yt']?>">
+                                    <input type="text" class="form-control inputform" name="link_yt" placeholder="Link . . ." value="<?php echo $value['link_yt']?>">
                                 </div>
                             </div>
                             <div class="form-group" id="postyt">
-                                <label>Tương tác Youtube</label>
+                                <label style="font-weight:bold;color:#000;">Tương tác Youtube</label>
                                 <?php foreach($value["postyt_link1"] as $subkey6 => $subvalue6): ?>
                                 <input type="hidden" class="form-control" name="postyt_id" value="<?php echo $subvalue6['postyt_id']; ?>">                        
-                                <input type="text" class="form-control" name="in_yt1" placeholder="Link ..." value="<?php echo $subvalue6['postyt_link1']; ?>">
-                                <input type="text" class="form-control" name="in_yt2" placeholder="Link ..." value="<?php echo $subvalue6['postyt_link2']; ?>">
-                                <input type="text" class="form-control" name="in_yt3" placeholder="Link ..." value="<?php echo $subvalue6['postyt_link3']; ?>">
-                                <input type="text" class="form-control" name="in_yt4" placeholder="Link ..." value="<?php echo $subvalue6['postyt_link4']; ?>">
-                                <input type="text" class="form-control" name="in_yt5" placeholder="Link ..." value="<?php echo $subvalue6['postyt_link5']; ?>">
+                                <input type="text" class="form-control inputform" name="in_yt1" placeholder="Link ..." value="<?php echo $subvalue6['postyt_link1']; ?>">
+                                <input type="text" class="form-control inputform" name="in_yt2" placeholder="Link ..." value="<?php echo $subvalue6['postyt_link2']; ?>">
+                                <input type="text" class="form-control inputform" name="in_yt3" placeholder="Link ..." value="<?php echo $subvalue6['postyt_link3']; ?>">
+                                <input type="text" class="form-control inputform" name="in_yt4" placeholder="Link ..." value="<?php echo $subvalue6['postyt_link4']; ?>">
+                                <input type="text" class="form-control inputform" name="in_yt5" placeholder="Link ..." value="<?php echo $subvalue6['postyt_link5']; ?>">
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -228,7 +228,7 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="form-group editcurd_tablefb" id="mylist">
-                                <label style="color:#1877F2;font-weight:bold;">Sow facebook</label>
+                                <label style="color:#1877F2;font-weight:bold;">Sow Facebook</label>
                                 <?php foreach($value["sowfb_name"] as $subkey => $subvalue): ?>
                                 <input type="hidden" class="form-control" name="sowfb_id" value="<?php echo $subvalue['sowfb_id']; ?>">
                                 <?php $sown = explode(PHP_EOL,$subvalue['sowfb_name']);
@@ -238,7 +238,7 @@
                                     <div class="col-xl-7">
                                         <?php foreach($sown as $sowns):
                                             $count2--; ?>
-                                        <input type="text" class="form-control row<?php echo $count2?>" name="sowfb_name[]" placeholder="Sow" value="<?php echo $sowns; ?>">
+                                        <input type="text" class="form-control row<?php echo $count2?> inputform" name="sowfb_name[]" placeholder="Sow" value="<?php echo $sowns; ?>">
                                         <?php endforeach; ?>
                                     </div>
                                     <div class="col-xl-5">
@@ -246,10 +246,10 @@
                                         $count--; ?>
                                         <div class="form-row">
                                             <div class="col-xl-10">
-                                                <input type="text" class="form-control row<?php echo $count?>" name="ratefb[]" placeholder="Rate card" value="<?php echo $rates; ?>">  
+                                                <input type="text" class="form-control row<?php echo $count?> inputform" name="ratefb[]" placeholder="Ratecard" value="<?php echo $rates; ?>">  
                                             </div>
-                                            <div class="col-xl-2" style="padding-top:8px">
-                                                <span class="minusinput removefb row<?php echo $count?>" data-row="row<?php echo $count?>"><i class="fas fa-times"></i></span>
+                                            <div class="col-xl-2">
+                                                <span class="minusinput removefb row<?php echo $count?>" data-row="row<?php echo $count?>"><i style="margin-top:10px;" class="fas fa-times"></i></span>
                                             </div>
                                         </div>
                                         <?php endforeach; ?>
@@ -257,11 +257,11 @@
                                 </div>
                                 <?php endforeach; ?>
                             </div>
-                            <span class="plusinput editfb"><i class="fas fa-plus"></i> Thêm sow</span>
+                            <span class="plusinput editfb"><i class="fas fa-plus"></i> Thêm</span>
                         </div>
                         <div class="col-xl-6">
                             <div class="form-group editcurd_tableins">
-                                <label style="color:#d6249f;font-weight:bold;">Sow instagram</label>
+                                <label style="color:#d6249f;font-weight:bold;">Sow Instagram</label>
                                 <?php foreach($value["sowins_name"] as $subkeyins => $subvalueins): ?>
                                 <input type="hidden" class="form-control" name="sowins_id" value="<?php echo $subvalueins['sowins_id']; ?>">
                                 <?php $sown = explode(PHP_EOL,$subvalueins['sowins_name']);
@@ -271,7 +271,7 @@
                                     <div class="col-xl-7">
                                         <?php foreach($sown as $sowns):
                                             $count2--; ?>
-                                        <input type="text" class="form-control row2<?php echo $count2?>" name="sowins_name[]" placeholder="Sow" value="<?php echo $sowns; ?>">
+                                        <input type="text" class="form-control row2<?php echo $count2?> inputform" name="sowins_name[]" placeholder="Sow" value="<?php echo $sowns; ?>">
                                         <?php endforeach; ?>
                                     </div>
                                     <div class="col-xl-5">
@@ -279,10 +279,10 @@
                                         $count--; ?>
                                         <div class="form-row">
                                             <div class="col-xl-10">
-                                                <input type="text" class="form-control row2<?php echo $count?>" name="rateins[]" placeholder="Rate card" value="<?php echo $rates; ?>">  
+                                                <input type="text" class="form-control row2<?php echo $count?> inputform" name="rateins[]" placeholder="Ratecard" value="<?php echo $rates; ?>">  
                                             </div>
-                                            <div class="col-xl-2" style="padding-top:8px">
-                                                <span class="minusinput removeins row2<?php echo $count?>" data-row="row2<?php echo $count?>"><i class="fas fa-times"></i></span>
+                                            <div class="col-xl-2">
+                                                <span class="minusinput removeins row2<?php echo $count?>" data-row="row2<?php echo $count?>"><i style="margin-top:10px;" class="fas fa-times"></i></span>
                                             </div>
                                             <!-- <div class="input-group-append">                                   
                                                 <button class="btn btnminus removeins row2<?php echo $count?>" data-row="row2<?php echo $count?>" type="button"><i class='fas fa-minus-circle'></i></button>
@@ -293,7 +293,7 @@
                                 </div>
                                 <?php endforeach; ?>
                             </div>
-                            <span class="plusinput editins"><i class="fas fa-plus"></i> Thêm sow</span>
+                            <span class="plusinput editins"><i class="fas fa-plus"></i> Thêm</span>
                             <!-- <button class="btn btnplus editins" type="button"><i class="fas fa-plus-circle"></i></button> -->
                         </div>
                     </div>
@@ -304,7 +304,7 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="form-group editcurd_tableyt">
-                                <label style="color:#FE0000;font-weight:bold;">Sow youtube</label>
+                                <label style="color:#FE0000;font-weight:bold;">Sow Youtube</label>
                                 <?php foreach($value["sowyt_name"] as $subkeyyt => $subvalueyt): ?>
                                 <input type="hidden" class="form-control" name="sowyt_id" value="<?php echo $subvalueyt['sowyt_id']; ?>">
                                 <?php $sown = explode(PHP_EOL,$subvalueyt['sowyt_name']);
@@ -314,7 +314,7 @@
                                     <div class="col-xl-7">
                                         <?php foreach($sown as $sowns):
                                             $count2--; ?>
-                                        <input type="text" class="form-control row3<?php echo $count2?>" name="sowyt_name[]" placeholder="Sow" value="<?php echo $sowns; ?>">
+                                        <input type="text" class="form-control row3<?php echo $count2?> inputform" name="sowyt_name[]" placeholder="Sow" value="<?php echo $sowns; ?>">
                                         <?php endforeach; ?>
                                     </div>
                                     <div class="col-xl-5">
@@ -322,10 +322,10 @@
                                         $count--; ?>
                                         <div class="form-row">
                                             <div class="col-xl-10">
-                                                <input type="text" class="form-control row3<?php echo $count?>" name="rateyt[]" placeholder="Rate card" value="<?php echo $rates; ?>">
+                                                <input type="text" class="form-control row3<?php echo $count?> inputform" name="rateyt[]" placeholder="Ratecard" value="<?php echo $rates; ?>">
                                             </div>  
-                                            <div class="col-xl-2" style="padding-top:8px">
-                                                <span class="minusinput removeyt row3<?php echo $count?>" data-row="row3<?php echo $count?>"><i class="fas fa-times"></i></span>
+                                            <div class="col-xl-2">
+                                                <span class="minusinput removeyt row3<?php echo $count?>" data-row="row3<?php echo $count?>"><i style="margin-top:10px;" class="fas fa-times"></i></span>
                                             </div>
                                             <!-- <div class="input-group-append">                                   
                                                 <button class="btn btnminus removeyt row3<?php echo $count?>" data-row="row3<?php echo $count?>" type="button"><i class='fas fa-minus-circle'></i></button>
@@ -336,12 +336,12 @@
                                 </div>
                                 <?php endforeach; ?>
                             </div>
-                            <span class="plusinput edityt"><i class="fas fa-plus"></i> Thêm sow</span>
+                            <span class="plusinput edityt"><i class="fas fa-plus"></i> Thêm</span>
                             <!-- <button class="btn btnplus edityt" type="button"><i class="fas fa-plus-circle"></i></button> -->
                         </div>
                         <div class="col-xl-6">
                             <div class="form-group editcurd_tabletk">
-                                <label style="color:#000;font-weight:bold;">Sow tik tok</label>
+                                <label style="color:#000;font-weight:bold;">Sow TikTok</label>
                                 <?php foreach($value["sowtk_name"] as $subkeytk => $subvaluetk): ?>
                                 <input type="hidden" class="form-control" name="sowtk_id" value="<?php echo $subvaluetk['sowtk_id']; ?>">
                                 <?php $sown = explode(PHP_EOL,$subvaluetk['sowtk_name']);
@@ -351,7 +351,7 @@
                                     <div class="col-xl-7">
                                         <?php foreach($sown as $sowns):
                                             $count2--; ?>
-                                        <input type="text" class="form-control row4<?php echo $count2?>" name="sowtk_name[]" placeholder="Sow" value="<?php echo $sowns; ?>">
+                                        <input type="text" class="form-control row4<?php echo $count2?> inputform" name="sowtk_name[]" placeholder="Sow" value="<?php echo $sowns; ?>">
                                         <?php endforeach; ?>
                                     </div>
                                     <div class="col-xl-5">
@@ -359,10 +359,10 @@
                                         $count--; ?>
                                         <div class="form-row">
                                             <div class="col-xl-10">
-                                                <input type="text" class="form-control row4<?php echo $count?>" name="ratetk[]" placeholder="Rate card" value="<?php echo $rates; ?>"> 
+                                                <input type="text" class="form-control row4<?php echo $count?> inputform" name="ratetk[]" placeholder="Ratecard" value="<?php echo $rates; ?>"> 
                                             </div>
-                                            <div class="col-xl-2" style="padding-top:8px">
-                                                <span class="minusinput removetk row4<?php echo $count?>" data-row="row4<?php echo $count?>"><i class="fas fa-times"></i></span>
+                                            <div class="col-xl-2">
+                                                <span class="minusinput removetk row4<?php echo $count?>" data-row="row4<?php echo $count?>"><i style="margin-top:10px;" class="fas fa-times"></i></span>
                                             </div> 
                                             <!-- <div class="input-group-append">                                   
                                                 <button class="btn btnminus removetk row4<?php echo $count?>" data-row="row4<?php echo $count?>" type="button"><i class='fas fa-minus-circle'></i></button>
@@ -373,7 +373,7 @@
                                 </div>
                                 <?php endforeach; ?>
                             </div>
-                            <span class="plusinput edittk"><i class="fas fa-plus"></i> Thêm sow</span>
+                            <span class="plusinput edittk"><i class="fas fa-plus"></i> Thêm</span>
                             <!-- <button class="btn btnplus edittk" type="button"><i class="fas fa-plus-circle"></i></button> -->
                         </div>
                     </div>
@@ -383,7 +383,7 @@
                     <div class="row">
                         <div class="col-xl-6">
                             <div class="form-group editcurd_tableoff">
-                                <label style="color:#daa458;font-weight:bold;">Sow offline</label>
+                                <label style="color:#daa458;font-weight:bold;">Sow Offline</label>
                                 <?php foreach($value["sowoff_name"] as $subkeyoff => $subvalueoff): ?>
                                 <input type="hidden" class="form-control" name="sowoff_id" value="<?php echo $subvalueoff['sowoff_id']; ?>">
                                 <?php $sown = explode(PHP_EOL,$subvalueoff['sowoff_name']);
@@ -393,7 +393,7 @@
                                     <div class="col-xl-7">
                                         <?php foreach($sown as $sowns):
                                             $count2--; ?>
-                                        <input type="text" class="form-control row5<?php echo $count2?>" name="sowoff_name[]" placeholder="Sow" value="<?php echo $sowns; ?>">
+                                        <input type="text" class="form-control row5<?php echo $count2?> inputform" name="sowoff_name[]" placeholder="Sow" value="<?php echo $sowns; ?>">
                                         <?php endforeach; ?>
                                     </div>
                                     <div class="col-xl-5">
@@ -401,10 +401,10 @@
                                         $count--; ?>
                                         <div class="form-row">
                                             <div class="col-xl-10">
-                                                <input type="text" class="form-control row5<?php echo $count?>" name="rateoff[]" placeholder="Rate card" value="<?php echo $rates; ?>"> 
+                                                <input type="text" class="form-control row5<?php echo $count?> inputform" name="rateoff[]" placeholder="Ratecard" value="<?php echo $rates; ?>"> 
                                             </div> 
-                                            <div class="col-xl-2" style="padding-top:8px">
-                                                <span class="minusinput removeoff row5<?php echo $count?>" data-row="row5<?php echo $count?>"><i class="fas fa-times"></i></span>
+                                            <div class="col-xl-2">
+                                                <span class="minusinput removeoff row5<?php echo $count?>" data-row="row5<?php echo $count?>"><i style="margin-top:10px;" class="fas fa-times"></i></span>
                                             </div>
                                             <!-- <div class="input-group-append">                                   
                                                 <button class="btn btnminus removeoff row5<?php echo $count?>" data-row="row5<?php echo $count?>" type="button"><i class='fas fa-minus-circle'></i></button>
@@ -415,13 +415,13 @@
                                 </div>
                                 <?php endforeach; ?>
                             </div>
-                            <span class="plusinput editoff"><i class="fas fa-plus"></i> Thêm sow</span>
+                            <span class="plusinput editoff"><i class="fas fa-plus"></i> Thêm</span>
                             <!-- <button class="btn btnplus editoff" type="button"><i class="fas fa-plus-circle"></i></button> -->
                         </div>
                         <div class="col-xl-6">
                             <div class="form-group editnoteform">
-                                <label style="font-weight:bold;">Lưu ý</label>
-                                <textarea type="text" class="form-control" rows="4" name="kol_note" placeholder="Note"><?php echo $value['kol_note']; ?></textarea>
+                                <label style="font-weight:bold;color:#000;">Note</label>
+                                <textarea type="text" class="form-control inputform" rows="4" name="kol_note" placeholder="Note"><?php echo $value['kol_note']; ?></textarea>
                             </div>
                         </div>
                     </div>

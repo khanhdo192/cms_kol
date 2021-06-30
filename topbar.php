@@ -89,7 +89,7 @@
     <!-- Nav Item - User Information -->
     <li class="nav-item dropdown no-arrow">
         <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="mr-2 d-none d-lg-inline text-light-600 small">Username</span>
+        <span style="color:#fff;" class="mr-2 d-none d-lg-inline text-light-600 small">Username</span>
         <img class="img-profile rounded-circle" src="img/user.png">
         </a>
         <!-- Dropdown - User Information -->

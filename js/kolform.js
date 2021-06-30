@@ -12,7 +12,7 @@ $(document).ready(function(){
 $(document).ready(function(){
     $('#companyfield').tokenfield({
         autocomplete: {
-            source: ['Bread n tea','Actor','Influencer','Youtuber','Family','Comedy','Music'],
+            source: ['Bread n tea'],
             delay: 100
         },
         showAutocompleteOnFocus: true,            
@@ -51,15 +51,15 @@ $(document).ready(function(){
         count = count + 1;
         var html_code = '<div class="row row'+count+'">';
         html_code += '<div class="col-xl-7">';
-        html_code += '<input type="text" class="form-control" name="sowfb_name[]" placeholder="Sow" value="">';
+        html_code += '<input type="text" class="form-control inputform" name="sowfb_name[]" placeholder="Sow" value="">';
         html_code += '</div>';
         html_code += '<div class="col-xl-5">';
         html_code += '<div class="form-row row'+count+'">';
         html_code += '<div class="col-xl-10">';
-        html_code += '<input type="text" class="form-control" name="ratefb[]" placeholder="Rate card" value="">';
+        html_code += '<input type="text" class="form-control inputform" name="ratefb[]" placeholder="Rate card" value="">';
         html_code += '</div>';
-        html_code += '<div class="col-xl-2" style="padding-top:8px">';
-        html_code += '<span class="minusinput remove" data-row="row'+count+'"><i class="fas fa-times"></i></span>';
+        html_code += '<div class="col-xl-2">';
+        html_code += '<span class="minusinput remove" data-row="row'+count+'"><i style="margin-top:10px;" class="fas fa-times"></i></span>';
         html_code += '</div>';
         html_code += '</div>';
         $('#curd_tablefb').append(html_code);
@@ -76,15 +76,15 @@ $(document).ready(function(){
         count = count + 1;
         var html_code = '<div class="row row2'+count+'">';
         html_code += '<div class="col-xl-7">';
-        html_code += '<input type="text" class="form-control" name="sowins_name[]" placeholder="Sow" value="">';
+        html_code += '<input type="text" class="form-control inputform" name="sowins_name[]" placeholder="Sow" value="">';
         html_code += '</div>';
         html_code += '<div class="col-xl-5">';
         html_code += '<div class="form-row row2'+count+'">';
         html_code += '<div class="col-xl-10">';
-        html_code += '<input type="text" class="form-control" name="rateins[]" placeholder="Rate card" value="">';
+        html_code += '<input type="text" class="form-control inputform" name="rateins[]" placeholder="Rate card" value="">';
         html_code += '</div>';
-        html_code += '<div class="col-xl-2" style="padding-top:8px">';
-        html_code += '<span class="minusinput remove" data-row="row2'+count+'"><i class="fas fa-times"></i></span>';
+        html_code += '<div class="col-xl-2">';
+        html_code += '<span class="minusinput remove" data-row="row2'+count+'"><i style="margin-top:10px;" class="fas fa-times"></i></span>';
         html_code += '</div>';
         html_code += '</div>';
         $('#curd_tableins').append(html_code);
@@ -101,15 +101,15 @@ $(document).ready(function(){
         count = count + 1;
         var html_code = '<div class="row row3'+count+'">';
         html_code += '<div class="col-xl-7">';
-        html_code += '<input type="text" class="form-control" name="sowyt_name[]" placeholder="Sow" value="">';
+        html_code += '<input type="text" class="form-control inputform" name="sowyt_name[]" placeholder="Sow" value="">';
         html_code += '</div>';
         html_code += '<div class="col-xl-5">';
         html_code += '<div class="form-row row3'+count+'">';
         html_code += '<div class="col-xl-10">';
-        html_code += '<input type="text" class="form-control" name="rateyt[]" placeholder="Rate card" value="">';
+        html_code += '<input type="text" class="form-control inputform" name="rateyt[]" placeholder="Rate card" value="">';
         html_code += '</div>';
-        html_code += '<div class="col-xl-2" style="padding-top:8px">';
-        html_code += '<span class="minusinput remove" data-row="row3'+count+'"><i class="fas fa-times"></i></span>';
+        html_code += '<div class="col-xl-2">';
+        html_code += '<span class="minusinput remove" data-row="row3'+count+'"><i style="margin-top:10px;" class="fas fa-times"></i></span>';
         html_code += '</div>';
         html_code += '</div>';
         $('#curd_tableyt').append(html_code);
@@ -126,15 +126,15 @@ $(document).ready(function(){
         count = count + 1;
         var html_code = '<div class="row row4'+count+'">';
         html_code += '<div class="col-xl-7">';
-        html_code += '<input type="text" class="form-control" name="sowtk_name[]" placeholder="Sow" value="">';
+        html_code += '<input type="text" class="form-control inputform" name="sowtk_name[]" placeholder="Sow" value="">';
         html_code += '</div>';
         html_code += '<div class="col-xl-5">';
         html_code += '<div class="form-row row4'+count+'">';
         html_code += '<div class="col-xl-10">';
-        html_code += '<input type="text" class="form-control" name="ratetk[]" placeholder="Rate card" value="">';
+        html_code += '<input type="text" class="form-control inputform" name="ratetk[]" placeholder="Rate card" value="">';
         html_code += '</div>';
-        html_code += '<div class="col-xl-2" style="padding-top:8px">';
-        html_code += '<span class="minusinput remove" data-row="row4'+count+'"><i class="fas fa-times"></i></span>';
+        html_code += '<div class="col-xl-2">';
+        html_code += '<span class="minusinput remove" data-row="row4'+count+'"><i style="margin-top:10px;" class="fas fa-times"></i></span>';
         html_code += '</div>';
         html_code += '</div>';
         $('#curd_tabletk').append(html_code);
@@ -151,15 +151,15 @@ $(document).ready(function(){
         count = count + 1;
         var html_code = '<div class="row row5'+count+'">';
         html_code += '<div class="col-xl-7">';
-        html_code += '<input type="text" class="form-control" name="sowoff_name[]" placeholder="Sow" value="">';
+        html_code += '<input type="text" class="form-control inputform" name="sowoff_name[]" placeholder="Sow" value="">';
         html_code += '</div>';
         html_code += '<div class="col-xl-5">';
         html_code += '<div class="form-row row5'+count+'">';
         html_code += '<div class="col-xl-10">';
-        html_code += '<input type="text" class="form-control" name="rateoff[]" placeholder="Rate card" value="">';
+        html_code += '<input type="text" class="form-control inputform" name="rateoff[]" placeholder="Rate card" value="">';
         html_code += '</div>';
-        html_code += '<div class="col-xl-2" style="padding-top:8px">';
-        html_code += '<span class="minusinput remove" data-row="row5'+count+'"><i class="fas fa-times"></i></span>';
+        html_code += '<div class="col-xl-2">';
+        html_code += '<span class="minusinput remove" data-row="row5'+count+'"><i style="margin-top:10px;" class="fas fa-times"></i></span>';
         html_code += '</div>';
         html_code += '</div>';
         $('#curd_tableoff').append(html_code);
@@ -257,7 +257,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min = parseInt( $('#minfb1').val(), 10 );
                 var max = parseInt( $('#maxfb1').val(), 10 );
-                var impact = parseFloat( data[2] ) || 0; // use data for the age column
+                var impact = parseFloat( data[4] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min ) && isNaN( max ) ) ||
                      ( isNaN( min ) && impact <= max ) ||
@@ -281,7 +281,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min2 = parseInt( $('#minfb2').val(), 10 );
                 var max2 = parseInt( $('#maxfb2').val(), 10 );
-                var active = parseFloat( data[3] ) || 0; // use data for the age column
+                var active = parseFloat( data[5] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
                      ( isNaN( min2 ) && active <= max2 ) ||
@@ -305,7 +305,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min = parseInt( $('#minins1').val(), 10 );
                 var max = parseInt( $('#maxins1').val(), 10 );
-                var impact = parseFloat( data[6] ) || 0; // use data for the age column
+                var impact = parseFloat( data[8] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min ) && isNaN( max ) ) ||
                      ( isNaN( min ) && impact <= max ) ||
@@ -329,7 +329,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min2 = parseInt( $('#minins2').val(), 10 );
                 var max2 = parseInt( $('#maxins2').val(), 10 );
-                var active = parseFloat( data[7] ) || 0; // use data for the age column
+                var active = parseFloat( data[9] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
                      ( isNaN( min2 ) && active <= max2 ) ||
@@ -353,7 +353,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min = parseInt( $('#minyt1').val(), 10 );
                 var max = parseInt( $('#maxyt1').val(), 10 );
-                var impact = parseFloat( data[10] ) || 0; // use data for the age column
+                var impact = parseFloat( data[12] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min ) && isNaN( max ) ) ||
                      ( isNaN( min ) && impact <= max ) ||
@@ -377,7 +377,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min2 = parseInt( $('#minyt2').val(), 10 );
                 var max2 = parseInt( $('#maxyt2').val(), 10 );
-                var active = parseFloat( data[11] ) || 0; // use data for the age column
+                var active = parseFloat( data[13] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
                      ( isNaN( min2 ) && active <= max2 ) ||
@@ -401,7 +401,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min = parseInt( $('#mintk1').val(), 10 );
                 var max = parseInt( $('#maxtk1').val(), 10 );
-                var impact = parseFloat( data[14] ) || 0; // use data for the age column
+                var impact = parseFloat( data[16] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min ) && isNaN( max ) ) ||
                      ( isNaN( min ) && impact <= max ) ||
@@ -425,7 +425,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min2 = parseInt( $('#mintk2').val(), 10 );
                 var max2 = parseInt( $('#maxtk2').val(), 10 );
-                var active = parseFloat( data[15] ) || 0; // use data for the age column
+                var active = parseFloat( data[17] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
                      ( isNaN( min2 ) && active <= max2 ) ||
@@ -449,7 +449,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min = parseInt( $('#minoff1').val(), 10 );
                 var max = parseInt( $('#maxoff1').val(), 10 );
-                var impact = parseFloat( data[18] ) || 0; // use data for the age column
+                var impact = parseFloat( data[20] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min ) && isNaN( max ) ) ||
                      ( isNaN( min ) && impact <= max ) ||
@@ -473,7 +473,7 @@ $(document).ready(function() {
             function( settings, data, dataIndex ) {
                 var min2 = parseInt( $('#minoff2').val(), 10 );
                 var max2 = parseInt( $('#maxoff2').val(), 10 );
-                var active = parseFloat( data[19] ) || 0; // use data for the age column
+                var active = parseFloat( data[21] ) || 0; // use data for the age column
          
                 if ( ( isNaN( min2 ) && isNaN( max2 ) ) ||
                      ( isNaN( min2 ) && active <= max2 ) ||
@@ -503,7 +503,7 @@ $(document).ready(function() {
                 return true;
               }
               
-              if (locations.indexOf(data[23]) !== -1) {
+              if (locations.indexOf(data[25]) !== -1) {
                 return true;
               }
               
@@ -521,7 +521,7 @@ $(document).ready(function() {
                 return true;
               }
               
-              if (genders.indexOf(data[1]) !== -1) {
+              if (genders.indexOf(data[3]) !== -1) {
                 return true;
               }
               
@@ -544,15 +544,15 @@ $(document).ready(function() {
 
     $(document).ready(function(){
         var table4 = $('#dataTable').DataTable();
-        table4.columns([1,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,23]).visible(false);
+        table4.columns([3,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,25,28]).visible(false);
 
         
             $('#fbshow').click(function(){
-                table4.columns([2,3,4,5]).visible(true);
-                table4.columns([6,7,8,9]).visible(false);
-                table4.columns([10,11,12,13]).visible(false);
-                table4.columns([14,15,16,17]).visible(false);
-                table4.columns([18,19,20,21]).visible(false);
+                table4.columns([4,5,6,7]).visible(true);
+                table4.columns([8,9,10,11]).visible(false);
+                table4.columns([12,13,14,15]).visible(false);
+                table4.columns([16,17,18,19]).visible(false);
+                table4.columns([20,21,22,23]).visible(false);
                 $('.pf1').show();
                 $('.pf2').hide();
                 $('.pf3').hide();
@@ -560,11 +560,11 @@ $(document).ready(function() {
                 $('.pf5').hide();
             });
             $('#inshow').click(function(){
-                table4.columns([2,3,4,5]).visible(false);
-                table4.columns([6,7,8,9]).visible(true);
-                table4.columns([10,11,12,13]).visible(false);
-                table4.columns([14,15,16,17]).visible(false);
-                table4.columns([18,19,20,21]).visible(false);
+                table4.columns([4,5,6,7]).visible(false);
+                table4.columns([8,9,10,11]).visible(true);
+                table4.columns([12,13,14,15]).visible(false);
+                table4.columns([16,17,18,19]).visible(false);
+                table4.columns([20,21,22,23]).visible(false);
                 $('.pf1').hide();
                 $('.pf2').show();
                 $('.pf3').hide();
@@ -572,11 +572,11 @@ $(document).ready(function() {
                 $('.pf5').hide();
             });
             $('#ytshow').click(function(){
-                table4.columns([2,3,4,5]).visible(false);
-                table4.columns([6,7,8,9]).visible(false);
-                table4.columns([10,11,12,13]).visible(true);
-                table4.columns([14,15,16,17]).visible(false);
-                table4.columns([18,19,20,21]).visible(false);
+                table4.columns([4,5,6,7]).visible(false);
+                table4.columns([8,9,10,11]).visible(false);
+                table4.columns([12,13,14,15]).visible(true);
+                table4.columns([16,17,18,19]).visible(false);
+                table4.columns([20,21,22,23]).visible(false);
                 $('.pf1').hide();
                 $('.pf2').hide();
                 $('.pf3').show();
@@ -584,11 +584,11 @@ $(document).ready(function() {
                 $('.pf5').hide();
             });
             $('#tkshow').click(function(){
-                table4.columns([2,3,4,5]).visible(false);
-                table4.columns([6,7,8,9]).visible(false);
-                table4.columns([10,11,12,13]).visible(false);
-                table4.columns([14,15,16,17]).visible(true);
-                table4.columns([18,19,20,21]).visible(false);
+                table4.columns([4,5,6,7]).visible(false);
+                table4.columns([8,9,10,11]).visible(false);
+                table4.columns([12,13,14,15]).visible(false);
+                table4.columns([16,17,18,19]).visible(true);
+                table4.columns([20,21,22,23]).visible(false);
                 $('.pf1').hide();
                 $('.pf2').hide();
                 $('.pf3').hide();
@@ -596,17 +596,44 @@ $(document).ready(function() {
                 $('.pf5').hide();
             });
             $('#otshow').click(function(){
-                table4.columns([2,3,4,5]).visible(false);
-                table4.columns([6,7,8,9]).visible(false);
-                table4.columns([10,11,12,13]).visible(false);
-                table4.columns([14,15,16,17]).visible(false);
-                table4.columns([18,19,20,21]).visible(true);
+                table4.columns([4,5,6,7]).visible(false);
+                table4.columns([8,9,10,11]).visible(false);
+                table4.columns([12,13,14,15]).visible(false);
+                table4.columns([16,17,18,19]).visible(false);
+                table4.columns([20,21,22,23]).visible(true);
                 $('.pf1').hide();
                 $('.pf2').hide();
                 $('.pf3').hide();
                 $('.pf4').hide();
                 $('.pf5').show();
             });
+    });
+
+    // $(document).ready(function(){
+    //     var table5 = $('#dataTable').DataTable();
+    //         $('#filterjob').on('change', function () {
+    //             table5.columns(1).search( this.value ).draw();
+    //         } );
+    // });
+
+    $(document).ready(function(){
+        var table6 = $('#dataTable').DataTable();
+        $('#searchjob').on( 'keyup', function () {
+            table6
+                .columns( 2 )
+                .search( this.value )
+                .draw();
+        } );
+    });
+
+    $(document).ready(function(){
+        var table7 = $('#dataTable').DataTable();
+        $('#searchcompany').on( 'keyup', function () {
+            table7
+                .columns( 28 )
+                .search( this.value )
+                .draw();
+        } );
     });
 
     $(document).ready(function(){
@@ -616,16 +643,12 @@ $(document).ready(function() {
         });
     });
 
-    $(document).ready(function(){
-        var table5 = $('#dataTable').DataTable();
-            $('#filterjob').on('change', function () {
-                table5.columns(0).search( this.value ).draw();
-            } );
-    });
+    
 
     $('#dataTable').dataTable( {    
         "bInfo" : false,
         "pageLength": 10,
+        "ordering": false,
         "lengthChange": false,
         //"dom": 'Bfrtip',
         // "buttons": [
@@ -638,32 +661,9 @@ $(document).ready(function() {
             }
         },
         'columnDefs': [
-            { "width": "220px", "targets": 0 },
-            { "width": "80px", "targets": 24 },
-            { "width": "100px", "targets": 2 },
-            { "width": "100px", "targets": 3 },
-            { "width": "180px", "targets": 4 },
-            { "width": "90px", "targets": 5 },
-            { "width": "100px", "targets": 6 },
-            { "width": "100px", "targets": 7 },
-            { "width": "180px", "targets": 8 },
-            { "width": "90px", "targets": 9 },
-            { "width": "100px", "targets": 10 },
-            { "width": "100px", "targets": 11 },
-            { "width": "180px", "targets": 12 },
-            { "width": "90px", "targets": 13 },
-            { "width": "100px", "targets": 14 },
-            { "width": "100px", "targets": 15 },
-            { "width": "180px", "targets": 16 },
-            { "width": "90px", "targets": 17 },
-            { "width": "100px", "targets": 18 },
-            { "width": "100px", "targets": 19 },
-            { "width": "180px", "targets": 20 },
-            { "width": "90px", "targets": 21 },
-            { "width": "60px", "targets": 22 },
-            { "width": "30px", "targets": 25 },
+            
             {
-               'targets': 26,
+               'targets': 0,
                'checkboxes': {
                   'selectRow': true
                }
@@ -684,7 +684,7 @@ $(document).ready(function() {
                         'className': 'btn btn-success',
                         'text': 'PDF',
                         'exportOptions': {
-                            'columns': [0,1,2,3,4,5,22,23,24],
+                            'columns': [2,4,5,6,7,26],
                             'modifier': {
                                 'selected': true
                             }
@@ -696,7 +696,7 @@ $(document).ready(function() {
                         'className': 'btn btn-success',
                         'text': 'EXCEL',
                         'exportOptions': {
-                            'columns': [0,1,2,3,4,5,22,23,24],
+                            'columns': [2,4,5,6,7,26],
                             'modifier': {
                                 'selected': true
                             }

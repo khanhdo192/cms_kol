@@ -114,38 +114,47 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-8">
+                        <div class="col-xl-4">
                             <div class="row">
-                                <div class="col-xl-1">
+                                <div class="col-xl-2">
                                     <span class="d-inline-block">
                                         <i class="fas fa-tags fass"></i>
                                     </span>
                                 </div>
-                                <div class="col-xl-11">
-                                    <p class="tel-mail">Tag</p>
-                                    <!-- <?php foreach($value["job_name"] as $subkey2 => $subvalue2): ?>
-                                    <span class="badge badge-success nametag2"><?php echo $subvalue2['job_name']?></span><br>
-                                    <?php endforeach; ?> -->
+                                <div class="col-xl-10">
+                                    <p class="tel-mail"><span class="badge badge-info nametag2"><?php echo $value['kol_job']?></span></p>                                   
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xl-1">
+                                <div class="col-xl-2">
                                     <span class="d-inline-block">
                                         <i class="fas fa-location-arrow fass"></i>
                                     </span>
                                 </div>
-                                <div class="col-xl-11">
+                                <div class="col-xl-10">
                                     <p class="tel-mail"><?php echo $value['kol_location']; ?></p>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xl-1">
+                                <div class="col-xl-2">
                                     <span class="d-inline-block">
                                         <i class="fas fa-map-marker-alt fass"></i>
                                     </span>
                                 </div>
-                                <div class="col-xl-11">
+                                <div class="col-xl-10">
                                     <p class="tel-mail"><?php echo $value['kol_address']; ?></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4">
+                            <div class="row">
+                                <div class="col-xl-2">
+                                    <span class="d-inline-block">
+                                        <i class="fas fa-building fass"></i>
+                                    </span>
+                                </div>
+                                <div class="col-xl-10">
+                                    <p class="tel-mail"><span class="badge badge-info nametag2"><?php echo $value['kol_company']?></span></p>                                   
                                 </div>
                             </div>
                         </div>
@@ -310,19 +319,19 @@
                     </div>
                     <div class="row rowdetail5">
                         <div class="col-xl-4">
-                            <p>Tết Trung Thu Bread n Tea</p>
+                            <p></p>
                         </div>
                         <div class="col-xl-2">
-                            <p>Bread n Tea</p>
+                            <p></p>
                         </div>
                         <div class="col-xl-2">
-                            <p>720M</p>
+                            <p></p>
                         </div>
                         <div class="col-xl-2">
-                            <p>1-8-2000</p>
+                            <p></p>
                         </div>
                         <div class="col-xl-2">
-                            <img class="kol-img" src="upload/<?php echo $value['kol_img']; ?>" alt="" width="30px" height="30px">
+                        
                         </div>
                     </div>
                 </div>

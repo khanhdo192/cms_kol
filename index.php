@@ -11,9 +11,7 @@
     <div class="container-fluid nav-page">
         <div class="row toptable">
             <div class="col-sm-8">
-                <p></p>
-                <h1 class="m-0 font-weight-bold text-dark">Quản lý KOL</h1>
-                <p></p>
+                <h3 class="m-0 font-weight-bold text-dark mt-4">Quản lý KOL</h3>
             </div>
             <!-- Button Add Kol -->
             <div class="col-sm-4">
@@ -60,7 +58,7 @@
                                 <button style="margin-right:8px;" id="inshow" class="btn btnins" type="button"><i class="fab fa-instagram"></i></button>
                                 <button style="margin-right:8px;" id="ytshow" class="btn btnyt" type="button"><i class="fab fa-youtube-square"></i></button>
                                 <button style="margin-right:8px;" id="tkshow" class="btn btntk" type="button"><i class="fab fa-tiktok"></i></button>
-                                <button style="margin-right:8px;" id="otshow" class="btn btnot" type="button"><i class="fas fa-ad"></i></button>
+                                <button style="margin-right:8px;" id="otshow" class="btn btnot" type="button"><i class="fas fa-video"></i></button>
                                 <select style="margin-right:12px;width:100px;font-weight:bold;" class="form-control" id="exportLink">
                                     <option>Export</option>
                                     <option id="pdf">PDF</option>
@@ -70,6 +68,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div style="padding-left:10px;font-weight:bold;">
                         <?php
                             if(isset($_SESSION['success']) && $_SESSION['success'] !=''){
                                 echo '<p> '.$_SESSION['success'].' </p>';
@@ -90,57 +89,66 @@
                                 unset($_SESSION['fail_edit']);
                             }
                         ?>
+                        </div>
                 </div>
                 <table class="table tablekol" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
+                        <th></th>
+                        <th>Avatar</th>
                         <th>Tên+Lĩnh vực</th>
-                        <th data-sortable="false"></th>
+                        <th>Gender</th>
 
-                        <th class="tdkol">Ảnh hưởng</th>
-                        <th class="tdkol" data-sortable="false">Tương tác</th>
-                        <th data-sortable="false">Sow</th>
-                        <th data-sortable="false">Giá</th>
+                        <th class="tdkol">Followers</th>
+                        <th class="tdkol">Engagement</th>
+                        <th>Sow Facebook</th>
+                        <th>Ratecard</th>
 
-                        <th class="tdkol">Ảnh hưởng</th>
-                        <th class="tdkol" data-sortable="false">Tương tác</th>
-                        <th data-sortable="false">Sow</th>
-                        <th data-sortable="false">Giá</th>
+                        <th class="tdkol">Followers</th>
+                        <th class="tdkol">Engagement</th>
+                        <th>Sow Instagram</th>
+                        <th>Ratecard</th>
 
-                        <th class="tdkol">Ảnh hưởng</th>
-                        <th class="tdkol" data-sortable="false">Tương tác</th>
-                        <th data-sortable="false">Sow</th>
-                        <th data-sortable="false">Giá</th>
+                        <th class="tdkol">Followers</th>
+                        <th class="tdkol">Engagement</th>
+                        <th>Sow Youtube</th>
+                        <th>Ratecard</th>
 
-                        <th class="tdkol">Ảnh hưởng</th>
-                        <th class="tdkol" data-sortable="false">Tương tác</th>
-                        <th data-sortable="false">Sow</th>
-                        <th data-sortable="false">Giá</th>
+                        <th class="tdkol">Followers</th>
+                        <th class="tdkol">Engagement</th>
+                        <th>Sow TikTok</th>
+                        <th>Ratecard</th>
 
-                        <th class="tdkol">Ảnh hưởng</th>
-                        <th class="tdkol" data-sortable="false">Tương tác</th>
-                        <th data-sortable="false">Sow</th>
-                        <th data-sortable="false">Giá</th>
+                        <th class="tdkol">Followers</th>
+                        <th class="tdkol">Engagement</th>
+                        <th>Sow Offline</th>
+                        <th>Ratecard</th>
 
-                        <th data-sortable="false">Liên hệ</th>
-                        <th data-sortable="false">Miền</th>
-                        <th data-sortable="false">Lưu ý</th>
-                        <th data-sortable="false"></th>
-                        <th data-sortable="false"></th>
+                        <th>Contact</th>
+                        <th>Location</th>
+                        <th>Note</th>
+                        <th></th>
+                        <th>Company</th>
                     </tr>
                     </thead>
                     <tbody id="dataTable2">
                     <?php include('showkol.php'); ?>
                     <?php foreach($data as $value): ?>
                     <tr>
+                        <td></td>
+                        <td>
+                            <div class="row">
+                            <div class="col-xl-12 col-sm-12">
+                                    <img class="rounded" src="upload/<?php echo $value['kol_img']; ?>" alt="kol image" width="45px" height="45px">
+                                </div>
+
+                            </div>
+                        </td>
                         <td>
                             <div class="row name-job">
-                                <div class="col-xl-4 col-sm-12">
-                                    <img class="rounded" src="upload/<?php echo $value['kol_img']; ?>" alt="kol image" width="55px" height="55px">
-                                </div>
-                                <div class="col-xl-8 col-sm-12">
+                                <div class="col-xl-12 col-sm-12">
                                     <p class="nametag"><?php echo $value['kol_name'];?></p>
-                                    <span class="badge badge-info"><?php echo $value['kol_job'];?></span>                                      
+                                    <span class="badge badge-info tags"><?php echo $value['kol_job'];?></span>                                      
                                 </div>
                             </div>                                   
                         </td>
@@ -150,16 +158,16 @@
                         <td>
                             <div class="row platform">
                                 <div class="col-xl-12">
-                                    <p class="api-pf"><a target="_blank" href="<?php echo $value['link_fb']; ?>"><img class="iconpng" src="img/fb.png" alt="" width="15px" height="15px"></a><?php echo $value['kol_id'];?></p>
-                                    <p class="api-date">(03 Aug 2020)</p>
+                                    <p class="api-pf"><?php echo $value['kol_id'];?></p>
+                                    
                                 </div>
                             </div>
                         </td>
                         <td>
                             <div class="row">
                                 <div class="col-xl-12">
-                                    <p class="api-pf2">38532</p>
-                                    <p class="api-date2">(03 Aug 2020)</p>
+                                    <p class="api-pf2">100</p>
+                                    
                                 </div>
                             </div>
                         </td>
@@ -169,7 +177,7 @@
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
-                                    <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
+                                    <p style="color:#000;margin-bottom:2px;"><?php echo $sows; ?></p>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -181,7 +189,7 @@
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
-                                    <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
+                                    <p style="color:#000;font-weight:bold;margin-bottom:2px;"><?php echo $rates; ?></p>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -190,8 +198,8 @@
                         <td>
                             <div class="row platform">
                                 <div class="col-xl-12">
-                                    <p class="api-pf"><a target="_blank" href="<?php echo $value['link_ins']; ?>"><img class="iconpng" src="img/insta.png" alt="" width="15px" height="15px"></a>36</p>
-                                    <p class="api-date">(03 Aug 2020)</p>
+                                    <p class="api-pf">36</p>
+                                    
                                 </div>
                             </div>
                         </td>
@@ -199,7 +207,7 @@
                             <div class="row">
                                 <div class="col-xl-12">
                                     <p class="api-pf2">20798</p>
-                                    <p class="api-date2">(03 Aug 2020)</p>
+                                    
                                 </div>
                             </div>
                         </td>
@@ -209,7 +217,7 @@
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
-                                    <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
+                                    <p style="color:#000;margin-bottom:2px;"><?php echo $sows; ?></p>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -221,7 +229,7 @@
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
-                                    <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
+                                    <p style="color:#000;font-weight:bold;margin-bottom:2px;"><?php echo $rates; ?></p>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -230,8 +238,8 @@
                         <td>
                             <div class="row platform">
                                 <div class="col-xl-12">
-                                    <p class="api-pf"><a target="_blank" href="<?php echo $value['link_yt']; ?>"><img class="iconpng" src="img/yt.png" alt="" width="15px" height="15px"></a>1.000.000</p>
-                                    <p class="api-date">(03 Aug 2020)</p>
+                                    <p class="api-pf">1000</p>
+                                    
                                 </div>
                             </div>
                         </td>
@@ -239,7 +247,7 @@
                             <div class="row">
                                 <div class="col-xl-12">
                                     <p class="api-pf2">50123</p>
-                                    <p class="api-date2">(03 Aug 2020)</p>
+                                    
                                 </div>
                             </div>
                         </td>
@@ -249,7 +257,7 @@
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
-                                    <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
+                                    <p style="color:#000;margin-bottom:2px;"><?php echo $sows; ?></p>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -261,7 +269,7 @@
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
-                                    <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
+                                    <p style="color:#000;font-weight:bold;margin-bottom:2px;"><?php echo $rates; ?></p>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -270,8 +278,8 @@
                         <td>
                             <div class="row platform">
                                 <div class="col-xl-12">
-                                    <p class="api-pf"><img class="iconpng" src="img/tk.png" alt="" width="15px" height="15px">No data</p>
-                                    <p class="api-date">No data</p>
+                                    <p class="api-pf">No data</p>
+                                    
                                 </div>
                             </div>
                         </td>
@@ -279,7 +287,7 @@
                             <div class="row">
                                 <div class="col-xl-12">
                                     <p class="api-pf2">No data</p>
-                                    <p class="api-date2">No data</p>
+                                    
                                 </div>
                             </div>
                         </td>
@@ -289,7 +297,7 @@
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
-                                    <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
+                                    <p style="color:#000;margin-bottom:2px;"><?php echo $sows; ?></p>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -301,7 +309,7 @@
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
-                                    <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
+                                    <p style="color:#000;font-weight:bold;margin-bottom:2px;"><?php echo $rates; ?></p>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -310,8 +318,8 @@
                         <td>
                             <div class="row platform">
                                 <div class="col-xl-12">
-                                    <p class="api-pf"><img class="iconpng" src="img/TAL.png" alt="" width="15px" height="15px">No data</p>
-                                    <p class="api-date">No data</p>
+                                    <p class="api-pf">No data</p>
+                                    
                                 </div>
                             </div>
                         </td>
@@ -319,7 +327,7 @@
                             <div class="row">
                                 <div class="col-xl-12">
                                     <p class="api-pf2">No data</p>
-                                    <p class="api-date2">No data</p>
+                                    
                                 </div>
                             </div>
                         </td>
@@ -329,7 +337,7 @@
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($sow as $sows): ?>
-                                    <p style="color:#000;margin-bottom:-4px;"><?php echo $sows; ?></p>
+                                    <p style="color:#000;margin-bottom:2px;"><?php echo $sows; ?></p>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -341,7 +349,7 @@
                             <div class="row sow-rate">
                                 <div class="col-xl-12">
                                     <?php foreach($rate as $rates): ?>
-                                    <p style="color:#000;font-weight:bold;margin-bottom:-4px;"><?php echo $rates; ?></p>
+                                    <p style="color:#000;font-weight:bold;margin-bottom:2px;"><?php echo $rates; ?></p>
                                     <?php endforeach; ?>
                                 </div>
                             </div>
@@ -405,7 +413,13 @@
                                 include('detailkol.php'); 
                             ?>
                         </td>
-                        <td></td>
+                        <td>
+                            <div class="row note">
+                                <div class="col-xl-12">
+                                    <p style="color:#000;white-space: pre-line;"><?php echo $value['kol_company']?></p>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <?php endforeach; ?>          
                     </tbody>
@@ -422,6 +436,7 @@
 
         <!-- Filter Screen -->
         <div class="col-sm-2 filter-screen">
+        <form action="filter.php" id="filterForm">
         <div class="row rowfilter1">
             <div class="col-xl-9">
                 <p class="p-filter"><i class="fas fa-filter"></i>&nbsp&nbspBộ lọc tìm kiếm</p>
@@ -430,11 +445,11 @@
                 <button class="btn btnrefresh" type="button"><i class="fas fa-redo-alt"></i></button>
             </div>
         </div>
-        <form action="filter.php" id="filterForm">
         <div class="container-fuild boxfilter">
             <div class="form-group">
                 <label class="p-filter">Lĩnh vực</label>
-                <select class="form-control" id="filterjob">
+                <input style="font-size:12px;" type="text" class="form-control" id="searchjob" name="searchByJob" placeholder="Lĩnh vực">    
+                <!-- <select style="font-size:12px;" class="form-control" id="filterjob">
                     <option value="">All</option>
                     <option value="Actor">Actor</option>
                     <option value="Singer">Singer</option>
@@ -442,13 +457,11 @@
                     <option value="Youtuber">Youtuber</option>
                     <option value="Family">Family</option>
                     <option value="Player">Player</option>
-                </select>
-                <!-- <div class="input-group">
-                    <input type="text" class="form-control" id="searchjob" name="searchByJob" placeholder="Lĩnh vực">
-                    <div class="input-group-append">
-                        <button class="btn btn-info btnsearch" id="" type="button"><i class="fas fa-angle-right"></i></button>
-                    </div>
-                </div> -->
+                </select> -->
+            </div>
+            <div class="form-group">
+                <label class="p-filter">Công ty</label>
+                <input style="font-size:12px;" type="text" class="form-control" id="searchcompany" name="searchByCompany" placeholder="Công ty">
             </div>
         </div>
         <div class="container-fuild boxfilter">
@@ -456,42 +469,42 @@
                 <label class="p-filter">Ảnh hưởng&ensp;</label><label class="labelfilter">(x1.000 người)</label>
                 <div class="row pf1">
                     <div class="col">
-                        <input type="text" id="minfb1" name="minfb1" class="form-control" placeholder="Từ">
+                        <input style="font-size:10px;" type="text" id="minfb1" name="minfb1" class="form-control" placeholder="Từ">
                     </div>
                     <div class="col">
-                        <input type="text" id="maxfb1" name="maxfb1" class="form-control" placeholder="Đến">
+                        <input style="font-size:10px;" type="text" id="maxfb1" name="maxfb1" class="form-control" placeholder="Đến">
                     </div>
                 </div>
                 <div class="row pf2" style="display:none;">
                     <div class="col">
-                        <input type="text" id="minins1" name="minins1" class="form-control" placeholder="Từ">
+                        <input style="font-size:10px;" type="text" id="minins1" name="minins1" class="form-control" placeholder="Từ">
                     </div>
                     <div class="col">
-                        <input type="text" id="maxins1" name="maxins1" class="form-control" placeholder="Đến">
+                        <input style="font-size:10px;" type="text" id="maxins1" name="maxins1" class="form-control" placeholder="Đến">
                     </div>
                 </div>
                 <div class="row pf3" style="display:none;">
                     <div class="col">
-                        <input type="text" id="minyt1" name="minyt1" class="form-control" placeholder="Từ">
+                        <input style="font-size:10px;" type="text" id="minyt1" name="minyt1" class="form-control" placeholder="Từ">
                     </div>
                     <div class="col">
-                        <input type="text" id="maxyt1" name="maxyt1" class="form-control" placeholder="Đến">
+                        <input style="font-size:10px;" type="text" id="maxyt1" name="maxyt1" class="form-control" placeholder="Đến">
                     </div>
                 </div>
                 <div class="row pf4" style="display:none;">
                     <div class="col">
-                        <input type="text" id="mintk1" name="mintk1" class="form-control" placeholder="Từ">
+                        <input style="font-size:10px;" type="text" id="mintk1" name="mintk1" class="form-control" placeholder="Từ">
                     </div>
                     <div class="col">
-                        <input type="text" id="maxtk1" name="maxtk1" class="form-control" placeholder="Đến">
+                        <input style="font-size:10px;" type="text" id="maxtk1" name="maxtk1" class="form-control" placeholder="Đến">
                     </div>
                 </div>
                 <div class="row pf5" style="display:none;">
                     <div class="col">
-                        <input type="text" id="minoff1" name="minoff1" class="form-control" placeholder="Từ">
+                        <input style="font-size:10px;" type="text" id="minoff1" name="minoff1" class="form-control" placeholder="Từ">
                     </div>
                     <div class="col">
-                        <input type="text" id="maxoff1" name="maxoff1" class="form-control" placeholder="Đến">
+                        <input style="font-size:10px;" type="text" id="maxoff1" name="maxoff1" class="form-control" placeholder="Đến">
                     </div>
                 </div>
             </div>
@@ -499,70 +512,46 @@
                 <label class="p-filter">Tương tác&ensp;</label><label class="labelfilter">(x1.000 đơn vị)</label>
                 <div class="row pf1">
                     <div class="col">
-                        <input type="text" id="minfb2" name="minfb2" class="form-control" placeholder="Từ">
+                        <input style="font-size:10px;" type="text" id="minfb2" name="minfb2" class="form-control" placeholder="Từ">
                     </div>
                     <div class="col">
-                        <input type="text" id="maxfb2" name="maxfb2" class="form-control" placeholder="Đến">
+                        <input style="font-size:10px;" type="text" id="maxfb2" name="maxfb2" class="form-control" placeholder="Đến">
                     </div>
                 </div>
                 <div class="row pf2" style="display:none;">
                     <div class="col">
-                        <input type="text" id="minins2" name="minins2" class="form-control" placeholder="Từ">
+                        <input style="font-size:10px;" type="text" id="minins2" name="minins2" class="form-control" placeholder="Từ">
                     </div>
                     <div class="col">
-                        <input type="text" id="maxins2" name="maxins2" class="form-control" placeholder="Đến">
+                        <input style="font-size:10px;" type="text" id="maxins2" name="maxins2" class="form-control" placeholder="Đến">
                     </div>
                 </div>
                 <div class="row pf3" style="display:none;">
                     <div class="col">
-                        <input type="text" id="minyt2" name="minyt2" class="form-control" placeholder="Từ">
+                        <input style="font-size:10px;" type="text" id="minyt2" name="minyt2" class="form-control" placeholder="Từ">
                     </div>
                     <div class="col">
-                        <input type="text" id="maxyt2" name="maxyt2" class="form-control" placeholder="Đến">
+                        <input style="font-size:10px;" type="text" id="maxyt2" name="maxyt2" class="form-control" placeholder="Đến">
                     </div>
                 </div>
                 <div class="row pf4" style="display:none;">
                     <div class="col">
-                        <input type="text" id="mintk2" name="mintk2" class="form-control" placeholder="Từ">
+                        <input style="font-size:10px;" type="text" id="mintk2" name="mintk2" class="form-control" placeholder="Từ">
                     </div>
                     <div class="col">
-                        <input type="text" id="maxtk2" name="maxtk2" class="form-control" placeholder="Đến">
+                        <input style="font-size:10px;" type="text" id="maxtk2" name="maxtk2" class="form-control" placeholder="Đến">
                     </div>
                 </div>
                 <div class="row pf5" style="display:none;">
                     <div class="col">
-                        <input type="text" id="minoff2" name="minoff2" class="form-control" placeholder="Từ">
+                        <input style="font-size:10px;" type="text" id="minoff2" name="minoff2" class="form-control" placeholder="Từ">
                     </div>
                     <div class="col">
-                        <input type="text" id="maxoff2" name="maxoff2" class="form-control" placeholder="Đến">
+                        <input style="font-size:10px;" type="text" id="maxoff2" name="maxoff2" class="form-control" placeholder="Đến">
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label class="p-filter">Location</label>
-                <div class="row">
-                    <div class="col-xl-6">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input filterlocation" type="checkbox" name="kol_location" value="Bắc">
-                        <label class="form-check-label labelfilter p-filter" for="inlineRadio1">Bắc</label>
-                    </div>
-                    </div>
-                    <div class="col-xl-6">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input filterlocation" type="checkbox" name="kol_location" value="Trung">
-                        <label class="form-check-label labelfilter p-filter" for="inlineRadio2">Trung</label>
-                    </div>
-                    </div>
-                </div>
-                <div class="row">
-                <div class="col-xl-6">
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input filterlocation" type="checkbox" name="kol_location" value="Nam">
-                        <label class="form-check-label labelfilter p-filter" for="inlineRadio1">Nam</label>
-                    </div>
-                    </div>
-                </div>
-            </div>
+            
             <!-- <div class="form-group">
                 <div class="input-group justify-content-center">
                     <button type="submit" class="btn btn-info btngo" name="filterbtn">Áp dụng</button>
@@ -570,32 +559,60 @@
             </div> -->
         </div>
         <div class="container-fuild boxfilter">
-            <div class="row">
+            <div class="form-group">
+                <label class="p-filter">Location</label>
+                <div class="row">
+                    <div class="col-xl-6">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input filterlocation" type="checkbox" name="kol_location" value="Bắc">
+                        <label class="form-check-label labelfilter p-checkbox" for="inlineRadio1">Bắc</label>
+                    </div>
+                    </div>
+                    <div class="col-xl-6">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input filterlocation" type="checkbox" name="kol_location" value="Trung">
+                        <label class="form-check-label labelfilter p-checkbox" for="inlineRadio2">Trung</label>
+                    </div>
+                    </div>
+                </div>
+                <div class="row">
                 <div class="col-xl-6">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="kol_gender" value="Nam">
-                    <label class="form-check-label labelfilter p-filter" for="inlineRadio1">Nam</label>
-                </div>
-                </div>
-                <div class="col-xl-6">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="kol_gender" value="Nữ">
-                    <label class="form-check-label labelfilter p-filter" for="inlineRadio2">Nữ</label>
-                </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input filterlocation" type="checkbox" name="kol_location" value="Nam">
+                        <label class="form-check-label labelfilter p-checkbox" for="inlineRadio1">Nam</label>
+                    </div>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-            <div class="col-xl-6">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="kol_gender" value="Nhóm">
-                    <label class="form-check-label labelfilter p-filter" for="inlineRadio1">Nhóm</label>
+            <div class="form-group">
+            <label class="p-filter">Gender</label>
+                <div class="row">
+                    <div class="col-xl-6">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="kol_gender" value="Nam">
+                        <label class="form-check-label labelfilter p-checkbox" for="inlineRadio1">Nam</label>
+                    </div>
+                    </div>
+                    <div class="col-xl-6">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="kol_gender" value="Nữ">
+                        <label class="form-check-label labelfilter p-checkbox" for="inlineRadio2">Nữ</label>
+                    </div>
+                    </div>
                 </div>
-                </div>
+                <div class="row">
                 <div class="col-xl-6">
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" name="kol_gender" value="Không rõ">
-                    <label class="form-check-label labelfilter p-filter" for="inlineRadio2">Không rõ</label>
-                </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="kol_gender" value="Nhóm">
+                        <label class="form-check-label labelfilter p-checkbox" for="inlineRadio1">Nhóm</label>
+                    </div>
+                    </div>
+                    <div class="col-xl-6">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" name="kol_gender" value="Không rõ">
+                        <label class="form-check-label labelfilter p-checkbox" for="inlineRadio2">Không rõ</label>
+                    </div>
+                    </div>
                 </div>
             </div>
         </div>
